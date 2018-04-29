@@ -1,0 +1,41 @@
+@import 'var'
+
+@import 'mixins/*'
+@import 'extras/*'
+
+body
+    font-family 'Roboto', sans-serif
+    font-size 14px
+    font-smoothing subpixel-antialiased
+    font-weight 400
+    line-height 18px
+    color #333
+
+.ui-app
+    background-color #F8F8F8
+    display flex
+    height 100%
+    left 0
+    position absolute
+    right 0
+    top 0
+
+    & .route
+        fadeIn(.1s)
+        flex-grow 1
+        height 100%
+        left NAV_S
+        padding 25px 30px
+        position absolute
+        transition left .1s ease-in-out
+        width 100%
+
+        &__title
+            color #333
+            font-size 1.4em
+            margin 0 0 10px
+            padding 0 0 10px
+
+    &.expand
+        & .route
+            left NAV_E

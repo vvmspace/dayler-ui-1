@@ -1,0 +1,73 @@
+@import '~stylus/var.styl'
+
+.navbar
+    background-color #FFF
+    bottom 0
+    box-shadow 0 2px 7px 0 rgba(0, 0, 0, .17)
+    left 0
+    position fixed
+    top 0
+    user-select none
+    width NAV_S
+    z-index 10
+
+    & .header
+        align-items center
+        border-bottom 1px solid #EEE
+        display flex
+        height NAV_S
+
+        &__action
+            align-items center
+            display flex
+            justify-content center
+            width NAV_S
+
+            &--icon
+                cursor pointer
+
+        &__image
+            display none
+            position relative
+            top -3px
+
+    & .body
+        padding 5px 0
+
+    & .item
+        height 56px
+
+        &__link
+            align-items center
+            color DARK
+            display flex
+            text-decoration none
+            height 100%
+
+            &.active
+                & > .item__icon
+                    color RED
+
+                & > .item__title
+                    color #333
+
+            &:hover
+                background-color #FAFAFA
+
+        &__icon
+            width NAV_S
+
+        &__title
+            display none
+
+    &.expand
+        width NAV_E
+
+        & .header
+            &__image
+                display block
+
+        & .item
+            &__title
+                display block
+
