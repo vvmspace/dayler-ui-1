@@ -2,6 +2,8 @@
 
 @import 'mixins/*'
 @import 'extras/*'
+@import 'typings'
+@import 'colors'
 
 body
     font-family 'Roboto', sans-serif
@@ -10,6 +12,11 @@ body
     font-weight 400
     line-height 18px
     color #333
+
+pre
+    font-family Monaco
+    font-size 12px
+    color #777777
 
 .ui-app
     background-color #F8F8F8
@@ -24,10 +31,8 @@ body
         fadeIn(.1s)
         flex-grow 1
         height 100%
-        left NAV_S
-        padding 25px 30px
-        position absolute
-        transition left .1s ease-in-out
+        padding 25px 30px 0 NAV_S + 30px
+        transition padding-left .1s ease-in-out
         width 100%
 
         &__title
@@ -36,6 +41,9 @@ body
             margin 0 0 10px
             padding 0 0 10px
 
+        &__body
+            display grid
+
     &.expand
         & .route
-            left NAV_E
+            padding-left NAV_E + 30px

@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import NavBar from './components/NavBar';
 
 import Buttons from './routes/buttons.route';
+import Chart from './routes/chart.route';
 import Colors from './routes/colors.route';
 import DatePicker from './routes/datepicker.route';
-import Grid from './routes/grid.route';
 import Icons from './routes/icons.route';
 import Inputs from './routes/inputs.route';
 import Panels from './routes/panels.route';
@@ -23,37 +23,33 @@ export default class App extends Component {
             title: 'Typings',
             icon: 'type',
         }, {
-            link: '/grid',
-            title: 'Grid',
-            icon: 'corner-left-down',
-        }, {
             link: '/colors',
             title: 'Colors',
-            icon: 'file-text',
+            icon: 'aperture',
         }, {
             link: '/icons',
             title: 'Icons',
-            icon: 'book',
+            icon: 'feather',
         }, {
             link: '/buttons',
             title: 'Buttons',
-            icon: 'tablet',
+            icon: 'chevrons-up',
         }, {
             link: '/inputs',
             title: 'Inputs',
-            icon: 'align-left',
+            icon: 'edit',
         }, {
             link: '/panels',
             title: 'Panels',
-            icon: 'bell-off',
+            icon: 'copy',
         }, {
             link: '/tabs',
             title: 'Tabs',
-            icon: 'alert-circle',
+            icon: 'folder',
         }, {
             link: '/datepicker',
             title: 'Date Picker',
-            icon: 'date',
+            icon: 'calendar',
         }, {
             link: '/snackbar',
             title: 'Snackbar',
@@ -61,7 +57,11 @@ export default class App extends Component {
         }, {
             link: '/switches',
             title: 'Switches',
-            icon: 'chevron-right',
+            icon: 'toggle-left',
+        }, {
+            link: '/chart',
+            title: 'Chart',
+            icon: 'activity',
         }]
     }
 
@@ -79,7 +79,6 @@ export default class App extends Component {
                     <NavBar data={nav} expand={expand} onExpand={this.handleExpand} />
                      <Switch>
                          <Route exact path="/" component={Typings} />
-                         <Route exact path="/grid" component={Grid} />
                          <Route exact path="/colors" component={Colors} />
                          <Route exact path="/icons" component={Icons} />
                          <Route exact path="/buttons" component={Buttons} />
@@ -89,6 +88,7 @@ export default class App extends Component {
                          <Route exact path="/datepicker" component={DatePicker} />
                          <Route exact path="/snackbar" component={Snackbar} />
                          <Route exact path="/switches" component={Switches} />
+                         <Route exact path="/chart" component={Chart} />
                          <Redirect to="/" />
                      </Switch>
                 </div>
