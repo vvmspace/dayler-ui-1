@@ -5,7 +5,7 @@ const Uglify = require('uglifyjs-webpack-plugin')
 module.exports = {
     mode: 'production',
     output: {
-        path: path.join(process.cwd(), 'dist'),
+        path: path.join(process.cwd(), 'docs'),
         chunkFilename: '[id].[chunkhash].js',
         filename: '[id].[hash:12].js',
     },
