@@ -1,4 +1,4 @@
-@import '~ui/style/var'
+@import './var.styl'
 @import '~ui/style/mixins/animate.styl'
 
 pre
@@ -6,7 +6,7 @@ pre
     font-size 12px
     color #777777
 
-#app
+:global(#app)
     height 100%
     display flex
     align-items stretch
@@ -15,7 +15,7 @@ pre
     position absolute
     width 100%
 
-.ui-app
+:global(.ui-app)
     background-color #F8F8F8
     display flex
     left 0
@@ -23,7 +23,7 @@ pre
     right 0
     top 0
 
-    & .route
+    & :global(.route)
         fadeIn(.2s)
         flex-grow 1
         height 100%
@@ -39,7 +39,7 @@ pre
             height 100px
             justify-content center
 
-            & > span
+            & > :global(span)
                 color #999
                 display block
                 margin-top 15px
@@ -54,6 +54,6 @@ pre
             display grid
             max-width 800px
 
-    &.expand
-        & .route
+    &:global(.expand)
+        & :global(.route)
             padding-left NAV_EXAPNDED + 30px

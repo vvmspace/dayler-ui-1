@@ -1,0 +1,75 @@
+@import '~app/stylus/var.styl'
+@import '~ui/style/var.styl'
+
+// NAV CONTAINER
+.container
+    background-color #FFF
+    bottom 0
+    box-shadow 0 2px 7px 0 rgba(0, 0, 0, .17)
+    left 0
+    position fixed
+    top 0
+    user-select none
+    width NAV_UNEXAPNDED
+    z-index 10
+
+.expanded
+    width NAV_EXAPNDED
+
+// NAV HEADER
+.header
+    align-items center
+    border-bottom 1px solid #EEE
+    display flex
+    height NAV_UNEXAPNDED
+
+.header-image
+    display none
+    position relative
+    top -3px
+
+.expanded .header-image
+    display block
+
+.header-action
+    align-items center
+    display flex
+    justify-content center
+    width NAV_UNEXAPNDED
+
+.header-icon
+    cursor pointer
+
+// NAV BODY
+.body
+    padding 5px 0
+
+// NAV DEFAULT ITEM
+.item
+    height 56px
+
+.item-link
+    align-items center
+    color DARK
+    display flex
+    text-decoration none
+    height 100%
+
+    &:hover
+        background-color #FAFAFA
+
+.item-icon
+    width NAV_UNEXAPNDED
+
+.item-title
+    display none
+
+.expanded .item-title
+    display block
+
+// NAV ACTIVE ITEM
+.active-link .item-icon
+    color RED
+
+.active-link .item-title
+    color #333

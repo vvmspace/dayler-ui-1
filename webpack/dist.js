@@ -11,7 +11,7 @@ module.exports = {
     },
     plugins: [
         new Html({
-            chunks: ['main', 'stylus'],
+            chunks: ['main'],
             filename: './index.html',
             inject: true,
             template: './src/index.html',

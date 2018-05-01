@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-import 'ui'
 
 import NavBar from './components/NavBar';
-
 import Buttons from './routes/buttons.route';
 import Chart from './routes/chart.route';
 import Colors from './routes/colors.route';
@@ -15,6 +13,8 @@ import Snackbar from './routes/snackbar.route';
 import Switches from './routes/switches.route';
 import Tabs from './routes/tabs.route';
 import Typings from './routes/typings.route';
+
+import './stylus/base.styl';
 
 export default class App extends Component {
     state = {
@@ -66,9 +66,7 @@ export default class App extends Component {
         }]
     }
 
-    handleExpand = state => {
-        this.setState({ expand: state })
-    }
+    handleExpand = state => this.setState({ expand: state })
 
 
     render() {

@@ -13,7 +13,6 @@ const options = {
     },
     entry: {
         main: ['./src/index.js'],
-        stylus: ['./src/stylus/base.styl'],
     },
     module: {
         rules: [
@@ -30,7 +29,17 @@ const options = {
             },
             {
                 test: /\.styl/,
-                use: ['style-loader', 'css-loader', 'stylus-loader'],
+                use: [{
+                    loader: 'style-loader',
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        camelCase: 'only',
+                        modules: true,
+                    }
+                }, {
+                    loader: 'stylus-loader',
+                }],
             },
             {
                 test: /\.(eot|svg|cur)$/,

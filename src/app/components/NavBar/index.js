@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Icon } from 'ui';
 
-import './style.styl'
+import styles from './styles.styl'
+
+console.log(styles)
 
 export default class NavBar extends Component {
     static propTypes = {
@@ -30,29 +32,29 @@ export default class NavBar extends Component {
         const { data, expand } = this.props;
 
         return (
-            <div className={`navbar fadeInLeft ${expand ? 'expand' : ''}`}>
-                <div className="header">
-                    <div className="header__action">
-                        <Icon className="header__action--icon"
+            <div className={`${styles.container} ${expand ? styles.expanded : null}`}>
+                <div className={styles.header}>
+                    <div className={styles.headerAction}>
+                        <Icon className={styles.headerIcon}
                             onClick={this.handleClick}
                             name={`chevron-${expand ? 'left' : 'right'}`}
                             size={34}
                         />
                     </div>
-                    <img className="header__image" src="/images/logo_dark.svg" />
+                    <img className={styles.headerImage} src="/images/logo_dark.svg" />
                 </div>
-                <ul className="body">
+                <ul className={styles.body}>
                     {data.map(item => (
-                        <li className="item" key={Math.random()}>
-                            <NavLink className="item__link"
+                        <li className={styles.item} key={Math.random()}>
+                            <NavLink className={styles.itemLink}
                                 to={item.link}
                                 isActive={this.isActive}
-                                activeClassName="active"
+                                activeClassName={styles.activeLink}
                             >
-                                <Icon className="item__icon"
+                                <Icon className={styles.itemIcon}
                                     name={item.icon}
                                 />
-                                <span className="item__title">
+                                <span className={styles.itemTitle}>
                                     {item.title}
                                 </span>
                             </NavLink>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
-import './style.styl';
+import style from './style.styl';
 
 export default class Button extends Component {
     static propTypes = {
