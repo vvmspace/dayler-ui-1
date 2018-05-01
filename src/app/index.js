@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import 'ui'
 
 import NavBar from './components/NavBar';
 
@@ -27,21 +28,21 @@ export default class App extends Component {
             title: 'Colors',
             icon: 'aperture',
         }, {
+            link: '/panels',
+            title: 'Panels',
+            icon: 'copy',
+        }, {
             link: '/icons',
             title: 'Icons',
             icon: 'feather',
         }, {
             link: '/buttons',
             title: 'Buttons',
-            icon: 'chevrons-up',
+            icon: 'command',
         }, {
             link: '/inputs',
             title: 'Inputs',
             icon: 'edit',
-        }, {
-            link: '/panels',
-            title: 'Panels',
-            icon: 'copy',
         }, {
             link: '/tabs',
             title: 'Tabs',

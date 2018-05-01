@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import Panel from 'ui/Panel'
+import { Panel } from 'ui'
 
 export default class Panels extends Component {
     render() {
@@ -11,7 +10,7 @@ export default class Panels extends Component {
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'auto auto auto',
-                        gridColumnGap: '100px',
+                        gridColumnGap: '30px',
                         borderBottom: '1px solid #EEEEEE',
                         paddingBottom: 30,
                         marginBottom: 30
@@ -28,9 +27,11 @@ export default class Panels extends Component {
                             <p>Panel with title and icon</p>
                         </Panel>
                     </div>
-                    <Panel title="Example">
+                    <Panel title="usage" icon="code">
                         <pre>
-                            {`<Panel title="Panel Title" icon="settings">
+{`import { Panel } from 'ui';
+
+<Panel title="Panel Title" icon="settings">
     ...
 </Panel>`}
                         </pre>

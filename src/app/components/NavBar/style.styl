@@ -1,4 +1,4 @@
-@import '~stylus/var.styl'
+@import '~ui/style/var.styl'
 
 .navbar
     background-color #FFF
@@ -8,20 +8,20 @@
     position fixed
     top 0
     user-select none
-    width NAV_S
+    width NAV_UNEXAPNDED
     z-index 10
 
     & .header
         align-items center
         border-bottom 1px solid #EEE
         display flex
-        height NAV_S
+        height NAV_UNEXAPNDED
 
         &__action
             align-items center
             display flex
             justify-content center
-            width NAV_S
+            width NAV_UNEXAPNDED
 
             &--icon
                 cursor pointer
@@ -55,13 +55,13 @@
                 background-color #FAFAFA
 
         &__icon
-            width NAV_S
+            width NAV_UNEXAPNDED
 
         &__title
             display none
 
     &.expand
-        width NAV_E
+        width NAV_EXAPNDED
 
         & .header
             &__image

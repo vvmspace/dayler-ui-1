@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import Panel from 'ui/Panel'
+import { Panel } from 'ui'
 
 export default class Colors extends Component {
     render() {

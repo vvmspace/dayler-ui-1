@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Icon } from 'ui';
 
 import './style.styl'
-
-import Icon from 'ui/Icon';
 
 export default class NavBar extends Component {
     static propTypes = {

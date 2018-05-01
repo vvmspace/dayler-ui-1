@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Icon from 'ui/Icon'
+import Icon from '../Icon'
 import './style.styl'
 
 export default class Panel extends Component {

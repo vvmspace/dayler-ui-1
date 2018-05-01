@@ -1,0 +1,94 @@
+@import '~ui/style/var'
+
+@keyframes buttonAnimation
+    100%
+        opacity 0
+        transform scale(2.5)
+
+.icon-button
+    align-items center
+    align-self center
+    background-color DEFAULT - 3%
+    border none
+    border-radius 2px
+    color #111111
+    cursor pointer
+    display inline-flex
+    font-family 'Myriad Pro', 'PT Sans', sans-serif
+    font-size 12px
+    height 32px
+    justify-content center
+    line-height 18px
+    min-width 45px
+    outline none
+    overflow hidden
+    padding 0 18px
+    position relative
+    text-decoration none
+    text-transform uppercase
+    vertical-align top
+
+    &-animate
+        animation buttonAnimation 0.65s linear
+
+    & > .ripple
+        background-color DEFAULT - 10%
+        border-radius 100%
+        display block
+        height 140px
+        position absolute
+        transform scale(0)
+
+    & > .title
+        position relative
+        z-index 2
+        top 1px
+        margin-left 5px
+        border-bottom none
+
+    & > .icon
+        font-size 10px
+        display flex
+        align-items center
+        position relative
+        z-index 2
+
+    &--dark
+        background-color DARK
+        color #FFFFFF
+
+        &:hover
+            background-color DARK + 10%
+
+        & > .ripple
+            background-color DARK + 25%
+
+    &--red
+        background-color RED
+        color #FFFFFF
+
+        &:hover
+            background-color RED + 10%
+
+        & > .ripple
+            background-color RED + 25%
+
+    &--green
+        background-color GREEN
+        color #FFFFFF
+
+        &:hover
+            background-color GREEN + 10%
+
+        & > .ripple
+            background-color GREEN + 25%
+
+    &--yellow
+        background-color YELLOW
+        color #FFFFFF
+
+        &:hover
+            background-color YELLOW + 10%
+
+        & > .ripple
+            background-color YELLOW + 25%

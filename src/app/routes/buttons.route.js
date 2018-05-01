@@ -1,12 +1,147 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+import { IconButton, Button, Panel } from 'ui'
 
 export default class Buttons extends Component {
+    handleBotton = event => {
+        console.log('Button Pressed')
+    }
+
     render() {
         return (
             <div className="route">
                 <div className="route__title">Buttons</div>
                 <div className="route__body">
-                    ...
+                    <Panel title="default button" icon="code">
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            onClick={this.handleBotton}
+                        />
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            onClick={this.handleBotton}
+                            color="dark"
+                        />
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            onClick={this.handleBotton}
+                            color="red"
+                        />
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            onClick={this.handleBotton}
+                            color="green"
+                        />
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            onClick={this.handleBotton}
+                            color="yellow"
+                        />
+                        <hr style={{ margin: '20px 0' }} />
+                        <pre>
+{`
+import { Button } from 'ui';
+
+<Button title="Next" />
+<Button title="Next" color="dark" />
+<Button title="Next" color="red" />
+<Button title="Next" color="green" />
+<Button title="Next" color="yellow" />`}
+                        </pre>
+                    </Panel>
+                    <br/>
+                    <Panel title="icon button" icon="code">
+                        <IconButton style={{ marginRight: 10 }}
+                            icon="code"
+                            onClick={this.handleBotton}
+                        />
+                        <IconButton style={{ marginRight: 10 }}
+                            icon="cloud-off"
+                            onClick={this.handleBotton}
+                            color="dark"
+                        />
+                        <IconButton style={{ marginRight: 10 }}
+                            onClick={this.handleBotton}
+                            icon="chevrons-right"
+                            color="red"
+                        />
+                        <IconButton style={{ marginRight: 10 }}
+                            icon="printer"
+                            title="print"
+                            onClick={this.handleBotton}
+                            color="green"
+                        />
+                        <IconButton style={{ marginRight: 10 }}
+                            icon="chevrons-right"
+                            title="Next"
+                            onClick={this.handleBotton}
+                            color="yellow"
+                        />
+                        <hr style={{ margin: '20px 0' }} />
+                        <pre>
+{`
+import { IconButton } from 'ui';
+
+<IconButton icon="code" />
+<IconButton icon="cloud-off" color="dark" />
+<IconButton icon="chevrons-right" color="red" />
+<IconButton icon="printer" title="print" color="green" />
+<IconButton icon="chevrons-right" title="Next" color="yellow" />`}
+                        </pre>
+                    </Panel>
+                    <br/>
+                    <Panel title="link button" icon="code">
+                        <Link to="/buttons"><IconButton style={{ marginRight: 10 }}
+                            icon="hash"
+                            onClick={this.handleBotton}
+                        /></Link>
+                        <Link to="/buttons"><IconButton style={{ marginRight: 10 }}
+                            icon="share"
+                            onClick={this.handleBotton}
+                            color="dark"
+                        /></Link>
+                        <Link to="/buttons"><IconButton style={{ marginRight: 10 }}
+                            onClick={this.handleBotton}
+                            icon="slack"
+                            color="red"
+                        /></Link>
+                        <Link to="/buttons"><IconButton style={{ marginRight: 10 }}
+                            icon="shopping-cart"
+                            title="Buy"
+                            onClick={this.handleBotton}
+                            color="green"
+                        /></Link>
+                        <Link to="/buttons"><Button style={{ marginRight: 10 }}
+                            title="Next"
+                            onClick={this.handleBotton}
+                            color="yellow"
+                        /></Link>
+                        <hr style={{ margin: '20px 0' }} />
+                        <pre>
+{`import { Button, IconButton } from 'ui';
+import { Link } from 'react-router-dom';
+
+<Link to="/buttons">
+    <IconButton icon="hash" />
+</Link>
+
+<Link to="/buttons">
+    <IconButton icon="share" color="dark" />
+</Link>
+
+<Link to="/buttons">
+    <IconButton icon="slack" color="red" />
+</Link>
+
+<Link to="/buttons">
+    <IconButton icon="shopping-cart" title="Buy" color="green" />
+</Link>
+
+<Link to="/buttons">
+    <Button title="Next" color="yellow" />
+</Link>`}
+                        </pre>
+                    </Panel>
                 </div>
             </div>
         );
