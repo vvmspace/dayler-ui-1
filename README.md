@@ -1,8 +1,8 @@
 ![logo](https://cdn.dayler.io/images/logo_dark.svg)
 ---
-Dayler.io React UI Kit
-
-[Example](https://ui.dayler.io/)
+# Dayler UI
+> Dayler UI React components
+> [Example](https://ui.dayler.io/)
 
 ## Installation
 ```bash
