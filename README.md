@@ -1,4 +1,5 @@
 ![logo](https://cdn.dayler.io/images/logo_dark.svg)
+---
 Dayler.io React UI Kit
 
 [Example](https://ui.dayler.io/)
