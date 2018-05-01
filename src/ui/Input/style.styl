@@ -1,0 +1,31 @@
+@import '~ui/style/var'
+@import '~ui/style/mixins/placeholder'
+
+.input-text
+    placeholder(#4E4E4E)
+    font-family 'Myriad Pro'
+    width 100%
+    outline 0
+    border 0
+    background-color DEFAULT - 5%
+    padding 3px 12px 0
+    font-size 14px
+    border-radius 2px
+    height 32px
+    vertical-align bottom
+    color #111111
+
+    &--white
+        background-color #FFF
+
+    &:focus
+        placeholder(transparent)
+
+    &__group
+        display flex
+        flex-direction column
+
+    &__label
+        margin-left 1px
+        margin-bottom 2px
+        color #777777

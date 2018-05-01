@@ -38,7 +38,7 @@ export default class App extends Component {
         }, {
             link: '/buttons',
             title: 'Buttons',
-            icon: 'command',
+            icon: 'server',
         }, {
             link: '/inputs',
             title: 'Inputs',

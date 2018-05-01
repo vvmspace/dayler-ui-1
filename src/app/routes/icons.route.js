@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Icon, Panel } from 'ui'
+import { Icon, Input, Panel } from 'ui'
 
-const icons = ['activity',
+const data = ['activity',
     'airplay',
     'alert-circle',
     'alert-octagon',
@@ -117,7 +117,6 @@ const icons = ['activity',
     'gitlab',
     'globe',
     'grid',
-    'gt.js',
     'hard-drive',
     'hash',
     'headphones',
@@ -271,7 +270,26 @@ const icons = ['activity',
 ];
 
 export default class Icons extends Component {
+    state = {
+        search: ''
+    }
+
+    handleSearch = event => {
+        const { value } = event.target;
+
+        this.setState({ search: value });
+    }
+
     render() {
+        const { search } = this.state
+        const icons = search.length > 0
+            ? data.reduce((result, icon) => {
+                return icon.search(search) !== -1
+                    ? [...result, icon]
+                    : [...result];
+            }, [])
+            : data;
+
         return (
             <div className="route">
                 <div className="route__title">Icons</div>
@@ -286,15 +304,24 @@ export default class Icons extends Component {
                         </pre>
                     </Panel>
                     <br/>
-                    <Panel title="icons" style={{
+                    <Panel title="icons" icon="feather">
+                        <div style={{ display: 'flex', marginLeft: 40, marginTop: 20 }}>
+                            <Input groupStyle={{ margin: '0 0 20px', width: 350 }}
+                                placeholder="Search"
+                                onChange={this.handleSearch}
+                                value={search}
+                            />
+                        </div>
+                        <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(5, 130px)',
+                        gridTemplateColumns: 'repeat(5, 125px)',
                         gridColumnGap: '30px',
                         gridRowGap: '30px',
                         paddingBottom: 30,
                         marginBottom: 30
                     }}>
                         {icons.map(icon => <div key={icon} className="route__icon-preview"><Icon size={30} name={icon} /><span>{icon}</span></div>)}
+                    </div>
                     </Panel>
                 </div>
             </div>

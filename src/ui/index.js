@@ -8,5 +8,6 @@ import './style/typings.styl'
 
 export Icon from './Icon'
 export IconButton from './IconButton'
+export Input from './Input'
 export Button from './Button'
 export Panel from './Panel'
