@@ -1,6 +1,4 @@
 ![logo](https://cdn.dayler.io/images/logo_dark.svg)
----
-# Dayler UI
 > Dayler UI React components ([Demo](https://ui.dayler.io/))
 
 ## Installation
