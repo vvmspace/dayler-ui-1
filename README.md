@@ -1,7 +1,7 @@
 # dayler-ui
 Dayler.io React UI Kit
 
-(Examples)[https://ui.dayler.io/]
+[Example](https://ui.dayler.io/)
 
 ## Installation
 ```bash
