@@ -1,26 +1,31 @@
-const devMiddleware = require('webpack-dev-middleware')
-const express = require('express')
-const helmet = require('helmet')
-const http = require('http')
-const webpack = require('webpack')
-const config = require('./webpack')
+const http = require('http');
+const path = require('path');
+const express = require('express');
+const helmet = require('helmet');
+const webpack = require('webpack');
+const config = require('./webpack');
 
-const PORT = process.env.PORT || 8080
+const DEBUG = process.env.NODE_ENV !== 'production';
+const PORT = process.env.PORT || 8080;
 
-const app = express()
-const server = http.createServer(app)
-const compiler = webpack(config)
+const app = express();
+const server = http.createServer(app);
+const compiler = webpack(config);
 
-const middleware = devMiddleware(compiler, {
-    publicPath: config.output.publicPath,
-    index: 'index.html',
-    stats: { colors: true },
-})
+app.disable('x-powered-by');
+app.use(helmet.noCache());
 
-app.disable('x-powered-by')
-app.use(helmet.noCache())
+/* set server middleware */
+const middleware = DEBUG
+    ? require('webpack-dev-middleware')(compiler, {
+        publicPath: config.output.publicPath,
+        index: 'index.html',
+        stats: { colors: true },
+    })
+    : (req, res) => res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 
-app.use(middleware)
-app.use('*', middleware)
+app.use(express.static(path.resolve(__dirname, 'dist')));
+app.use(middleware);
+app.use('*', middleware);
 
-server.listen(PORT)
+server.listen(PORT);
