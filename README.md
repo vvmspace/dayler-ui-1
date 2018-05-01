@@ -34,7 +34,7 @@ import { Panel } from 'dayler-ui';
 ```
 
 ### Icons
-All icons forked from [feather](https://feathericons.com) icons.
+Thanks [feather](https://feathericons.com) for icons
 
 ```javascript
 import { Icon } from 'dayler-ui';
