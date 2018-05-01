@@ -1,6 +1,24 @@
 # dayler-ui
 Dayler.io React UI Kit
 
+(Examples)[https://ui.dayler.io/]
 
-### Features
-* Icons [Feather](https://feathericons.com)
+## Installation
+```bash
+npm install --save dayler-ui
+```
+
+## Usage
+import 'dayler-ui';
+
+### Typings
+### Colors
+### Panels
+### Icons
+### Buttons
+### Inputs
+### Tabs
+### Date Picker
+### Snackbar
+### Switches
+### Chart
