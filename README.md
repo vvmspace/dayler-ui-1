@@ -1,4 +1,4 @@
-# dayler-ui
+![logo](https://raw.githubusercontent.com/iknpx/dayler-ui/master/src/assets/images/logo_dark.svg?token=AiaEsnrPoa3RLYgaBT_dnicPipuNbHQTks5a8XtBwA%3D%3D)
 Dayler.io React UI Kit
 
 [Example](https://ui.dayler.io/)
