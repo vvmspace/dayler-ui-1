@@ -9,7 +9,9 @@ npm install --save dayler-ui
 ```
 
 ## Usage
+```javascript
 import 'dayler-ui';
+```
 
 ### Typings
 ### Colors
