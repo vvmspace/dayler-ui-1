@@ -4,13 +4,23 @@
 
 Dayler React Components
 
-## Installation
+#### Api with examples
+[https://ui.dayler.io](https://ui.dayler.io)
+
+#### Installation
 ```bash
 npm install --save dayler-ui
 ```
 
-## Documentation
-[Api with examples](https://ui.dayler.io)
+#### Usage
+* Panels
+```js
+import { Panel } from 'dayler-ui';
+
+<Panel>
+    ...
+</Panel>
+```
 
 
 ---
