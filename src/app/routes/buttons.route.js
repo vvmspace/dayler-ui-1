@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import SyntaxHighlighter from 'react-syntax-highlighter/prism';
+import { coy } from 'react-syntax-highlighter/styles/prism';
 import { IconButton, Button, Panel } from 'ui';
 
 import styles from '../styles.styl';
@@ -33,15 +35,9 @@ export default class Buttons extends Component {
                             color="yellow"
                         />
                         <hr style={{ margin: '20px 0' }} />
-                        <pre>
-                            {`import { Button } from 'dayler-ui';
-
-<Button title="Next" />
-<Button title="Next" color="dark" />
-<Button title="Next" color="red" />
-<Button title="Next" color="green" />
-<Button title="Next" color="yellow" />`}
-                        </pre>
+                        <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
+                            {`import { Button } from 'dayler-ui';\n\n<Button title="Next" />\n<Button title="Next" color="dark" />\n<Button title="Next" color="red" />\n<Button title="Next" color="green" />\n<Button title="Next" color="yellow" />`}
+                        </SyntaxHighlighter>
                     </Panel>
                     <Panel title="icon button" icon="code" outerStyle={{ marginBottom: 20 }}>
                         <IconButton style={{ marginRight: 10 }}
@@ -66,15 +62,11 @@ export default class Buttons extends Component {
                             color="yellow"
                         />
                         <hr style={{ margin: '20px 0' }} />
+                        <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
+                            {`import { IconButton } from 'dayler-ui';\n\n\n<IconButton icon="code" />\n<IconButton icon="cloud-off" color="dark" />\n<IconButton icon="chevrons-right" color="red" />\n<IconButton icon="printer" title="print" color="green" />\n<IconButton icon="chevrons-right" title="Next" color="yellow" />`}
+                        </SyntaxHighlighter>
                         <pre>
-                            {`
-import { IconButton } from 'dayler-ui';
 
-<IconButton icon="code" />
-<IconButton icon="cloud-off" color="dark" />
-<IconButton icon="chevrons-right" color="red" />
-<IconButton icon="printer" title="print" color="green" />
-<IconButton icon="chevrons-right" title="Next" color="yellow" />`}
                         </pre>
                     </Panel>
                     <Panel title="link button" icon="code">
@@ -99,29 +91,11 @@ import { IconButton } from 'dayler-ui';
                             color="yellow"
                         /></Link>
                         <hr style={{ margin: '20px 0' }} />
+                        <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
+                            {`import { Button, IconButton } from 'dayler-ui';\nimport { Link } from 'react-router-dom';\n\n<Link to="/buttons">\n    <IconButton icon="hash" />\n</Link>\n\n<Link to="/buttons">\n    <IconButton icon="share" color="dark" />\n</Link>\n\n<Link to="/buttons">\n    <IconButton icon="slack" color="red" />\n</Link>\n\n<Link to="/buttons">\n    <IconButton icon="shopping-cart" title="Buy" color="green" />\n</Link>\n\n<Link to="/buttons">\n    <Button title="Next" color="yellow" />\n</Link>`}
+                        </SyntaxHighlighter>
                         <pre>
-                            {`import { Button, IconButton } from 'dayler-ui';
-import { Link } from 'react-router-dom';
 
-<Link to="/buttons">
-    <IconButton icon="hash" />
-</Link>
-
-<Link to="/buttons">
-    <IconButton icon="share" color="dark" />
-</Link>
-
-<Link to="/buttons">
-    <IconButton icon="slack" color="red" />
-</Link>
-
-<Link to="/buttons">
-    <IconButton icon="shopping-cart" title="Buy" color="green" />
-</Link>
-
-<Link to="/buttons">
-    <Button title="Next" color="yellow" />
-</Link>`}
                         </pre>
                     </Panel>
                 </div>

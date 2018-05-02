@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter/prism';
+import { coy } from 'react-syntax-highlighter/styles/prism';
 import { Panel } from 'ui';
 
 import styles from '../styles.styl';
@@ -17,19 +19,10 @@ export default class Typings extends Component {
                         <h3>Heading 3</h3>
                         <h4>Heading 4</h4>
                         <h5>Heading 5</h5>
-                    </Panel>
-
-                    <Panel title="pre" icon="code" outerStyle={{ marginBottom: 20 }}>
-                        <pre>
-                            {`
-                                <h1>Heading 1</h1>
-                                <h2>Heading 2</h2>
-                                <h3>Heading 3</h3>
-                                <h4>Heading 4</h4>
-                                <h5>Heading 5</h5>
-                                <h6>Heading 6</h6>
-                            `}
-                        </pre>
+                        <hr style={{ margin: '20px 0' }} />
+                        <SyntaxHighlighter language='html' style={coy} wrapLines={true}>
+                            {`<h1>Heading 1</h1>\n<h2>Heading 2</h2>\n<h3>Heading 3</h3>\n<h4>Heading 4</h4>\n<h5>Heading 5</h5>\n<h6>Heading 6</h6>`}
+                        </SyntaxHighlighter>
                     </Panel>
 
                     <Panel title="paragraph" icon="code">

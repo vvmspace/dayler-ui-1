@@ -9,6 +9,10 @@ insert_final_newline = true
 max_line_length = 180
 trim_trailing_whitespace = true
 
+[*.styl]
+indent_size = 4
+indent_style = tabs
+
 [*.md]
 max_line_length = 0
 trim_trailing_whitespace = false

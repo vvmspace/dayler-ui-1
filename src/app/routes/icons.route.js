@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter/prism';
+import { coy } from 'react-syntax-highlighter/styles/prism';
 import { Icon, Panel } from 'ui';
 
 import styles from '../styles.styl';
@@ -301,13 +303,9 @@ export default class Icons extends Component {
                 </div>
                 <div className={styles.routeBody}>
                     <Panel title="usage" icon="code">
-                        <pre>
-                            {`import { Icon } from 'dayler-ui';
-
-
-<Icon name="activity" />
-`}
-                        </pre>
+                        <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
+                            {`import { Icon } from 'dayler-ui';\n\n<Icon name="activity" />`}
+                        </SyntaxHighlighter>
                     </Panel>
                     <br/>
                     <Panel title="icons" icon="feather" innerStyle={iconsStyle.panel}>

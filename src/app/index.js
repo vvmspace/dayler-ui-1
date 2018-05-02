@@ -21,69 +21,71 @@ export default class App extends Component {
             ? JSON.parse(localStorage.getItem('isExpanded'))
             : true,
         nav: [{
+            component: Typings,
+            exact: true,
+            icon: 'type',
             link: '/',
             title: 'Typings',
-            icon: 'type',
-            component: Typings,
+            visible: true,
         }, {
+            component: Colors,
+            icon: 'aperture',
             link: '/colors',
             title: 'Colors',
-            icon: 'aperture',
-            component: Colors,
             visible: true,
         }, {
+            component: Panels,
+            icon: 'copy',
             link: '/panels',
             title: 'Panels',
-            icon: 'copy',
-            component: Panels,
             visible: true,
         }, {
+            component: Icons,
+            icon: 'feather',
             link: '/icons',
             title: 'Icons',
-            icon: 'feather',
-            component: Icons,
             visible: true,
         }, {
+            component: Buttons,
+            icon: 'server',
             link: '/buttons',
             title: 'Buttons',
-            icon: 'server',
-            component: Buttons,
             visible: true,
         }, {
+            component: Inputs,
+            icon: 'edit',
             link: '/inputs',
             title: 'Inputs',
-            icon: 'edit',
-            component: Inputs,
             visible: true,
         }, {
+            component: Tabs,
+            icon: 'folder',
             link: '/tabs',
             title: 'Tabs',
-            icon: 'folder',
-            component: Tabs,
-            visible: false,
+            visible: true,
         }, {
+            component: DatePicker,
+            icon: 'calendar',
             link: '/datepicker',
             title: 'Date Picker',
-            icon: 'calendar',
-            component: DatePicker,
             visible: false,
         }, {
+            component: Snackbar,
+            icon: 'droplet',
             link: '/snackbar',
             title: 'Snackbar',
-            icon: 'droplet',
-            component: Snackbar,
             visible: false,
         }, {
+            component: Switches,
+            icon: 'toggle-left',
             link: '/switches',
             title: 'Switches',
-            icon: 'toggle-left',
-            component: Switches,
             visible: false,
         }, {
+            component: Chart,
+            icon: 'activity',
             link: '/chart',
             title: 'Chart',
-            icon: 'activity',
-            component: Chart,
             visible: false,
         }],
     }
@@ -102,7 +104,7 @@ export default class App extends Component {
                     <Switch>
                         {nav.map(route => (
                             <Route key={route.link}
-                                exact
+                                exact={route.exact}
                                 path={route.link}
                                 component={route.component}
                             />

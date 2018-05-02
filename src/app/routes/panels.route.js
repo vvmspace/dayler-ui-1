@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter/prism';
+import { coy } from 'react-syntax-highlighter/styles/prism';
 import { Panel } from 'ui';
 
 import styles from '../styles.styl';
@@ -14,33 +16,21 @@ export default class Panels extends Component {
                     <Panel outerStyle={{ marginBottom: 20 }}>
                         <p>Empty Panel</p>
                         <hr style={{ margin: '20px 0' }}/>
-                        <pre>
-                            {`import { Panel } from 'dayler-ui';
-
-<Panel>
-    <p>Empty Panel</p>
-</Panel>`}
-                        </pre>
+                        <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
+                            {`import { Panel } from 'dayler-ui';\n\n<Panel>\n    ...\n</Panel>`}
+                        </SyntaxHighlighter>
                     </Panel>
 
                     <Panel title="panel with title" outerStyle={{ marginBottom: 20 }}>
-                        <pre>
-                            {`import { Panel } from 'dayler-ui';
-
-<Panel title="panel with title">
-    <p>Empty Panel</p>
-</Panel>`}
-                        </pre>
+                        <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
+                            {`import { Panel } from 'dayler-ui';\n\n<Panel title="panel with title">\n    ...\n</Panel>`}
+                        </SyntaxHighlighter>
                     </Panel>
 
                     <Panel title="panel with title and icon" icon="code" outerStyle={{ marginBottom: 20 }}>
-                        <pre>
-                            {`import { Panel } from 'dayler-ui';
-
-<Panel title="panel with title and icon" icon="code">
-    <p>Empty Panel</p>
-</Panel>`}
-                        </pre>
+                        <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
+                            {`import { Panel } from 'dayler-ui';\n\n<Panel title="panel with title and icon" icon="code">\n    ...\n</Panel>`}
+                        </SyntaxHighlighter>
                     </Panel>
                 </div>
             </div>
