@@ -1,7 +1,11 @@
 @import '../../stylus/colors'
 @import '../../stylus/mixins/placeholder'
 
-.input-text
+.group
+    display flex
+    flex-direction column
+
+.input
     placeholder(#4E4E4E)
     font-family 'Myriad Pro'
     width 100%
@@ -15,17 +19,13 @@
     vertical-align bottom
     color #111111
 
-    &--white
-        background-color #FFF
-
     &:focus
         placeholder(transparent)
 
-    &__group
-        display flex
-        flex-direction column
+.white
+    background-color #FFF
 
-    &__label
-        margin-left 1px
-        margin-bottom 2px
-        color #777777
+.label
+    margin-left 1px
+    margin-bottom 2px
+    color #777777

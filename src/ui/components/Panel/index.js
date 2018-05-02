@@ -1,37 +1,40 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import Icon from '../Icon';
-import './style.styl';
+import styles from './styles.styl';
 
 export default class Panel extends Component {
     static propTypes = {
-        title: PropTypes.string,
         icon: PropTypes.string,
+        innerStyle: PropTypes.object,
+        outerStyle: PropTypes.object,
+        title: PropTypes.string,
     }
 
     render() {
-        const { children, title, icon, ...props } = this.props
+        const { children, icon, innerStyle, outerStyle, title, ...props } = this.props
 
         const headerIcon = icon
-            ? <div className="panel__header--icon">
+            ? <div className={styles.icon}>
                 <Icon size={16} name={icon} />
             </div>
             : null;
 
         const header = title
-            ? <div className="panel__header">
+            ? <div className={styles.header}>
                 {headerIcon}
-                <div className="panel__header--title">{title}</div>
+                <div className={styles.title}>{title}</div>
             </div>
             : null;
 
         return (
-            <div className="panel">
+            <div className={styles.panel} style={outerStyle}>
                 {header}
-                <div className="panel__body" {...props}>
+                <div className={styles.body} style={innerStyle} {...props}>
                     {children}
                 </div>
             </div>
-        )
+        );
     }
 }

@@ -17,7 +17,9 @@ import styles from './styles.styl';
 
 export default class App extends Component {
     state = {
-        expand: true,
+        expand: localStorage.getItem('isExpanded') !== null
+            ? JSON.parse(localStorage.getItem('isExpanded'))
+            : true,
         nav: [{
             link: '/',
             title: 'Typings',
@@ -76,7 +78,9 @@ export default class App extends Component {
         }]
     }
 
-    handleExpand = state => this.setState({ expand: state })
+    handleExpand = state => {
+        this.setState({ expand: state }, () => localStorage.setItem('isExpanded', state))
+    }
 
     render() {
         const { expand, nav } = this.state

@@ -272,27 +272,28 @@ const data = [
     'zoom-out'
 ];
 
+const iconsStyle = {
+    panel: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        padding: '60px 0',
+        justifyContent: 'center',
+    },
+    icon: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: 800 / 5 - 12,
+        height: 100,
+    },
+    title: {
+        color: '#777777',
+        marginTop: 15
+    }
+}
+
 export default class Icons extends Component {
-    state = {
-        search: ''
-    }
-
-    handleSearch = event => {
-        const { value } = event.target;
-
-        this.setState({ search: value });
-    }
-
     render() {
-        const { search } = this.state
-        const icons = search.length > 0
-            ? data.reduce((result, icon) => {
-                return icon.search(search) !== -1
-                    ? [...result, icon]
-                    : [...result];
-            }, [])
-            : data;
-
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
@@ -309,24 +310,13 @@ export default class Icons extends Component {
                         </pre>
                     </Panel>
                     <br/>
-                    <Panel title="icons" icon="feather">
-                        <div style={{ display: 'flex', marginLeft: 40, marginTop: 20 }}>
-                            <Input groupStyle={{ margin: '0 0 20px', width: 350 }}
-                                placeholder="Search"
-                                onChange={this.handleSearch}
-                                value={search}
-                            />
-                        </div>
-                        <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(5, 125px)',
-                        gridColumnGap: '30px',
-                        gridRowGap: '30px',
-                        paddingBottom: 30,
-                        marginBottom: 30
-                    }}>
-                        {icons.map(icon => <div key={icon} className="route__icon-preview"><Icon size={30} name={icon} /><span>{icon}</span></div>)}
-                    </div>
+                    <Panel title="icons" icon="feather" innerStyle={iconsStyle.panel}>
+                        {data.map(icon => (
+                            <div key={icon} style={iconsStyle.icon}>
+                                <Icon size={30} name={icon} />
+                                <span style={iconsStyle.title}>{icon}</span>
+                            </div>
+                        ))}
                     </Panel>
                 </div>
             </div>

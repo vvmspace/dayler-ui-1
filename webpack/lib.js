@@ -1,18 +1,23 @@
-const Assets = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpackMerge = require('webpack-merge')
-const webpack = require('webpack')
+const path = require('path');
+const Uglify = require('uglifyjs-webpack-plugin');
 
-const options = {
+module.exports = {
+    mode: 'production',
+    output: {
+        path: path.join(process.cwd(), 'lib'),
+        filename: 'index.min.js',
+        library: 'daylerUi',
+        libraryTarget: 'umd',
+    },
     resolve: {
-        extensions: ['.js', '.html'],
-        modules: ['node_modules', 'src'],
+        extensions: ['.js'],
+        modules: ['node_modules'],
     },
     resolveLoader: {
-        modules: ['node_modules', 'src'],
+        modules: ['node_modules'],
     },
     entry: {
-        main: ['./src/index.js'],
+        main: ['./src/ui/index.js'],
     },
     module: {
         rules: [
@@ -58,23 +63,6 @@ const options = {
         ],
     },
     plugins: [
-        new Assets([{ to: '', from: 'src/assets' }], {
-            ignore: ['.gitkeep', '**/.DS_Store', '**/Thumbs.db'],
-            debug: 'warning',
-        }),
-        new HtmlWebpackPlugin({
-            filename: './index.html',
-            template: './src/index.html',
-            inject: 'body',
-        }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-            },
-        }),
+        new Uglify(),
     ],
 }
-
-module.exports = process.env.NODE_ENV !== 'production'
-    ? webpackMerge(options, require('./dev'))
-    : webpackMerge(options, require('./dist'))

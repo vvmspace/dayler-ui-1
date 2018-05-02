@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Icon } from 'ui';
 
-import styles from './styles.styl'
-
-console.log(styles)
+import styles from './styles.styl';
 
 export default class NavBar extends Component {
     static propTypes = {

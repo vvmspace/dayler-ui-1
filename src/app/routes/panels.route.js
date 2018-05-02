@@ -11,32 +11,28 @@ export default class Panels extends Component {
                     <div className={styles.routeTitle}>Panels</div>
                 </div>
                 <div className={styles.routeBody}>
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'auto auto auto',
-                        gridColumnGap: '30px',
-                        borderBottom: '1px solid #EEEEEE',
-                        paddingBottom: 30,
-                        marginBottom: 30
-                    }}>
-                        <Panel>
-                            <p>Empty Panel</p>
-                        </Panel>
-
-                        <Panel title="Panel Title">
-                            <p>Panel with title</p>
-                        </Panel>
-
-                        <Panel title="Panel Title" icon="settings">
-                            <p>Panel with title and icon</p>
-                        </Panel>
-                    </div>
-                    <Panel title="usage" icon="code">
+                    <Panel outerStyle={{ marginBottom: 20 }}>
+                        <p>Empty Panel</p>
+                        <hr style={{ margin: '20px 0' }}/>
                         <pre>
-{`import { Panel } from 'ui';
+{`<Panel>
+    <p>Empty Panel</p>
+</Panel>`}
+                        </pre>
+                    </Panel>
 
-<Panel title="Panel Title" icon="settings">
-    ...
+                    <Panel title="panel with title" outerStyle={{ marginBottom: 20 }}>
+                        <pre>
+{`<Panel title="panel with title">
+    <p>Empty Panel</p>
+</Panel>`}
+                        </pre>
+                    </Panel>
+
+                    <Panel title="panel with title and icon" icon="code" outerStyle={{ marginBottom: 20 }}>
+                        <pre>
+{`<Panel title="panel with title and icon" icon="code">
+    <p>Empty Panel</p>
 </Panel>`}
                         </pre>
                     </Panel>

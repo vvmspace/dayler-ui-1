@@ -283,8 +283,8 @@ export default class Icon extends Component {
             .split('-')
             .reduce((r, str) => r + str.charAt(0).toUpperCase() + str.slice(1), '')
 
-        const Result = icons[icon] || icons.X;
+        const ResultIcon = icons[icon] || icons.X;
 
-        return <Result {...props} />
+        return <ResultIcon {...props} />
     }
 }

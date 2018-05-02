@@ -12,7 +12,7 @@ export default class Buttons extends Component {
                     <div className={styles.routeTitle}>Buttons</div>
                 </div>
                 <div className={styles.routeBody}>
-                    <Panel title="default button" icon="code">
+                    <Panel title="default button" icon="code" outerStyle={{ marginBottom: 20 }}>
                         <Button style={{ marginRight: 10 }}
                             title="Next"
                         />
@@ -44,8 +44,7 @@ import { Button } from 'ui';
 <Button title="Next" color="yellow" />`}
                         </pre>
                     </Panel>
-                    <br/>
-                    <Panel title="icon button" icon="code">
+                    <Panel title="icon button" icon="code" outerStyle={{ marginBottom: 20 }}>
                         <IconButton style={{ marginRight: 10 }}
                             icon="code"
                         />
@@ -79,7 +78,6 @@ import { IconButton } from 'ui';
 <IconButton icon="chevrons-right" title="Next" color="yellow" />`}
                         </pre>
                     </Panel>
-                    <br/>
                     <Panel title="link button" icon="code">
                         <Link to="/buttons"><IconButton style={{ marginRight: 10 }}
                             icon="hash"
@@ -93,8 +91,8 @@ import { IconButton } from 'ui';
                             color="red"
                         /></Link>
                         <Link to="/buttons"><IconButton style={{ marginRight: 10 }}
-                            icon="shopping-cart"
-                            title="Buy"
+                            icon="twitter"
+                            title="Twitter"
                             color="green"
                         /></Link>
                         <Link to="/buttons"><Button style={{ marginRight: 10 }}

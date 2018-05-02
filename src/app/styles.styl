@@ -1,24 +1,22 @@
+@import '~ui/stylus/mixins/animate'
 @import '~ui/stylus/base.styl'
 
 $NAV_EXAPNDED    = 280px
 $NAV_UNEXAPNDED  = 80px
 
-:global(.root)
-    display flex
-    align-items stretch
-    justify-content stretch
-    background-color #F8F8F8
-    position absolute
+body, html
     height 100%
-    width 100%
+    min-width 1024px
+
+:global(.root)
+    height 100%
+    min-width 100%
 
 .app
     background-color #F8F8F8
-    display flex
-    position absolute
-    left 0
-    right 0
-    top 0
+    min-height 100%
+    width 100%
+    outline 1px solid green
 
 .app-expanded
     & .route
@@ -27,17 +25,12 @@ $NAV_UNEXAPNDED  = 80px
 
 .route
     fadeIn(.2s)
-    flex-grow 1
-    height 100%
     padding 25px 30px 0 $NAV_UNEXAPNDED + 30px
     transition padding-left .1s ease-in-out
-    width 100%
-    min-height 100%
 
     &-header
-        align-items center
         display flex
-        height 60px
+        height 55px
 
     &-body
         display grid
@@ -45,4 +38,5 @@ $NAV_UNEXAPNDED  = 80px
 
     &-title
         color #333333
-        font-size 26px
+        font-size 24px
+        line-height 24px
