@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Panel } from 'ui'
+import { Panel } from 'ui';
+
+import styles from '../styles.styl';
 
 export default class Colors extends Component {
     render() {
         return (
-            <div className="route">
-                <div className="route__title">Colors</div>
-                <div className="route__body">
+            <div className={styles.route}>
+                <div className={styles.routeHeader}>
+                    <div className={styles.routeTitle}>Colors</div>
+                </div>
+                <div className={styles.routeBody}>
                     <div style={{ marginBottom: 20 }}>
                         <Panel style={{ backgroundColor: '#EEEEEE', color: '#333' }}>#585C67 (DEFAULT)</Panel>
                     </div>

@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
-
 import style from './style.styl';
 
 export default class Button extends Component {
     static propTypes = {
         color: PropTypes.oneOf(['dark', 'red', 'green', 'yellow']),
-        title: PropTypes.string,
+        title: PropTypes.string.isRequired,
         type: PropTypes.string,
-        icon: PropTypes.string.isRequired,
     };
 
     static defaultProps = {
@@ -30,17 +27,16 @@ export default class Button extends Component {
     }
 
     render() {
-        const { title, type, color, icon, ...props } = this.props;
+        const { title, type, color, ...props } = this.props;
 
         return (
-            <button className={`icon-button ${color ? 'icon-button--' + color : ''}`}
+            <button className={`button ${color ? 'button--' + color : ''}`}
                 onMouseDown={this.handleMouseDown}
                 type={type}
                 ref={referance => this.button = referance}
                 {...props}>
                 <div className="ripple" ref={referance => this.ripple = referance}></div>
-                <div className="icon"><Icon size={20} name={icon} /></div>
-                {title ? <div className="title">{title}</div> : null}
+                <div className="title">{title}</div>
             </button>
         )
     }

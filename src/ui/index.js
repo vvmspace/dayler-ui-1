@@ -1,13 +1,5 @@
-import './style/var.styl'
-import './style/mixins/animate.styl'
-import './style/mixins/placeholder.styl'
-import './style/extras/animate.styl'
-import './style/extras/reset.styl'
-import './style/typings.styl'
-
-
-export Icon from './Icon'
-export IconButton from './IconButton'
-export Input from './Input'
-export Button from './Button'
-export Panel from './Panel'
+export Icon from './components/Icon'
+export IconButton from './components/IconButton'
+export Input from './components/Input'
+export Button from './components/Button'
+export Panel from './components/Panel'

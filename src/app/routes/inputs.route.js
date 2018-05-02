@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { Button, Input, Panel } from 'ui';
 
+import styles from '../styles.styl';
+
 export default class Inputs extends Component {
     render() {
         return (
-            <div className="route">
-                <div className="route__title">Inputs</div>
-                <div className="route__body">
+            <div className={styles.route}>
+                <div className={styles.routeHeader}>
+                    <div className={styles.routeTitle}>Inputs</div>
+                </div>
+                <div className={styles.routeBody}>
                     <Panel title="Inputs" icon="code">
                         <Input placeholder="Text Input" groupStyle={{ marginBottom: 20 }} />
                         <Input placeholder="Text Input with Label" label="Input Label" groupStyle={{ marginBottom: 20 }} />

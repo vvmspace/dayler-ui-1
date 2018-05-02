@@ -13,8 +13,7 @@ import Snackbar from './routes/snackbar.route';
 import Switches from './routes/switches.route';
 import Tabs from './routes/tabs.route';
 import Typings from './routes/typings.route';
-
-import './stylus/base.styl';
+import styles from './styles.styl';
 
 export default class App extends Component {
     state = {
@@ -23,73 +22,79 @@ export default class App extends Component {
             link: '/',
             title: 'Typings',
             icon: 'type',
+            component: Typings,
         }, {
             link: '/colors',
             title: 'Colors',
             icon: 'aperture',
+            component: Colors,
         }, {
             link: '/panels',
             title: 'Panels',
             icon: 'copy',
+            component: Panels,
         }, {
             link: '/icons',
             title: 'Icons',
             icon: 'feather',
+            component: Icons,
         }, {
             link: '/buttons',
             title: 'Buttons',
             icon: 'server',
+            component: Buttons,
         }, {
             link: '/inputs',
             title: 'Inputs',
             icon: 'edit',
+            component: Inputs,
         }, {
             link: '/tabs',
             title: 'Tabs',
             icon: 'folder',
+            component: Tabs,
         }, {
             link: '/datepicker',
             title: 'Date Picker',
             icon: 'calendar',
+            component: DatePicker,
         }, {
             link: '/snackbar',
             title: 'Snackbar',
             icon: 'droplet',
+            component: Snackbar,
         }, {
             link: '/switches',
             title: 'Switches',
             icon: 'toggle-left',
+            component: Switches,
         }, {
             link: '/chart',
             title: 'Chart',
             icon: 'activity',
+            component: Chart,
         }]
     }
 
     handleExpand = state => this.setState({ expand: state })
-
 
     render() {
         const { expand, nav } = this.state
 
         return (
             <Router>
-                <div className={`ui-app ${expand ? 'expand' : ''}`}>
+                <div className={`${styles.app} ${expand ? styles.appExpanded : ''}`}>
                     <NavBar data={nav} expand={expand} onExpand={this.handleExpand} />
-                     <Switch>
-                         <Route exact path="/" component={Typings} />
-                         <Route exact path="/colors" component={Colors} />
-                         <Route exact path="/icons" component={Icons} />
-                         <Route exact path="/buttons" component={Buttons} />
-                         <Route exact path="/inputs" component={Inputs} />
-                         <Route exact path="/panels" component={Panels} />
-                         <Route exact path="/tabs" component={Tabs} />
-                         <Route exact path="/datepicker" component={DatePicker} />
-                         <Route exact path="/snackbar" component={Snackbar} />
-                         <Route exact path="/switches" component={Switches} />
-                         <Route exact path="/chart" component={Chart} />
-                         <Redirect to="/" />
-                     </Switch>
+                    <Switch>
+                        {nav.map(route => (
+                            <Route key={route.link}
+                                exact
+                                path={route.link}
+                                component={route.component}
+                            />
+                        ))}
+                        <Redirect to="/" />
+                    </Switch>
                 </div>
             </Router>
         );

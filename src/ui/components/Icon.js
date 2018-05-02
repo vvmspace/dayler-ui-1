@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Icon, Input, Panel } from 'ui';
+import PropTypes from 'prop-types';
+import * as icons from 'react-feather';
 
-import styles from '../styles.styl';
-
-const data = [
+const allowedIcons = [
     'activity',
     'airplay',
     'alert-circle',
@@ -272,64 +271,20 @@ const data = [
     'zoom-out'
 ];
 
-export default class Icons extends Component {
-    state = {
-        search: ''
-    }
-
-    handleSearch = event => {
-        const { value } = event.target;
-
-        this.setState({ search: value });
-    }
+export default class Icon extends Component {
+    static propTypes = {
+        name: PropTypes.oneOf(allowedIcons),
+    };
 
     render() {
-        const { search } = this.state
-        const icons = search.length > 0
-            ? data.reduce((result, icon) => {
-                return icon.search(search) !== -1
-                    ? [...result, icon]
-                    : [...result];
-            }, [])
-            : data;
+        const { name, ...props } = this.props
 
-        return (
-            <div className={styles.route}>
-                <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Icons</div>
-                </div>
-                <div className={styles.routeBody}>
-                    <Panel title="usage" icon="code">
-                        <pre>
-{`import { Icon } from 'ui';
+        const icon = name
+            .split('-')
+            .reduce((r, str) => r + str.charAt(0).toUpperCase() + str.slice(1), '')
 
+        const Result = icons[icon] || icons.X;
 
-<Icon name="activity" />
-`}
-                        </pre>
-                    </Panel>
-                    <br/>
-                    <Panel title="icons" icon="feather">
-                        <div style={{ display: 'flex', marginLeft: 40, marginTop: 20 }}>
-                            <Input groupStyle={{ margin: '0 0 20px', width: 350 }}
-                                placeholder="Search"
-                                onChange={this.handleSearch}
-                                value={search}
-                            />
-                        </div>
-                        <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(5, 125px)',
-                        gridColumnGap: '30px',
-                        gridRowGap: '30px',
-                        paddingBottom: 30,
-                        marginBottom: 30
-                    }}>
-                        {icons.map(icon => <div key={icon} className="route__icon-preview"><Icon size={30} name={icon} /><span>{icon}</span></div>)}
-                    </div>
-                    </Panel>
-                </div>
-            </div>
-        );
+        return <Result {...props} />
     }
 }

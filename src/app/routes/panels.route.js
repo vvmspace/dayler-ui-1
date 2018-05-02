@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Panel } from 'ui'
+import { Panel } from 'ui';
+
+import styles from '../styles.styl';
 
 export default class Panels extends Component {
     render() {
         return (
-            <div className="route">
-                <div className="route__title">Panels</div>
-                <div className="route__body">
+            <div className={styles.route}>
+                <div className={styles.routeHeader}>
+                    <div className={styles.routeTitle}>Panels</div>
+                </div>
+                <div className={styles.routeBody}>
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'auto auto auto',

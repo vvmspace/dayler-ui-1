@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import { IconButton, Button, Panel } from 'ui'
+import { Link } from 'react-router-dom';
+import { IconButton, Button, Panel } from 'ui';
+
+import styles from '../styles.styl';
 
 export default class Buttons extends Component {
     render() {
         return (
-            <div className="route">
-                <div className="route__title">Buttons</div>
-                <div className="route__body">
+            <div className={styles.route}>
+                <div className={styles.routeHeader}>
+                    <div className={styles.routeTitle}>Buttons</div>
+                </div>
+                <div className={styles.routeBody}>
                     <Panel title="default button" icon="code">
                         <Button style={{ marginRight: 10 }}
                             title="Next"

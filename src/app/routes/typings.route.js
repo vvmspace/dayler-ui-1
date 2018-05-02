@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { Panel } from 'ui';
 
+import styles from '../styles.styl';
+
 export default class Typings extends Component {
     render() {
         return (
-            <div className="route">
-                <div className="route__title">Typings</div>
-                <div className="route__body">
+            <div className={styles.route}>
+                <div className={styles.routeHeader}>
+                    <div className={styles.routeTitle}>Typings</div>
+                </div>
+                <div className={styles.routeBody}>
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: '200px 200px auto',
