@@ -1,58 +1,63 @@
 @import './extras/animate.styl'
 @import './extras/reset.styl'
 
+$DEFAULT-COLOR  = #333333
+$HR-COLOR       = #EEEEEE
+$P-COLOR        = #555555
+$PRE-COLOR      = #777777
+
 body
-    font-family: 'Myriad Pro', 'PT Sans', sans-serif
-    font-size: 14px
-    font-smoothing: subpixel-antialiased
-    font-weight: 400
-    line-height: 18px
-    color: #333333
+	color: $DEFAULT-COLOR
+	font-weight: 400
+	font-size: 14px
+	font-family: 'Myriad Pro', 'PT Sans', sans-serif
+	line-height: 18px
+	font-smoothing: subpixel-antialiased
 
 a
-    text-decoration: none
+	text-decoration: none
 
 pre
-    font-family Monaco
-    font-size 12px
-    color #777777
+	color: $PRE-COLOR
+	font-size: 12px
+	font-family: Monaco
 
 h1
-    font-size 32px
-    font-weight 300
-    line-height 36px
+	font-weight: 300
+	font-size: 32px
+	line-height: 36px
 
 h2
-    font-size 28px
-    font-weight 300
-    line-height 34px
+	font-weight: 300
+	font-size: 28px
+	line-height: 34px
 
 h3
-    font-size 24px
-    font-weight 300
-    line-height 28px
+	font-weight: 300
+	font-size: 24px
+	line-height: 28px
 
 h4
-    font-size 22px
-    font-weight 300
-    line-height 28px
+	font-weight: 300
+	font-size: 22px
+	line-height: 28px
 
 h5
-    font-size 18px
-    font-weight 300
-    line-height 26px
+	font-weight: 300
+	font-size: 18px
+	line-height: 26px
 
 p
-    color #555555
-    font-size 14px
-    line-height 20px
+	color: $P-COLOR
+	font-size: 14px
+	line-height: 20px
 
 hr
-    display block
-    background-color #EEEEEE
-    height 1px
-    border 0
-    outline 0
+	display: block
+	height: 1px
+	outline: 0
+	border: 0
+	background-color: $HR-COLOR
 
 br
-    margin: 10px 0
+	margin: 10px 0

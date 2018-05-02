@@ -1,31 +1,37 @@
 @import '../../stylus/colors'
 @import '../../stylus/mixins/placeholder'
 
+$DEFAULT-BACKGROUND = #4E4E4E
+$INPUT-COLOR        = #111111
+$LABEL-COLOR        = #777777
+$WHITE-BACKGROUND   = #FFFFFF
+
 .group
-    display flex
-    flex-direction column
+	display: flex
+	flex-direction: column
 
 .input
-    placeholder(#4E4E4E)
-    font-family 'Myriad Pro'
-    width 100%
-    outline 0
-    border 0
-    background-color DEFAULT - 5%
-    padding 3px 12px 0
-    font-size 14px
-    border-radius 2px
-    height 32px
-    vertical-align bottom
-    color #111111
+	placeholder($DEFAULT-BACKGROUND)
 
-    &:focus
-        placeholder(transparent)
+	padding: 3px 12px 0
+	width: 100%
+	height: 32px
+	outline: 0
+	border: 0
+	border-radius: 2px
+	background-color: $DEFAULT - 5%
+	color: $INPUT-COLOR
+	vertical-align: bottom
+	font-size: 14px
+	font-family: 'Myriad Pro'
+
+	&:focus
+		placeholder(transparent)
 
 .white
-    background-color #FFF
+	background-color: $WHITE-BACKGROUND
 
 .label
-    margin-left 1px
-    margin-bottom 2px
-    color #777777
+	margin-bottom: 2px
+	margin-left: 1px
+	color: $LABEL-COLOR

@@ -21,7 +21,7 @@ export default class Input extends Component {
     }
 
     render() {
-        const { label, outerStyle, type, white ...props } = this.props;
+        const { label, outerStyle, type, white, ...props } = this.props;
         const { id } = this.state;
 
         return (

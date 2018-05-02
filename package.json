@@ -1,14 +1,19 @@
 {
   "name": "dayler-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./lib/index.min.js",
   "scripts": {
     "dist": "webpack --config ./webpack/index.js",
     "eslint": "eslint .",
     "lib": "webpack --config ./webpack/lib.js",
     "start": "node ./server.js",
-    "stylint": "stylint",
-    "stylus-supremacy": "stylus-supremacy format ./**/*.styl --options ./.stylintrc"
+    "stylint": "stylint ./src",
+    "stylus-supremacy": "stylus-supremacy format ./src/**/*.styl --options ./.stylintrc --replace"
+  },
+  "config": {
+    "ghooks": {
+      "pre-push": "npm run lint && npm run stylint"
+    }
   },
   "repository": {
     "type": "git",
@@ -25,6 +30,7 @@
   },
   "dependencies": {
     "babel-preset-stage-0": "^6.24.1",
+    "ghooks": "^2.0.4",
     "moment": "^2.22.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
