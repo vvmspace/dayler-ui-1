@@ -44,7 +44,6 @@ export default class TabsRouter extends Component {
         document.fonts.ready.then(() => this.setState(this.getBorderStyle(this.props, true)));
     }
 
-
     render() {
         const { innerStyle, match, routes } = this.props;
         const { left, width } = this.state;

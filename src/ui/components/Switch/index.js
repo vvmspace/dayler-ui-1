@@ -22,7 +22,7 @@ export default class Checkbox extends Component {
             <div className={styles.group} style={outerStyle}>
                 <span className={styles.title}>{title}</span>
                 <div className={styles.wrapper}>
-                    <input className={`${styles.input} ${styles[color]}`} type="checkbox" id={id} {...props} />
+                    <input className={`${styles.input} ${styles[color] || ''}`} type="checkbox" id={id} {...props} />
                     <label htmlFor={id} className={styles.label}></label>
                 </div>
             </div>
