@@ -3,10 +3,12 @@
   "version": "1.0.1",
   "main": "./lib/index.min.js",
   "scripts": {
-    "lib": "webpack --config ./webpack/lib.js",
-    "lint": "eslint .",
     "dist": "webpack --config ./webpack/index.js",
-    "start": "node ./server.js"
+    "eslint": "eslint .",
+    "lib": "webpack --config ./webpack/lib.js",
+    "start": "node ./server.js",
+    "stylint": "stylint",
+    "stylus-supremacy": "stylus-supremacy format ./**/*.styl --options ./.stylintrc"
   },
   "repository": {
     "type": "git",
@@ -51,6 +53,7 @@
     "stylint": "^1.5.9",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "stylus-supremacy": "^2.10.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.15",
