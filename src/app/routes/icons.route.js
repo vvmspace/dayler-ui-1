@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Input, Panel } from 'ui';
+import { Icon, Panel } from 'ui';
 
 import styles from '../styles.styl';
 
@@ -269,7 +269,7 @@ const data = [
     'zap-off',
     'zap',
     'zoom-in',
-    'zoom-out'
+    'zoom-out',
 ];
 
 const iconsStyle = {
@@ -288,9 +288,9 @@ const iconsStyle = {
     },
     title: {
         color: '#777777',
-        marginTop: 15
-    }
-}
+        marginTop: 15,
+    },
+};
 
 export default class Icons extends Component {
     render() {
@@ -302,7 +302,7 @@ export default class Icons extends Component {
                 <div className={styles.routeBody}>
                     <Panel title="usage" icon="code">
                         <pre>
-{`import { Icon } from 'dayler-ui';
+                            {`import { Icon } from 'dayler-ui';
 
 
 <Icon name="activity" />

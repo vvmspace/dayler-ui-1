@@ -1,5 +1,5 @@
 ![logo](https://cdn.dayler.io/images/logo_dark.svg)
-> Dayler React components
+> Dayler React Components
 
 ## Installation
 ```bash

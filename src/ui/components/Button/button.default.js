@@ -15,7 +15,6 @@ export default class Button extends Component {
     }
 
     handleMouseDown = event => {
-        const { isLoading } = this.props;
         const { offsetWidth, offsetHeight } = this.button;
         const size = Math.max(offsetWidth, offsetHeight);
 
@@ -39,6 +38,6 @@ export default class Button extends Component {
                 <div className={styles.ripple} ref={referance => this.ripple = referance}></div>
                 <div className={styles.title}>{title}</div>
             </button>
-        )
+        );
     }
 }

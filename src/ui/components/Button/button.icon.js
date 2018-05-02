@@ -8,9 +8,9 @@ import styles from './styles.styl';
 export default class IconButton extends Button {
     static propTypes = {
         color: PropTypes.oneOf(['dark', 'red', 'green', 'yellow']),
+        icon: PropTypes.string.isRequired,
         title: PropTypes.string,
         type: PropTypes.string,
-        icon: PropTypes.string.isRequired,
     };
 
     static defaultProps = {

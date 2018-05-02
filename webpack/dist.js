@@ -1,6 +1,6 @@
-const path = require('path')
-const Html = require('html-webpack-plugin')
-const Uglify = require('uglifyjs-webpack-plugin')
+const path = require('path');
+const Html = require('html-webpack-plugin');
+const Uglify = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -18,4 +18,4 @@ module.exports = {
         }),
         new Uglify(),
     ],
-}
+};

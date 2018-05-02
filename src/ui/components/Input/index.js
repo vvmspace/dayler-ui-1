@@ -5,31 +5,34 @@ import styles from './styles.styl';
 
 export default class Input extends Component {
     static propTypes = {
-        white: PropTypes.bool,
-        type: PropTypes.string.isRequired,
         label: PropTypes.string,
         outerStyle: PropTypes.object,
+        type: PropTypes.string.isRequired,
+        white: PropTypes.bool,
     };
 
     static defaultProps = {
-        type: 'text',
         outerStyle: {},
+        type: 'text',
     };
 
-    elemntId = Math.random();
+    state = {
+        id: Math.random(),
+    }
 
     render() {
-        const { white, type, label, outerStyle, ...props } = this.props
+        const { label, outerStyle, type, white ...props } = this.props;
+        const { id } = this.state;
 
         return (
             <div className={styles.group} style={outerStyle}>
-                {label ? <label className={styles.label} htmlFor={this.elemntId}>{label}</label> : null}
+                {label ? <label className={styles.label} htmlFor={id}>{label}</label> : null}
                 <input type={type}
-                    id={this.elemntId}
+                    id={id}
                     className={`${styles.input} ${white ? styles.white : null}`}
                     {...props}
                 />
             </div>
-        )
+        );
     }
 }

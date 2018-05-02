@@ -1,7 +1,7 @@
-const Assets = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpackMerge = require('webpack-merge')
-const webpack = require('webpack')
+const Assets = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpackMerge = require('webpack-merge');
+const webpack = require('webpack');
 
 const options = {
     resolve: {
@@ -35,7 +35,7 @@ const options = {
                     options: {
                         camelCase: 'only',
                         modules: true,
-                    }
+                    },
                 }, {
                     loader: 'stylus-loader',
                 }],
@@ -73,8 +73,8 @@ const options = {
             },
         }),
     ],
-}
+};
 
 module.exports = process.env.NODE_ENV !== 'production'
     ? webpackMerge(options, require('./dev'))
-    : webpackMerge(options, require('./dist'))
+    : webpackMerge(options, require('./dist'));

@@ -13,7 +13,7 @@ export default class Panel extends Component {
     }
 
     render() {
-        const { children, icon, innerStyle, outerStyle, title, ...props } = this.props
+        const { children, icon, innerStyle, outerStyle, title, ...props } = this.props;
 
         const headerIcon = icon
             ? <div className={styles.icon}>

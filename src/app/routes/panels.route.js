@@ -15,7 +15,7 @@ export default class Panels extends Component {
                         <p>Empty Panel</p>
                         <hr style={{ margin: '20px 0' }}/>
                         <pre>
-{`import { Panel } from 'dayler-ui';
+                            {`import { Panel } from 'dayler-ui';
 
 <Panel>
     <p>Empty Panel</p>
@@ -25,7 +25,7 @@ export default class Panels extends Component {
 
                     <Panel title="panel with title" outerStyle={{ marginBottom: 20 }}>
                         <pre>
-{`import { Panel } from 'dayler-ui';
+                            {`import { Panel } from 'dayler-ui';
 
 <Panel title="panel with title">
     <p>Empty Panel</p>
@@ -35,7 +35,7 @@ export default class Panels extends Component {
 
                     <Panel title="panel with title and icon" icon="code" outerStyle={{ marginBottom: 20 }}>
                         <pre>
-{`import { Panel } from 'dayler-ui';
+                            {`import { Panel } from 'dayler-ui';
 
 <Panel title="panel with title and icon" icon="code">
     <p>Empty Panel</p>

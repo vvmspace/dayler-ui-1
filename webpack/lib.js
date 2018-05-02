@@ -40,7 +40,7 @@ module.exports = {
                     options: {
                         camelCase: 'only',
                         modules: true,
-                    }
+                    },
                 }, {
                     loader: 'stylus-loader',
                 }],
@@ -65,4 +65,4 @@ module.exports = {
     plugins: [
         new Uglify(),
     ],
-}
+};

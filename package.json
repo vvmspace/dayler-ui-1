@@ -4,7 +4,7 @@
   "main": "./lib/index.min.js",
   "scripts": {
     "lib": "webpack --config ./webpack/lib.js",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
     "dist": "webpack --config ./webpack/index.js",
     "start": "node ./server.js"
   },
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
@@ -40,8 +41,6 @@
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
@@ -49,6 +48,7 @@
     "helmet": "^3.12.0",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.21.0",
+    "stylint": "^1.5.9",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "uglifyjs-webpack-plugin": "^1.2.5",

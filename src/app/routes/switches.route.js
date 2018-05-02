@@ -13,6 +13,6 @@ export default class Switches extends Component {
                     ...
                 </div>
             </div>
-        )
+        );
     }
 }

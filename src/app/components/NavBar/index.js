@@ -20,7 +20,7 @@ export default class NavBar extends Component {
         return match && match.path === '/' + location.pathname.split('/')[1];
     };
 
-    handleClick = event => {
+    handleClick = () => {
         const { expand, onExpand } = this.props;
 
         onExpand(!expand);
@@ -39,7 +39,7 @@ export default class NavBar extends Component {
                             size={34}
                         />
                     </div>
-                    <img className={styles.headerImage} src="/images/logo_dark.svg" />
+                    <img className={styles.headerImage} src="https://cdn.dayler.io/images/logo_dark.svg" alt="Dayler" />
                 </div>
                 <ul className={styles.body}>
                     {data.map(item => item.visible ? (

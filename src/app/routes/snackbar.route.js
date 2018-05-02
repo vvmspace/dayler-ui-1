@@ -13,6 +13,6 @@ export default class Snackbar extends Component {
                     ...
                 </div>
             </div>
-        )
+        );
     }
 }

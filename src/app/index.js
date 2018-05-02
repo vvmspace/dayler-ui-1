@@ -85,15 +85,15 @@ export default class App extends Component {
             icon: 'activity',
             component: Chart,
             visible: false,
-        }]
+        }],
     }
 
     handleExpand = state => {
-        this.setState({ expand: state }, () => localStorage.setItem('isExpanded', state))
+        this.setState({ expand: state }, () => localStorage.setItem('isExpanded', state));
     }
 
     render() {
-        const { expand, nav } = this.state
+        const { expand, nav } = this.state;
 
         return (
             <Router>
