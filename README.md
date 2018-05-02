@@ -4,15 +4,20 @@
 
 Dayler React Components
 
-#### Api with examples
+### Api with examples
 [https://ui.dayler.io](https://ui.dayler.io)
 
-#### Installation
+### Installation
 ```bash
 npm install --save dayler-ui
 ```
 
-#### Usage
+### Usage
+You can easily add base sty;es for you app from `.stylus`
+```stylus
+@import '~dayler-ui/stylus/base.styl'
+```
+
 ##### Panels
 ```js
 import { Panel } from 'dayler-ui';
