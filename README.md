@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/dayler-ui.svg)](https://badge.fury.io/js/dayler-ui)
+
 ![logo](https://cdn.dayler.io/images/logo_dark.svg)
 > Dayler React Components
 
