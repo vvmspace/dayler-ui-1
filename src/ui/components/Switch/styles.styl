@@ -1,0 +1,127 @@
+@import '../../stylus/colors'
+
+$TITLE-COLOR = #888888
+
+.group
+	display: inline-flex
+	flex-direction: column
+	align-items: flex-start
+
+.input
+	margin: 0 3px 0 0
+	width: 14px
+	height: 14px
+	outline: 0
+	vertical-align: middle
+
+	&:checked
+		& + label
+			&:before
+				border: 1px solid $DEFAULT - 13%
+				background-color: $DEFAULT - 13%
+
+			&:after
+				left: 22px
+
+	&:not(checked)
+		position: absolute
+		opacity: 0
+
+		& + label
+			position: relative
+			padding: 2px 0 0 25px
+
+			&:before
+				position: absolute
+				top: 1px
+				left: 0
+				width: 38px
+				height: 16px
+				border: 1px solid $DEFAULT - 3%
+				border-radius: 16px
+				background-color: $DEFAULT
+				content: ''
+				transition: all .3s
+
+			&:after
+				position: absolute
+				top: 1px
+				left: 0
+				width: 18px
+				height: 18px
+				border-radius: 50%
+				background-color: $DEFAULT - 35%
+				content: ''
+				transition: all .2s
+
+.label
+	cursor: pointer
+	user-select: none
+
+.title
+	color: $TITLE-COLOR
+	font-size: .9em
+
+.dark
+	&:checked
+		& + label
+			&:before
+				border: 1px solid $DARK + 30%
+				background-color: $DARK + 30%
+
+	&:not(checked)
+		& + label
+			&:before
+				border: 1px solid $DARK + 60%
+				background-color: $DARK + 65%
+
+			&:after
+				background-color: $DARK
+
+.red
+	&:checked
+		& + label
+			&:before
+				border: 1px solid $RED + 55%
+				background-color: $RED + 55%
+
+	&:not(checked)
+		& + label
+			&:before
+				border: 1px solid $RED + 75%
+				background-color: $RED + 80%
+
+			&:after
+				background-color: $RED
+
+.green
+	&:checked
+		& + label
+			&:before
+				border: 1px solid $GREEN + 45%
+				background-color: $GREEN + 45%
+
+	&:not(checked)
+		& + label
+			&:before
+				border: 1px solid $GREEN + 75%
+				background-color: $GREEN + 80%
+
+			&:after
+				background-color: $GREEN
+
+.yellow
+	&:checked
+		& + label
+			&:before
+				border: 1px solid $YELLOW + 45%
+				background-color: $YELLOW + 45%
+
+	&:not(checked)
+		& + label
+			&:before
+				border: 1px solid $YELLOW + 70%
+				background-color: $YELLOW + 80%
+
+			&:after
+				background-color: $YELLOW

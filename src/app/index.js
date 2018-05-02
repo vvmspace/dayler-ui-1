@@ -80,7 +80,7 @@ export default class App extends Component {
             icon: 'toggle-left',
             link: '/switches',
             title: 'Switches',
-            visible: false,
+            visible: true,
         }, {
             component: Chart,
             icon: 'activity',
