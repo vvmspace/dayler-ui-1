@@ -44,7 +44,7 @@ import { Panel } from 'dayler-ui';
 ```
 
 ##### Icons
-[Feathericons](https://feathericons.com)
+Icons provided by [Feathericons](https://feathericons.com)
 
 ```js
 import { Icon } from 'dayler-ui';
@@ -65,7 +65,6 @@ import { Button } from 'dayler-ui';
 
 ```js
 import { IconButton } from 'dayler-ui';
-
 
 <IconButton icon="code" />
 <IconButton icon="cloud-off" color="dark" />
@@ -120,6 +119,7 @@ import { Button, Input } from 'dayler-ui';
 
 ```js
 import { Button, Input } from 'dayler-ui';
+
 <Input placeholder="Text Input with button"
     outerStyle={{ width: 200, marginBottom: 10 }}
 />
