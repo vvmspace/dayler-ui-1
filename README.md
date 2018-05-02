@@ -13,7 +13,7 @@ npm install --save dayler-ui
 ```
 
 #### Usage
-* Panels
+##### Panels
 ```js
 import { Panel } from 'dayler-ui';
 
@@ -38,7 +38,7 @@ import { Panel } from 'dayler-ui';
 </Panel>
 ```
 
-* Icons
+##### Icons
 [Feathericons](https://feathericons.com)
 
 ```js
@@ -47,7 +47,7 @@ import { Icon } from 'dayler-ui';
 <Icon name="activity" />
 ```
 
-* Buttons
+##### Buttons
 ```js
 import { Button } from 'dayler-ui';
 
@@ -94,7 +94,7 @@ import { Link } from 'react-router-dom';
 </Link>
 ```
 
-* Inputs
+##### Inputs
 ```js
 import { Input } from 'dayler-ui';
 
@@ -121,7 +121,7 @@ import { Button, Input } from 'dayler-ui';
 <Button title="Submit" color="red" />
 ```
 
-* Tabs
+##### Tabs
 ```js
 import { TabsRouter } from 'dayler-ui';
 
@@ -147,7 +147,7 @@ export default class Tabs extends Component {
 }
 ```
 
-* Checkboxes
+##### Checkboxes
 ```js
 import { Checkbox } from 'dayler-ui';
 
@@ -158,7 +158,7 @@ import { Checkbox } from 'dayler-ui';
 <Checkbox title="Dark" color="dark" />
 ```
 
-* Switches
+##### Switches
 ```js
 import { Switch } from 'dayler-ui';
 
