@@ -30,51 +30,61 @@ export default class App extends Component {
             title: 'Colors',
             icon: 'aperture',
             component: Colors,
+            visible: true,
         }, {
             link: '/panels',
             title: 'Panels',
             icon: 'copy',
             component: Panels,
+            visible: true,
         }, {
             link: '/icons',
             title: 'Icons',
             icon: 'feather',
             component: Icons,
+            visible: true,
         }, {
             link: '/buttons',
             title: 'Buttons',
             icon: 'server',
             component: Buttons,
+            visible: true,
         }, {
             link: '/inputs',
             title: 'Inputs',
             icon: 'edit',
             component: Inputs,
+            visible: true,
         }, {
             link: '/tabs',
             title: 'Tabs',
             icon: 'folder',
             component: Tabs,
+            visible: false,
         }, {
             link: '/datepicker',
             title: 'Date Picker',
             icon: 'calendar',
             component: DatePicker,
+            visible: false,
         }, {
             link: '/snackbar',
             title: 'Snackbar',
             icon: 'droplet',
             component: Snackbar,
+            visible: false,
         }, {
             link: '/switches',
             title: 'Switches',
             icon: 'toggle-left',
             component: Switches,
+            visible: false,
         }, {
             link: '/chart',
             title: 'Chart',
             icon: 'activity',
             component: Chart,
+            visible: false,
         }]
     }
 

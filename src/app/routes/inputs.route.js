@@ -16,7 +16,7 @@ export default class Inputs extends Component {
                         <Input placeholder="Text Input with Label" label="Input Label" outerStyle={{ marginBottom: 20 }} />
                         <hr style={{ margin: '20px 0' }}/>
                         <pre>
-{`import { Input } from 'ui';
+{`import { Input } from 'dayler-ui';
 
 <Input placeholder="Text Input" />
 <Input placeholder="Text Input with Label" label="Input Label" />
@@ -30,7 +30,7 @@ export default class Inputs extends Component {
                         </div>
                         <hr style={{ margin: '20px 0' }}/>
                         <pre>
-{`import { Button, Input } from 'ui';
+{`import { Button, Input } from 'dayler-ui';
 
 <div style={{ display: 'flex' }}>
     <Input placeholder="Text Input with button"
@@ -47,7 +47,7 @@ export default class Inputs extends Component {
                         <Button title="Cancel" />
                         <hr style={{ margin: '20px 0' }}/>
                         <pre>
-{`import { Button, Input } from 'ui';
+{`import { Button, Input } from 'dayler-ui';
 
 <Input placeholder="Text Input with button"
     outerStyle={{ width: 200, marginBottom: 10 }}

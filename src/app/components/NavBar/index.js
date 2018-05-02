@@ -21,9 +21,9 @@ export default class NavBar extends Component {
     };
 
     handleClick = event => {
-        const { expand, onExpand } = this.props
+        const { expand, onExpand } = this.props;
 
-        onExpand(!expand)
+        onExpand(!expand);
     };
 
     render() {
@@ -42,7 +42,7 @@ export default class NavBar extends Component {
                     <img className={styles.headerImage} src="/images/logo_dark.svg" />
                 </div>
                 <ul className={styles.body}>
-                    {data.map(item => (
+                    {data.map(item => item.visible ? (
                         <li className={styles.item} key={Math.random()}>
                             <NavLink className={styles.itemLink}
                                 to={item.link}
@@ -57,7 +57,7 @@ export default class NavBar extends Component {
                                 </span>
                             </NavLink>
                         </li>
-                    ))}
+                    ) : null)}
                 </ul>
             </div>
         );

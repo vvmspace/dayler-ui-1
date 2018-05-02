@@ -35,7 +35,7 @@ export default class Buttons extends Component {
                         <hr style={{ margin: '20px 0' }} />
                         <pre>
 {`
-import { Button } from 'ui';
+import { Button } from 'dayler-ui';
 
 <Button title="Next" />
 <Button title="Next" color="dark" />
@@ -69,7 +69,7 @@ import { Button } from 'ui';
                         <hr style={{ margin: '20px 0' }} />
                         <pre>
 {`
-import { IconButton } from 'ui';
+import { IconButton } from 'dayler-ui';
 
 <IconButton icon="code" />
 <IconButton icon="cloud-off" color="dark" />
@@ -101,7 +101,7 @@ import { IconButton } from 'ui';
                         /></Link>
                         <hr style={{ margin: '20px 0' }} />
                         <pre>
-{`import { Button, IconButton } from 'ui';
+{`import { Button, IconButton } from 'dayler-ui';
 import { Link } from 'react-router-dom';
 
 <Link to="/buttons">

@@ -302,7 +302,7 @@ export default class Icons extends Component {
                 <div className={styles.routeBody}>
                     <Panel title="usage" icon="code">
                         <pre>
-{`import { Icon } from 'ui';
+{`import { Icon } from 'dayler-ui';
 
 
 <Icon name="activity" />
