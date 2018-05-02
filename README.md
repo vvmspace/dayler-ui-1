@@ -13,7 +13,7 @@ npm install --save dayler-ui
 ```
 
 ### Usage
-You can easily add base sty;es for you app from `.stylus`
+You can easily add base styles for you app from `.stylus`
 ```stylus
 @import '~dayler-ui/stylus/base.styl'
 ```
