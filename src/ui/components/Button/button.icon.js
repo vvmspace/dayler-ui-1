@@ -19,6 +19,7 @@ export default class IconButton extends Button {
 
     render() {
         const { color, icon, title, type, ...props } = this.props;
+        const { ...rippleStyle } = this.state;
 
         return (
             <button className={`${styles.button} ${styles.buttonIcon} ${styles[color]}`}
@@ -26,7 +27,8 @@ export default class IconButton extends Button {
                 type={type}
                 ref={referance => this.button = referance}
                 {...props}>
-                <div className={styles.ripple} ref={referance => this.ripple = referance}></div>
+                <div className={styles.ripple} style={rippleStyle}
+                    ref={referance => this.ripple = referance}></div>
                 <div className={styles.icon}><Icon size={18} name={icon} /></div>
                 {title ? <div className={styles.title}>{title}</div> : null}
             </button>

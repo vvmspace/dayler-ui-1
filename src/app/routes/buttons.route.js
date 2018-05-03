@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import SyntaxHighlighter from 'react-syntax-highlighter/prism';
 import { coy } from 'react-syntax-highlighter/styles/prism';
+import { Link } from 'react-router-dom';
 import { IconButton, Button, Panel } from 'ui';
 
 import styles from '../styles.styl';

@@ -14,20 +14,32 @@ export default class Button extends Component {
         type: 'button',
     }
 
+    state = {
+        height: 0,
+        width: 0,
+        left: 0,
+        top: 0,
+    }
+
     handleMouseDown = event => {
-        const { offsetWidth, offsetHeight } = this.button;
-        const size = Math.max(offsetWidth, offsetHeight);
+        const { left, top, width } = this.button.getBoundingClientRect();
 
         this.ripple.classList.remove(styles.animate);
-        this.ripple.style.height = size + 'px';
-        this.ripple.style.width = size + 'px';
-        this.ripple.style.left = event.pageX - this.button.offsetLeft - size/2 + 'px';
-        this.ripple.style.top = event.pageY - this.button.offsetTop - size/2 + 'px';
+        this.button.offsetTop; // Gansta-hook for refresh animation;
+
+        this.setState({
+            height: width,
+            width: width,
+            left: event.pageX - left - width/2,
+            top: event.pageY - top - width/2,
+        });
+
         this.ripple.classList.add(styles.animate);
     }
 
     render() {
         const { color, title, type, ...props } = this.props;
+        const { ...rippleStyle } = this.state;
 
         return (
             <button className={`${styles.button} ${styles[color]}`}
@@ -35,7 +47,8 @@ export default class Button extends Component {
                 type={type}
                 ref={referance => this.button = referance}
                 {...props}>
-                <div className={styles.ripple} ref={referance => this.ripple = referance}></div>
+                <div className={styles.ripple} style={rippleStyle}
+                    ref={referance => this.ripple = referance}></div>
                 <div className={styles.title}>{title}</div>
             </button>
         );

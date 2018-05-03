@@ -1,6 +1,7 @@
 export Avatar from './components/Avatar';
 export Button from './components/Button/button.default';
 export Checkbox from './components/Checkbox';
+export Crop from './components/Crop';
 export Icon from './components/Icon';
 export IconButton from './components/Button/button.icon';
 export Input from './components/Input';
