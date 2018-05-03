@@ -15,7 +15,19 @@ npm install --save dayler-ui
 ### Usage
 You can easily add base styles for you app from `.stylus`
 ```stylus
-@import '~dayler-ui/stylus/base.styl'
+@import '~dayler-ui/src/ui/stylus/base.styl'
+```
+
+#### Colors
+```stylus
+@import '~dayler-ui/src/ui/stylus/base.styl'
+
+$DARK = #585C67
+$DEFAULT = #EEEEEE
+$GRAY = #777F83
+$GREEN = #66C85F
+$RED = #E14839
+$YELLOW = #F0B458
 ```
 
 #### Panels
@@ -172,6 +184,42 @@ import { Switch } from 'dayler-ui';
 <Switch title="Green" color="green" />
 <Switch title="Yellow" color="yellow" />
 <Switch title="Dark" color="dark" />
+```
+
+#### Radio
+```js
+import { Radio } from 'ui';
+
+const { checkedRadio } = this.state;
+<Radio title="Default"
+    checked={checkedRadio === "1"}
+    onChange={this.handleRadioChange}
+    value="1"
+/>
+<Radio title="Red"
+    checked={checkedRadio === "2"}
+    color="red"
+    onChange={this.handleRadioChange}
+    value="2"
+/>
+<Radio title="Green"
+    checked={checkedRadio === "3"}
+    color="green"
+    onChange={this.handleRadioChange}
+    value="3"
+/>
+<Radio title="Yellow"
+    checked={checkedRadio === "4"}
+    color="yellow"
+    onChange={this.handleRadioChange}
+    value="4"
+/>
+<Radio title="Dark"
+    checked={checkedRadio === "5"}
+    color="dark"
+    onChange={this.handleRadioChange}
+    value="5"
+/>
 ```
 
 

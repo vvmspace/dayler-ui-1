@@ -8,11 +8,12 @@
     "lib": "webpack --config ./webpack/lib.js",
     "start": "node ./server.js",
     "stylint": "stylint ./src",
-    "stylus-supremacy": "stylus-supremacy format ./**/*.styl --options ./.stylintrc --replace"
+    "stylus-supremacy": "stylus-supremacy format ./**/*.styl --options ./.stylintrc --replace",
+    "test": "npm run eslint && npm run stylint"
   },
   "config": {
     "ghooks": {
-      "pre-push": "npm run eslint && npm run stylint"
+      "pre-push": "npm test"
     }
   },
   "repository": {
