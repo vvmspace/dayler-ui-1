@@ -30,8 +30,8 @@ export default class Button extends Component {
         this.setState({
             height: width,
             width: width,
-            left: event.pageX - left - width/2,
-            top: event.pageY - top - width/2,
+            left: event.clientX - left - width/2,
+            top: event.clientY - top - width/2,
         });
 
         this.ripple.classList.add(styles.animate);
