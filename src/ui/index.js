@@ -1,3 +1,4 @@
+export Avatar from './components/Avatar';
 export Button from './components/Button/button.default';
 export Checkbox from './components/Checkbox';
 export Icon from './components/Icon';

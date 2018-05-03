@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
+import Avatars from './routes/avatars.route';
 import Buttons from './routes/buttons.route';
-import Chart from './routes/chart.route';
+import Charts from './routes/charts.route';
 import Colors from './routes/colors.route';
+import ImageCrop from './routes/crop.route';
 import DatePicker from './routes/datepicker.route';
 import Icons from './routes/icons.route';
 import Inputs from './routes/inputs.route';
@@ -28,22 +30,10 @@ export default class App extends Component {
             title: 'Typings',
             visible: true,
         }, {
-            component: Colors,
-            icon: 'aperture',
-            link: '/colors',
-            title: 'Colors',
-            visible: true,
-        }, {
-            component: Panels,
-            icon: 'copy',
-            link: '/panels',
-            title: 'Panels',
-            visible: true,
-        }, {
-            component: Icons,
-            icon: 'feather',
-            link: '/icons',
-            title: 'Icons',
+            component: Avatars,
+            icon: 'user-plus',
+            link: '/avatars',
+            title: 'Avatars',
             visible: true,
         }, {
             component: Buttons,
@@ -52,16 +42,16 @@ export default class App extends Component {
             title: 'Buttons',
             visible: true,
         }, {
-            component: Inputs,
-            icon: 'edit',
-            link: '/inputs',
-            title: 'Inputs',
+            component: Charts,
+            icon: 'activity',
+            link: '/charts',
+            title: 'Charts',
             visible: true,
         }, {
-            component: Tabs,
-            icon: 'folder',
-            link: '/tabs',
-            title: 'Tabs',
+            component: Colors,
+            icon: 'aperture',
+            link: '/colors',
+            title: 'Colors',
             visible: true,
         }, {
             component: DatePicker,
@@ -70,11 +60,35 @@ export default class App extends Component {
             title: 'Date Picker',
             visible: false,
         }, {
+            component: Icons,
+            icon: 'feather',
+            link: '/icons',
+            title: 'Icons',
+            visible: true,
+        }, {
+            component: ImageCrop,
+            icon: 'crop',
+            link: '/crop',
+            title: 'Image Crop',
+            visible: true,
+        }, {
+            component: Inputs,
+            icon: 'edit',
+            link: '/inputs',
+            title: 'Inputs',
+            visible: true,
+        }, {
+            component: Panels,
+            icon: 'copy',
+            link: '/panels',
+            title: 'Panels',
+            visible: true,
+        }, {
             component: Snackbar,
             icon: 'droplet',
             link: '/snackbar',
             title: 'Snackbar',
-            visible: false,
+            visible: true,
         }, {
             component: Switches,
             icon: 'toggle-left',
@@ -82,11 +96,11 @@ export default class App extends Component {
             title: 'Switches',
             visible: true,
         }, {
-            component: Chart,
-            icon: 'activity',
-            link: '/chart',
-            title: 'Chart',
-            visible: false,
+            component: Tabs,
+            icon: 'folder',
+            link: '/tabs',
+            title: 'Tabs',
+            visible: true,
         }],
     }
 

@@ -1,0 +1,36 @@
+$BACKGROUND-COLOR = #AAAAAA
+$ICON-COLOR = #FEFEFE
+$NAME-COLOR = #888888
+
+defaultStyles()
+	display: flex
+	justify-content: center
+	align-items: center
+	border: 2px solid $BACKGROUND-COLOR
+	border-radius: 50%
+	background-color: $BACKGROUND-COLOR + 20%
+	color: $ICON-COLOR
+
+.iconAvatar, .imageAvatar, .fontAvatar
+	defaultStyles()
+
+.container
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	align-items: center
+
+.name
+	display: flex
+	flex-grow: 1
+	align-items: flex-end
+	color: $NAME-COLOR
+	text-align: center
+	font-size: 13px
+	line-height: 13px
+
+.iconHolder
+	position: relative
+	top: 2px
+	font-size: 34px
+	line-height: 34px
