@@ -41,7 +41,9 @@ export default class Crop extends Component {
         source: null,
         isCropModalShown: false,
         dragging: false,
+        caretStyles: {},
         containerStyles: {},
+        cropStyles: {},
     }
 
     handleClose = () => {
@@ -55,48 +57,153 @@ export default class Crop extends Component {
         const file = event.target.files[0];
         const reader = new FileReader();
 
-        reader.onload = data => this.setState({
-            source: data.target.result,
-            isCropModalShown: true,
-        });
+        reader.onload = data => {
+
+            const image = new Image();
+            image.src = data.target.result;
+
+            image.onload = () => {
+                this.setState({
+                    source: data.target.result,
+                    isCropModalShown: true,
+                }, () => {
+                    this.setContainerStyles(image);
+                });
+            }
+        };
 
         reader.readAsDataURL(file);
+        event.target.value = ''; // Reset input element
     }
 
     handleSubmit = () => {}
 
-    getContainerStyles = () => {
+    setContainerStyles(image) {
         const { geometry } = this.props;
         const { source } = this.state;
 
+        this.setState({
+            containerStyles: {
+                container: {
+                    ...geometry,
+                    gridTemplateColumns: `${geometry.height}px auto`,
+                },
+                shadow: {
+                    display: source ? 'flex' : 'none',
+                },
+                sourceContainer: {
+                    width: geometry.height,
+                    height: geometry.height,
+                },
+                sourceImage: {
+                    maxWidth: geometry.height,
+                    maxHeight: geometry.height,
+                },
+            }
+        }, () => {
+            this.setCaretStyles();
+            this.setCropStyles(image)
+        });
+    }
+
+    setCropStyles(image) {
+        const { height, width } = image;
+        const size = this.props.geometry.height;
+
+        const imageHeight = width / height >= 1
+            ? (height * size) / width
+            : size;
+
+        const imageWidth = width / height >= 1
+            ? size
+            : (size * width) / height;
+
+        const top = (size - imageHeight) / 2;
+        const bottom = (size - imageHeight) / 2;
+        const left = (size - imageWidth) / 2;
+        const right = (size - imageWidth) / 2;
+
+        this.setState({ cropStyles: {
+            area: { top, bottom, left, right, width: imageWidth, height: imageHeight },
+        }});
+    }
+
+    setCaretStyles() {
+        const { geometry } = this.props;
+
+        this.setState({
+            caretStyles: {
+                image: {
+                    maxWidth: geometry.height,
+                    maxHeight: geometry.height,
+                }
+            }
+        });
+    }
+
+    getGeometry(x, y, /*caret = {}*/) {
+        const caret = {width: 200, height: 200}
+        const size = 500;
+
         return {
-            container: {
-                ...geometry,
-                gridTemplateColumns: `${geometry.height}px auto`,
-            },
-            shadow: {
-                display: source ? 'flex' : 'none',
-            },
-            sourceContainer: {
-                width: geometry.height,
-                height: geometry.height,
-            },
-            sourceImage: {
-                maxWidth: geometry.height,
-                maxHeight: geometry.height,
-            },
-        };
+            top: 0
+        }
     }
 
     componentDidMount() {
         this.props.onMount(this.fileInput);
     }
 
+    handlePress = event => {
+        this.setState({ dragging: true, pos: {
+            x: event.pageX - this.caret.getBoundingClientRect().left,
+            y: event.pageY - this.caret.getBoundingClientRect().top
+        } })
+    }
+
+    handleRelease = event => {
+        this.setState({ dragging: false });
+    }
+
+    handleMove = event => {
+        // const { dragging } = this.state;
+        // const { geometry } = this.props;
+
+        // if (dragging) {
+        //     const { x, y } = this.state.pos;
+        //     const caretGeometry = this.caret.getBoundingClientRect();
+        //     const containerGeometry = this.source.getBoundingClientRect();
+
+        //     const caretPosition = {
+        //         x: containerGeometry.left - caretGeometry.left,
+        //         y: containerGeometry.top - caretGeometry.top + event.pageY - containerGeometry.top - y,
+        //     }
+
+        //     console.log(caretPosition);
+
+        //     this.setState({ caretStyles: {
+        //         caret: {
+        //             top: Math.floor(caretPosition.y)
+        //         },
+        //         image: {
+        //             maxWidth: geometry.height,
+        //             maxHeight: geometry.height,
+        //             marginTop: -Math.floor(caretPosition.y)
+        //         }
+        //     }})
+        // }
+    }
+
     render() {
         const { portalNode, title } = this.props;
-        const { result, source } = this.state;
 
-        const containerStyles = this.getContainerStyles();
+        const {
+            caretStyles,
+            containerStyles,
+            cropStyles,
+            result,
+            source,
+        } = this.state;
 
         const CropElement = (
             <div className={initialStyles.wrapper}>
@@ -108,7 +215,7 @@ export default class Crop extends Component {
                     <div className={initialStyles.container}
                         style={containerStyles.container}
                         ref={referance => this.container = referance }>
-                        <div className={initialStyles.sourceContainer} style={containerStyles.sourceContainer}>
+                        <div className={initialStyles.sourceContainer} style={containerStyles.sourceContainer} onMouseMove={this.handleMove} onMouseUp={this.handleRelease}>
                             <img className={initialStyles.sourceImage}
                                 style={containerStyles.sourceImage}
                                 crossOrigin="anonymous"
@@ -116,6 +223,18 @@ export default class Crop extends Component {
                                 src={source}
                                 ref={referance => this.source = referance}
                             />
+                            <div className={initialStyles.cropArea} style={cropStyles.area}>
+                                <div className={initialStyles.caret} style={caretStyles.caret} onMouseDown={this.handlePress} ref={referance => this.caret = referance}>
+                                    <div className={initialStyles.caretCircle}>
+                                        <img src={source} alt="clone" className= {initialStyles.caretImage} style={caretStyles.image} />
+                                    </div>
+                                    <span className={initialStyles.caretBorder}></span>
+                                    <span className={initialStyles.caretTL} data-action="tl"></span>
+                                    <span className={initialStyles.caretTR} data-action="tr"></span>
+                                    <span className={initialStyles.caretBR} data-action="br"></span>
+                                    <span className={initialStyles.caretBL} data-action="bl"></span>
+                                </div>
+                            </div>
                         </div>
                         <div className={initialStyles.preview}>
                             <div>
