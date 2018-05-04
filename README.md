@@ -222,6 +222,44 @@ const { checkedRadio } = this.state;
 />
 ```
 
+#### Crop
+```js
+import React, { Component } from 'react';
+import { Avatar, Button, Crop } from 'dayler-ui';
+
+export default class MyClass extends Component {
+    state = {
+        image: 'https://cdn.dayler.io/images/avatar.svg',
+    };
+
+    handleChange = image => {
+        this.setState({ image });
+    };
+
+    handleClick = () => {
+        this.cropper.click();
+    }
+
+    render() {
+        return (
+            <div>
+                <Avatar image={image} size={200} />
+                <Button title="change" onClick={this.handleClick} />
+                <Crop node="root"
+                    onChange={this.handleChange}
+                    onMount={referance => this.cropper = referance}
+                    height={500}
+                    width={760}
+                    size={100}
+                    x={20}
+                    y={30}
+                />
+            </div>
+        );
+    }
+}
+```
+
 
 ---
 *Made with* :heart: *for [Dayler.io](https://dayler.io)*

@@ -10,7 +10,7 @@ export default class Snackbar extends Component {
                     <div className={styles.routeTitle}>Snackbar</div>
                 </div>
                 <div className={styles.routeBody}>
-                    ...
+                    ... in progress
                 </div>
             </div>
         );

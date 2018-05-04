@@ -35,6 +35,8 @@ export default class Crop extends Component {
         containerHeight: 0,
         containerWidth: 0,
         frameSize: 0,
+        imageHeight: 0,
+        imageWidth: 0,
         isDragging: false,
         onMouseDownCursorX: 0,
         onMouseDownCursorY: 0,
@@ -72,12 +74,14 @@ export default class Crop extends Component {
             containerHeight,
             containerWidth,
             frameSize,
+            imageHeight,
+            imageWidth,
+            portalLeft,
             portalSize,
             portalTop,
-            portalLeft,
             sourceHeight,
             sourceWidth,
-        });
+        }, this.handleCrop);
     }
 
     movePortal(event) {
@@ -249,15 +253,47 @@ export default class Crop extends Component {
 
         reader.readAsDataURL(file);
         event.target.value = ''; // Reset input element
-    }
+    };
 
-    handleCrop = () => { }
+    handleCrop = () => {
+        const {
+            imageWidth,
+            sourceWidth,
+            portalSize,
+            portalLeft,
+            portalTop,
+        } = this.state;
+
+        const canvas = document.createElement('canvas');
+        const scale = imageWidth / sourceWidth;
+        const size = portalSize * scale;
+        const x = portalLeft * scale;
+        const y = portalTop * scale;
+
+        canvas.width = size;
+        canvas.height = size;
+        canvas.getContext('2d').drawImage(this.sourceImage, x, y, size, size, 0, 0, size, size);
+
+        this.setState({
+            result: canvas.toDataURL(),
+        }, () => canvas.remove());
+    };
 
     handleClose = () => {
         this.setState({
             source: null,
         });
-    }
+    };
+
+    handleSubmit = () => {
+        const { onChange } = this.props;
+        const { result } = this.state;
+
+        this.setState({
+            source: null,
+            result: null,
+        }, () => onChange(result));
+    };
 
     handleMouseDown = event => {
         const { portalLeft, portalSize, portalTop } = this.state;
@@ -275,11 +311,11 @@ export default class Crop extends Component {
             onMouseDownPortalSize: portalSize,
             onMouseDownPortalTop: portalTop,
         });
-    }
+    };
 
     handleMouseUp = () => {
-        this.setState({ isDragging: false });
-    }
+        this.setState({ isDragging: false }, this.handleCrop);
+    };
 
     handleMouseMove = event => {
         const {
@@ -297,7 +333,7 @@ export default class Crop extends Component {
         } else {
             this.resizePortal(event, actionType);
         }
-    }
+    };
 
     componentDidMount() {
         this.props.onMount(this.input);
@@ -313,6 +349,7 @@ export default class Crop extends Component {
             portalLeft,
             portalSize,
             portalTop,
+            result,
             source,
             sourceHeight,
             sourceWidth,
@@ -330,8 +367,10 @@ export default class Crop extends Component {
         };
 
         const sourceImageStyle = {
+            height: sourceHeight,
             maxHeight: containerHeight,
             maxWidth: containerHeight,
+            width: sourceWidth,
         };
 
         const sourceShadowStyle = {
@@ -357,24 +396,19 @@ export default class Crop extends Component {
 
         const CropElement = (
             <div className={styles.wrapper}>
-
                 <input type="file"
                     className={styles.input}
                     onChange={this.handleFileChange}
                     ref={referance => this.input = referance}
                 />
-
                 <div className={styles.shadow}
                     style={{ display: source ? 'flex' : 'none' }}
                     onMouseMove={this.handleMouseMove}
                     onMouseUp={this.handleMouseUp}>
-
                     <div className={styles.container}
                         style={containerStyle}>
-
                         <div className={styles.frame}
                             style={frameStyle}>
-
                             <img className={styles.source}
                                 alt="source"
                                 style={sourceImageStyle}
@@ -382,15 +416,12 @@ export default class Crop extends Component {
                                 src={source}
                                 ref={referance => this.sourceImage = referance}
                             />
-
                             <div className={styles.sourceShadow}
                                 style={sourceShadowStyle}>
-
                                 <div className={styles.portal}
                                     style={portalStyle}
                                     onMouseDown={this.handleMouseDown}
                                     ref={referance => this.portal = referance}>
-
                                     <div className={styles.fakePortal}>
                                         <img className={styles.fakeSource}
                                             alt="fake source"
@@ -398,45 +429,37 @@ export default class Crop extends Component {
                                             src={source}
                                         />
                                     </div>
-
                                     <span className={styles.portalHandler}
                                         data-action="move">
                                     </span>
-
                                     <span className={styles.portalDotTL}
                                         data-action="tl">
                                     </span>
-
                                     <span className={styles.portalDotTR}
                                         data-action="tr">
                                     </span>
-
                                     <span className={styles.portalDotBR}
                                         data-action="br">
                                     </span>
-
                                     <span className={styles.portalDotBL}
                                         data-action="bl">
                                     </span>
                                 </div>
                             </div>
                         </div>
-
                         <div className={styles.preview}>
                             <div>
                                 <span className={styles.title}>{title}</span>
                             </div>
-
                             <div className={styles.avatars}>
-                                <Avatar style={{ marginBottom: 20 }} size={120} />
-                                <Avatar style={{ marginBottom: 20 }} size={70} />
+                                <Avatar image={result} style={{ marginBottom: 20 }} size={140} />
+                                <Avatar image={result} style={{ marginBottom: 20 }} size={100} />
                             </div>
-
                             <div>
                                 <IconButton style={{ marginRight: 10, marginTop: 10 }}
                                     color="red"
                                     icon="crop"
-                                    onClick={this.handleCrop}
+                                    onClick={this.handleSubmit}
                                     title="Crop"
                                 />
                                 <IconButton style={{ marginTop: 10 }}

@@ -10,7 +10,7 @@ export default class Charts extends Component {
                     <div className={styles.routeTitle}>Chart</div>
                 </div>
                 <div className={styles.routeBody}>
-                    ...
+                    ... in progress
                 </div>
             </div>
         );

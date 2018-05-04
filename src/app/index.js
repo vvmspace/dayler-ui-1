@@ -46,7 +46,7 @@ export default class App extends Component {
             icon: 'activity',
             link: '/charts',
             title: 'Charts',
-            visible: true,
+            visible: false,
         }, {
             component: Colors,
             icon: 'aperture',
@@ -88,7 +88,7 @@ export default class App extends Component {
             icon: 'droplet',
             link: '/snackbar',
             title: 'Snackbar',
-            visible: true,
+            visible: false,
         }, {
             component: Switches,
             icon: 'toggle-left',

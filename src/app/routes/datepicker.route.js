@@ -10,7 +10,7 @@ export default class DatePicker extends Component {
                     <div className={styles.routeTitle}>DatePicker</div>
                 </div>
                 <div className={styles.routeBody}>
-                    ...
+                    ... in progress
                 </div>
             </div>
         );
