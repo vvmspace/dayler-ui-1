@@ -1,11 +1,15 @@
-dot() {
-	background-color #FFF
-	width 5px
-	height 5px
-	padding 0
-	margin 0
-	position absolute
-}
+$DOT-COLOR = #FFFFFF
+$CONTAINER-BACKGROUND = #FFFFFF
+$PORTAL-OUTLINE = #AAAAAA
+$FRAME-BACKGROUND = #AAAAAA
+
+dot()
+	position: absolute
+	margin: 0
+	padding: 0
+	width: 5px
+	height: 5px
+	background-color: $DOT-COLOR
 
 .wrapper
 	width: 0
@@ -14,32 +18,33 @@ dot() {
 	& > *
 		user-select: none
 
+.input
+	display: none
+
 .shadow
-	position: absolute
 	position: absolute
 	top: 0
 	right: 0
 	bottom: 0
 	left: 0
 	z-index: 100
-	display: flex
+	display: none
 	justify-content: center
 	align-items: center
 	width: 100%
 	height: 100%
 	outline: 1px solid green
 	background-color: rgba(0, 0, 0, .6)
-	display none
-
-.avatars
-	flex-grow: 1
 
 .container
 	top: 100px
 	display: grid
 	border-radius: 2px
-	background-color: #FFFFFF
+	background-color: $CONTAINER-BACKGROUND
 	box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .17)
+
+.avatars
+	flex-grow: 1
 
 .preview
 	display: flex
@@ -53,106 +58,85 @@ dot() {
 	font-weight: 400
 	font-size: 26px
 
-.span
-	&-wrapper
-		position absolute
-		top 0
-		left 0
-		right 0
-		bottom 0
-		background-color transparent
-		cursor move
-		outline 1px solid #FFF
+.portal
+	position: absolute
 
-.crop
-	&-area
-		position absolute
-		top 0
-		left 0
-		right 0
-		bottom 0
-		background-color rgba(0, 0, 0, .3)
+	&-handler
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		outline: 1px dashed $PORTAL-OUTLINE
+		background-color: transparent
+		cursor: move
 
-.caret
-	width 200px
-	height 200px
-	position absolute
-	top 0
-	left 0
-	// top 10px
-	// left 10px
+	&-dot
+		&-tL
+			dot()
 
-	&-circle
-		overflow hidden
-		border-radius 50%
-		width 100%
-		height 100%
-		left 0
-		top 0
-		position absolute
+			top: -3px
+			left: -3px
+			cursor: nw-resize
 
-	&-border
-		position absolute
-		top 0
-		left 0
-		right 0
-		bottom 0
-		background-color transparent
-		cursor move
-		outline 1px dashed #FFF
+		&-tR
+			dot()
 
-	&-image
-		user-select: none;
-		-webkit-user-drag: none;
-		transform: translateZ(0px);
-		perspective: 1000px;
-		backface-visibility: hidden;
-		// margin-left: -10px;
-		// margin-top: -10px;
+			top: -3px
+			right: -3px
+			cursor: ne-resize
 
-	&-tL
-		dot()
+		&-bR
+			dot()
 
-		top -3px
-		left -3px
-		cursor: nw-resize
+			right: -3px
+			bottom: -3px
+			cursor: se-resize
 
-	&-tR
-		dot()
+		&-bL
+			dot()
 
-		top -3px
-		right -3px
-		cursor: ne-resize
+			bottom: -3px
+			left: -3px
+			cursor: sw-resize
 
-
-	&-bL
-		dot()
-
-		bottom -3px
-		left -3px
-		cursor: sw-resize
-
-	&-bR
-		dot()
-
-		bottom -3px
-		right -3px
-		cursor: se-resize
+.frame
+	position: relative
+	display: flex
+	justify-content: center
+	align-items: center
+	overflow: hidden
+	border-top-left-radius: 2px
+	border-bottom-left-radius: 2px
+	background-color: $FRAME-BACKGROUND
 
 .source
-	&-container
-		display: flex
-		justify-content: center
-		align-items: center
-		border-top-left-radius: 2px
-		border-bottom-left-radius: 2px
-		background-color: #AAAAAA
-		position relative
+	width: auto
+	user-select: none
+	-webkit-backface-visibility: hidden
+	-webkit-perspective: 1000
+	-webkit-transform: translateZ(0)
 
-	&-image
-		width: auto
+	&-shadow
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba(0, 0, 0, .4)
+
+.fake
+	&-portal
+		position: absolute
+		top: 0
+		left: 0
+		overflow: hidden
+		width: 100%
+		height: 100%
+		border-radius: 50%
+
+	&-source
+		backface-visibility: hidden
+		transform: translateZ(0)
 		user-select: none
-		user-drag: none
-		-webkit-transform: translateZ(0)
-		-webkit-perspective: 1000
-		-webkit-backface-visibility: hidden
+		perspective: 1000px

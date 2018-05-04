@@ -38,7 +38,12 @@ export default class ImageCrop extends Component {
                     <Panel title="crop" icon="crop" innerStyle={innerStyle} outerStyle={outerStyle}>
                         <Avatar image={image} size={200} style={{ marginBottom: 20 }} />
                         <Button title="change" onClick={this.handleClick} />
-                        <Crop origin={{ x: 10, y: 100 }} portalNode="root"
+                        <Crop node="root"
+                            x={20}
+                            y={30}
+                            size={100}
+                            width={760}
+                            height={500}
                             onMount={referance => this.cropper = referance}
                             onChange={this.handleChange}
                         />
