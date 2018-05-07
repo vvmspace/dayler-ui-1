@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import styles from '../styles.styl';
 
-export default class DatePicker extends Component {
+export default class DatePickerRoute extends Component {
     render() {
         return (
             <div className={styles.route}>

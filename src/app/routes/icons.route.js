@@ -294,7 +294,7 @@ const iconsStyle = {
     },
 };
 
-export default class Icons extends Component {
+export default class IconsRoute extends Component {
     render() {
         return (
             <div className={styles.route}>

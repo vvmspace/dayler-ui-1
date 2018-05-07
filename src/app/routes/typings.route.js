@@ -5,7 +5,7 @@ import { Panel } from 'ui';
 
 import styles from '../styles.styl';
 
-export default class Typings extends Component {
+export default class TypingsRoute extends Component {
     render() {
         return (
             <div className={styles.route}>

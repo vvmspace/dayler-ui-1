@@ -3,7 +3,7 @@ import { Panel } from 'ui';
 
 import styles from '../styles.styl';
 
-export default class Colors extends Component {
+export default class ColorsRoute extends Component {
     render() {
         return (
             <div className={styles.route}>

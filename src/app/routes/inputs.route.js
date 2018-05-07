@@ -5,7 +5,7 @@ import { Button, Input, Panel } from 'ui';
 
 import styles from '../styles.styl';
 
-export default class Inputs extends Component {
+export default class InputsRoute extends Component {
     render() {
         return (
             <div className={styles.route}>

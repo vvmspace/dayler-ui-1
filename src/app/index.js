@@ -88,7 +88,7 @@ export default class App extends Component {
             icon: 'droplet',
             link: '/snackbar',
             title: 'Snackbar',
-            visible: false,
+            visible: true,
         }, {
             component: Switches,
             icon: 'toggle-left',

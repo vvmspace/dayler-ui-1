@@ -5,7 +5,7 @@ import { Panel } from 'ui';
 
 import styles from '../styles.styl';
 
-export default class Panels extends Component {
+export default class PanelsRoute extends Component {
     render() {
         return (
             <div className={styles.route}>

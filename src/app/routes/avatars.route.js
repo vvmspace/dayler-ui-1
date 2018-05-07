@@ -5,7 +5,7 @@ import { Avatar, Panel } from 'ui';
 
 import styles from '../styles.styl';
 
-export default class Avatars extends Component {
+export default class AvatarsRoute extends Component {
     render() {
         return (
             <div className={styles.route}>

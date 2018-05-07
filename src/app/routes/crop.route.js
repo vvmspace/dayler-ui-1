@@ -11,7 +11,7 @@ const innerStyle = {
     flexDirection: 'column',
 };
 
-export default class ImageCrop extends Component {
+export default class ImageCropRoute extends Component {
     state = {
         image: 'https://cdn.dayler.io/images/avatar.svg',
     };

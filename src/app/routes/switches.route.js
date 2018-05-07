@@ -5,7 +5,7 @@ import { Checkbox, Switch, Panel, Radio } from 'ui';
 
 import styles from '../styles.styl';
 
-export default class Switches extends Component {
+export default class SwitchesRoute extends Component {
     state = {
         checkedRadio: "1",
     }

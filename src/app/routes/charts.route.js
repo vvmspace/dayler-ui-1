@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import styles from '../styles.styl';
 
-export default class Charts extends Component {
+export default class ChartsRoute extends Component {
     render() {
         return (
             <div className={styles.route}>

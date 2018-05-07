@@ -6,7 +6,7 @@ import { IconButton, Button, Panel } from 'ui';
 
 import styles from '../styles.styl';
 
-export default class Buttons extends Component {
+export default class ButtonsRoute extends Component {
     render() {
         return (
             <div className={styles.route}>

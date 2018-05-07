@@ -260,6 +260,39 @@ export default class MyClass extends Component {
 }
 ```
 
+#### Snackbar
+```js
+import React, { Component } from 'react';
+import { Button, Snackbar } from 'dayler-ui';
+
+export class SnackBarExample extends Component {
+    handleAlert = () => {
+        const options = {
+            type: 'red', // default: 'dark', should be one of ['dark', 'red', 'green', 'yellow']
+            duration: 4000, // default 4000ms
+        }
+
+        this.snackBar('Snackbar title', options);
+    }
+
+    render() {
+        return (
+            <div>
+                <Snackbar onMount={referance => this.snackBar = referance}
+                    duration={4000}
+                    node="root"
+                    position="NE"
+                    type="dark"
+                />
+
+                <Button title="Show Snackbar" onClick={this.handleAlert} />
+            </div>
+        );
+    }
+
+}
+```
+
 
 ---
 *Made with* :heart: *for [Dayler.io](https://dayler.io)*

@@ -1,6 +1,6 @@
 {
   "name": "dayler-ui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "./lib/index.min.js",
   "scripts": {
     "dist": "webpack --config ./webpack/index.js",
@@ -21,8 +21,23 @@
     "url": "git+https://github.com/iknpx/dayler-ui.git"
   },
   "keywords": [
+    "buttons",
+    "checkbox",
+    "date-picker",
+    "feather",
+    "image-crop",
+    "input",
+    "panels",
+    "radio",
     "react",
-    "ui-components"
+    "snackbar",
+    "stylus",
+    "switcher",
+    "tabs",
+    "typings",
+    "ui",
+    "ui-components",
+    "webpack"
   ],
   "author": "Iknpx",
   "license": "MIT",
