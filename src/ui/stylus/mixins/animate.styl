@@ -65,3 +65,15 @@ fadeInRight(duration)
 		to
 			opacity: 1
 			transform: none
+
+fadeOut(duration)
+	animation-name: fadeOut
+	animation-duration: duration
+	animation-fill-mode: both
+
+	@keyframes fadeOut
+		from
+			opacity: 1
+
+		to
+			opacity: 0
