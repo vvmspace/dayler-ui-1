@@ -142,6 +142,9 @@ import { Button, Input } from 'dayler-ui';
 ```js
 import { TabsRouter } from 'dayler-ui';
 
+import TabInitial from './TabInitial';
+import TabUsage from './TabUsage';
+
 export default class Tabs extends Component {
     routes = [{
         component: TabInitial,
@@ -156,9 +159,8 @@ export default class Tabs extends Component {
     }];
 
     render() {
-        // You MUST provide router props as {...this.props}
         return (
-            <TabsRouter routes={this.routes} {...this.props} />
+            <TabsRouter routes={this.routes} />
         );
     }
 }

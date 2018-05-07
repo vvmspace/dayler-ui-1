@@ -25,7 +25,7 @@ export default class Tabs extends Component {
                     <div className={styles.routeTitle}>Tabs</div>
                 </div>
                 <div className={styles.routeBody}>
-                    <TabsRouter routes={this.routes} {...this.props} />
+                    <TabsRouter routes={this.routes} />
                 </div>
             </div>
         );

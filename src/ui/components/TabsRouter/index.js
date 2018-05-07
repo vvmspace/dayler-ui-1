@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, withRouter } from 'react-router-dom';
 
 import styles from './styles.styl';
 
-export default class TabsRouter extends Component {
+class TabsRouterComponent extends Component {
     static propTypes = {
         innerStyle: PropTypes.object,
         location: PropTypes.object.isRequired,
@@ -73,3 +73,5 @@ export default class TabsRouter extends Component {
         );
     }
 }
+
+export default withRouter(TabsRouterComponent);
