@@ -13,7 +13,7 @@ pipeline:
         - pull_request
 
   build:
-    image: node:8
+    image: node:carbon
     commands:
       - npm install --quiet
       - npm run dist
