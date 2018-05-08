@@ -16,7 +16,6 @@ pipeline:
     image: node:carbon
     environment:
       - NODE_ENV=production
-      - KEY=$ROOT_KEY
     secrets: [ root_key ]
     commands:
       - npm run dist
