@@ -30,7 +30,8 @@ pipeline:
     image: node:carbon
     secrets: [ root_key ]
     commands:
-      - npm run deploy:production
+      - npm install -g gulp
+      - gulp deploy:production
     when:
       branch:
         - master

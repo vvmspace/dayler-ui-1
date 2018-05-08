@@ -3,7 +3,6 @@
   "version": "1.0.10",
   "main": "./lib/index.min.js",
   "scripts": {
-    "deploy": "gulp deploy",
     "dist": "webpack --config ./webpack/index.js",
     "eslint": "eslint .",
     "lib": "webpack --config ./webpack/lib.js",
