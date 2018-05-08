@@ -1,22 +1,12 @@
 pipeline:
-  install:
+  test:
     image: node:8
     commands:
-      - npm install
+      - npm install --quiet
+      - npm test
     when:
       branch:
         - master
       event:
         - push
         - pull_request
-
-  test:
-    image: node:latest
-    commands:
-      - npm test
-  build:
-    image: node:latest
-    environment:
-      - NODE_ENV=production
-    commands:
-      - npm run dist
