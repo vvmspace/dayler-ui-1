@@ -17,6 +17,7 @@ pipeline:
     commands:
       - npm install --quiet
       - npm run dist
+      - ls ./dist
 
     when:
       branch:
