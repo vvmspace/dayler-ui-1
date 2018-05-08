@@ -3,7 +3,21 @@ pipeline:
     image: node:8
     commands:
       - npm install --quiet
-      - npm test
+      - npm run eslint
+      - npm run stylint
+    when:
+      branch:
+        - master
+      event:
+        - push
+        - pull_request
+
+  build:
+    image: node:8
+    commands:
+      - npm install --quiet
+      - npm run dist
+
     when:
       branch:
         - master
