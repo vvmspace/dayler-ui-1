@@ -1,6 +1,6 @@
 pipeline:
   test:
-    image: node:8
+    image: node:carbon
     commands:
       - npm install --quiet
       - npm run eslint
@@ -18,7 +18,7 @@ pipeline:
       - NODE_ENV=production
     commands:
       - npm run dist
-      - ls ./dist
+      - npm run deploy
 
     when:
       branch:
