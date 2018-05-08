@@ -14,8 +14,9 @@ pipeline:
 
   build:
     image: node:carbon
+    environment:
+      - NODE_ENV=production
     commands:
-      - npm install --quiet
       - npm run dist
       - ls ./dist
 
