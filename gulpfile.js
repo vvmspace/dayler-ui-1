@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const sftp = require('gulp-sftp');
 
-gulp.task('deploy', function () {
+gulp.task('deploy:production', function () {
     return gulp.src('dist/*')
         .pipe(sftp({
             host: 'dayler.io',

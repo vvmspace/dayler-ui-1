@@ -1,5 +1,5 @@
 pipeline:
-  test:
+  lint:
     image: node:carbon
     commands:
       - npm install --quiet
@@ -12,14 +12,25 @@ pipeline:
         - push
         - pull_request
 
-  build:
+  build_production:
     image: node:carbon
     environment:
       - NODE_ENV=production
     secrets: [ root_key ]
     commands:
       - npm run dist
-      - npm run deploy
+    when:
+      branch:
+        - master
+      event:
+        - push
+        - pull_request
+
+  deploy_production:
+    image: node:carbon
+    secrets: [ root_key ]
+    commands:
+      - npm run deploy:production
     when:
       branch:
         - master
