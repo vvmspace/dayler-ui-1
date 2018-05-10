@@ -37,3 +37,26 @@ pipeline:
         - master
       event:
         - push
+
+  build_package:
+    image: node:carbon
+    environment:
+      - NODE_ENV=production
+    commands:
+      - npm run lib
+    when:
+      branch:
+        - master
+      event:
+        - push
+
+  npm:
+    image: plugins/npm
+    username: iknpx@aol.com
+    email: iknpx@aol.com
+    secrets: [ npm_password ]
+    when:
+      branch:
+        - master
+      event:
+        - push
