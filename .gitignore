@@ -6,4 +6,5 @@
 *.lock
 
 dist
+lib
 node_modules

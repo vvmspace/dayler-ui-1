@@ -12,7 +12,7 @@ pipeline:
         - push
         - pull_request
 
-  build_production:
+  build_production_example:
     image: node:carbon
     environment:
       - NODE_ENV=production
@@ -26,18 +26,6 @@ pipeline:
         - push
         - pull_request
 
-  deploy_production:
-    image: node:carbon
-    secrets: [ root_key ]
-    commands:
-      - npm install -g gulp
-      - gulp deploy:production
-    when:
-      branch:
-        - master
-      event:
-        - push
-
   build_package:
     image: node:carbon
     environment:
@@ -50,7 +38,19 @@ pipeline:
       event:
         - push
 
-  npm:
+  deploy_production_example:
+    image: node:carbon
+    secrets: [ root_key ]
+    commands:
+      - npm install -g gulp
+      - gulp deploy:production
+    when:
+      branch:
+        - master
+      event:
+        - push
+
+  deploy_package:
     image: plugins/npm
     username: iknpx@aol.com
     email: iknpx@aol.com
