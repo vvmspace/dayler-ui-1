@@ -60,6 +60,11 @@ pipeline:
       event:
         - push
 
+  check:
+    image: node:carbon
+    commands:
+      - ls ./lib
+
   deploy_package:
     image: plugins/npm
     username: iknpx@aol.com
