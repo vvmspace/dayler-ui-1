@@ -3,7 +3,6 @@ pipeline:
     image: node:carbon
     commands:
       - npm install --quiet
-      - npm install -g gulp
     when:
       branch:
         - master
@@ -53,6 +52,7 @@ pipeline:
     image: node:carbon
     secrets: [ root_key ]
     commands:
+      - npm install -g gulp
       - gulp deploy:production
     when:
       branch:
