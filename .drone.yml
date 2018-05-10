@@ -1,8 +1,18 @@
 pipeline:
-  lint:
+  install:
     image: node:carbon
     commands:
       - npm install --quiet
+    when:
+      branch:
+        - master
+      event:
+        - push
+        - pull_request
+
+  lint:
+    image: node:carbon
+    commands:
       - npm run eslint
       - npm run stylint
     when:
