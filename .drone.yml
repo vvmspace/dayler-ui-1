@@ -64,6 +64,7 @@ pipeline:
     image: plugins/npm
     username: iknpx@aol.com
     email: iknpx@aol.com
+    registry: https://registry.npmjs.org/
     secrets: [ npm_password ]
     when:
       branch:
