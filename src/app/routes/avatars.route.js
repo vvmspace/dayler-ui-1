@@ -22,7 +22,7 @@ export default class AvatarsRoute extends Component {
                         </div>
                         <hr style={{ margin: '20px 0' }} />
                         <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
-                            {`import { Avatar } from 'ui';\n\n<Avatar />\n<Avatar image="https://cdn.dayler.io/images/avatar.svg" />\n<Avatar name="Stephen Hawking" />\n<Avatar name="Stephen Hawking" image="https://cdn.dayler.io/images/avatar.svg" />`}
+                            {`import { Avatar } from 'dayler-ui';\n\n<Avatar />\n<Avatar image="https://cdn.dayler.io/images/avatar.svg" />\n<Avatar name="Stephen Hawking" />\n<Avatar name="Stephen Hawking" image="https://cdn.dayler.io/images/avatar.svg" />`}
                         </SyntaxHighlighter>
                     </Panel>
                     <Panel title="Sized Avatars" icon="code">
@@ -34,7 +34,7 @@ export default class AvatarsRoute extends Component {
                         </div>
                         <hr style={{ margin: '20px 0' }} />
                         <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
-                            {`import { Avatar } from 'ui';\n\n<Avatar size={65} />\n<Avatar image="https://cdn.dayler.io/images/avatar.svg" size={65} />\n<Avatar name="Stephen Hawking" size={65} />\n<Avatar name="Stephen Hawking" image="https://cdn.dayler.io/images/avatar.svg" size={65} />`}
+                            {`import { Avatar } from 'dayler-ui';\n\n<Avatar size={65} />\n<Avatar image="https://cdn.dayler.io/images/avatar.svg" size={65} />\n<Avatar name="Stephen Hawking" size={65} />\n<Avatar name="Stephen Hawking" image="https://cdn.dayler.io/images/avatar.svg" size={65} />`}
                         </SyntaxHighlighter>
                     </Panel>
                 </div>

@@ -24,15 +24,16 @@ export default class App extends Component {
             : true,
         nav: [{
             component: Typings,
-            exact: true,
+            exact: false,
             icon: 'type',
-            link: '/',
+            link: '/typings',
             title: 'Typings',
-            visible: true,
+            visible: false,
         }, {
             component: Avatars,
+            exact: true,
             icon: 'user-plus',
-            link: '/avatars',
+            link: '/',
             title: 'Avatars',
             visible: true,
         }, {

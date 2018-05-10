@@ -15,12 +15,12 @@ npm install --save dayler-ui
 ### Usage
 You can easily add base styles for you app from `.stylus`
 ```stylus
-@import '~dayler-ui/src/ui/stylus/base.styl'
+@import '~dayler-ui/src/ui/stylus/base'
 ```
 
 #### Colors
 ```stylus
-@import '~dayler-ui/src/ui/stylus/base.styl'
+@import '~dayler-ui/src/ui/stylus/colors'
 
 $DARK = #585C67
 $DEFAULT = #EEEEEE

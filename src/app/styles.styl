@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&subset=cyrillic')
 @import '~ui/stylus/mixins/animate'
 @import '~ui/stylus/base.styl'
 
 $NAV_EXAPNDED = 280px
 $NAV_UNEXAPNDED = 80px
 $BACKGROUND-COLOR = #F8F8F8
-$ROUTE-TITLE-COLOR = #333333
+$ROUTE-TITLE-COLOR = #666666
+
+*
+	font-family: 'PT Sans', sans-serif
 
 body, html
 	min-width: 1024px
 	height: 100%
+	font-family: 'PT Sans', sans-serif
 
 :global(.root)
 	min-width: 100%
@@ -39,6 +44,6 @@ body, html
 
 	&-title
 		color: $ROUTE-TITLE-COLOR
-		font-weight: 300
+		font-weight: 700
 		font-size: 24px
 		line-height: 24px
