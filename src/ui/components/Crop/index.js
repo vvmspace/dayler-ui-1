@@ -356,7 +356,7 @@ export default class Crop extends Component {
         } = this.state;
 
         const containerStyle = {
-            gridTemplateColumns: `${containerHeight}px auto`,
+            gridTemplateColumns: `${containerHeight}px 300px`,
             height: containerHeight,
             width: containerWidth,
         };
@@ -456,16 +456,16 @@ export default class Crop extends Component {
                                 <Avatar image={result} style={{ marginBottom: 20 }} size={100} />
                             </div>
                             <div>
-                                <IconButton style={{ marginRight: 10, marginTop: 10 }}
+                                <IconButton style={{ marginRight: 10, marginTop: 10, paddingTop: 1 }}
                                     color="red"
                                     icon="crop"
                                     onClick={this.handleSubmit}
                                     title="Apply"
                                 />
-                                <IconButton style={{ marginTop: 10 }}
-                                    color="dark"
+                                <IconButton style={{ marginTop: 10, paddingTop: 1 }}
                                     icon="x"
                                     onClick={this.handleClose}
+                                    title="Cancel"
                                 />
                             </div>
                         </div>

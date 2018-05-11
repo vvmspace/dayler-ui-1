@@ -63,6 +63,11 @@ export default class ButtonsRoute extends Component {
                             title="Next"
                             color="yellow"
                         />
+                        <IconButton style={{ marginRight: 10 }}
+                            color="red"
+                            icon="crop"
+                            title="Apply"
+                        />
                         <hr style={{ margin: '20px 0' }} />
                         <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
                             {`import { IconButton } from 'dayler-ui';\n\n\n<IconButton icon="code" />\n<IconButton icon="cloud-off" color="dark" />\n<IconButton icon="chevrons-right" color="red" />\n<IconButton icon="printer" title="print" color="green" />\n<IconButton icon="chevrons-right" title="Next" color="yellow" />`}
