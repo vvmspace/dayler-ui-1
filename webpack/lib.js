@@ -1,3 +1,4 @@
+const autoprefixer = require('autoprefixer');
 const path = require('path');
 const Uglify = require('uglifyjs-webpack-plugin');
 
