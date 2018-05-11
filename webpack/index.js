@@ -1,4 +1,5 @@
 const Assets = require('copy-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const webpack = require('webpack');
@@ -34,7 +35,17 @@ const options = {
                     loader: 'css-loader',
                     options: {
                         camelCase: 'only',
+                        importLoaders: 2,
                         modules: true,
+                    },
+                }, {
+                    loader: 'postcss-loader',
+                    options: {
+                        plugins: [
+                            autoprefixer({
+                                browsers:['ie >= 8', 'last 4 version'],
+                            }),
+                        ],
                     },
                 }, {
                     loader: 'stylus-loader',

@@ -460,13 +460,12 @@ export default class Crop extends Component {
                                     color="red"
                                     icon="crop"
                                     onClick={this.handleSubmit}
-                                    title="Crop"
+                                    title="Apply"
                                 />
                                 <IconButton style={{ marginTop: 10 }}
                                     color="dark"
                                     icon="x"
                                     onClick={this.handleClose}
-                                    title="Cancel"
                                 />
                             </div>
                         </div>

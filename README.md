@@ -2,7 +2,7 @@
 ---
 ![Build Status](https://drone.dayler.io/api/badges/iknpx/dayler-ui/status.svg) [![npm version](https://badge.fury.io/js/dayler-ui.svg)](https://badge.fury.io/js/dayler-ui)
 
-Dayler React Components
+Dayler React Components 
 
 ### Api with examples
 [https://ui.dayler.io](https://ui.dayler.io)
@@ -210,6 +210,7 @@ import { Switch } from 'dayler-ui';
 import { Radio } from 'ui';
 
 const { checkedRadio } = this.state;
+
 <Radio title="Default"
     checked={checkedRadio === "1"}
     onChange={this.handleRadioChange}
@@ -308,7 +309,6 @@ export class SnackBarExample extends Component {
             </div>
         );
     }
-
 }
 ```
 

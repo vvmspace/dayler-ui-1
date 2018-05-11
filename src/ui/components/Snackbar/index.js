@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import styles from './stylus.styl';
+import styles from './styles.styl';
 
 export default class Snacbar extends Component {
     static propTypes = {

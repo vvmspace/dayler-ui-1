@@ -65,10 +65,10 @@ dot()
 		right: 0
 		bottom: 0
 		left: 0
+		z-index: 101
 		outline: 1px dashed $PORTAL-OUTLINE
 		background-color: transparent
 		cursor: move
-		z-index: 101
 		user-select: none
 
 	&-dot
@@ -112,10 +112,11 @@ dot()
 
 .source
 	width: auto
+	filter: blur(2px)
+	backface-visibility: hidden
+	transform: translateZ(0)
 	user-select: none
-	-webkit-backface-visibility: hidden
-	-webkit-perspective: 1000
-	-webkit-transform: translateZ(0)
+	perspective: 1000px
 
 	&-shadow
 		position: absolute
@@ -130,12 +131,11 @@ dot()
 		position: absolute
 		top: 0
 		left: 0
+		z-index: 100
 		overflow: hidden
 		width: 100%
 		height: 100%
 		border-radius: 50%
-		background-color #FFF
-		z-index 100
 
 	&-source
 		backface-visibility: hidden

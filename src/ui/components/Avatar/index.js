@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
-import styles from './stylus.styl';
+import styles from './styles.styl';
 
 export default class Avatar extends Component {
     static propTypes = {
@@ -26,10 +26,7 @@ export default class Avatar extends Component {
         const { image, innerStyle, name, prevenHideName, size, style, ...props } = this.props;
 
         const elementStyle = { width: size, height: size };
-        const fontStyle = {
-            fontSize: size * 0.34,
-            top: size > 70 ? 3 : 2,
-        };
+        const fontStyle = { fontSize: size * 0.34, top: size > 70 ? 4 : 2 };
         const heightIndex = size > 100 ? 1.2 : 1.4;
         const iconSize = size / 2;
         const imageStyle = { width: size - 4, height: size - 4 };
