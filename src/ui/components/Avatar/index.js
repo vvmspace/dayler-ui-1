@@ -28,7 +28,7 @@ export default class Avatar extends Component {
         const elementStyle = { width: size, height: size };
         const fontStyle = {
             fontSize: size * 0.34,
-            top: size > 70 ? 1 : 0,
+            top: size > 70 ? 3 : 2,
         };
         const heightIndex = size > 100 ? 1.2 : 1.4;
         const iconSize = size / 2;
