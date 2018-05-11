@@ -36,12 +36,14 @@ class TabsRouterComponent extends Component {
         return { left, width };
     };
 
-    componentWillReceiveProps(nextProps) {
-        this.setState(this.getBorderStyle(nextProps));
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.setState(this.getBorderStyle(this.props));
+        }
     }
 
     componentDidMount() {
-        document.fonts.ready.then(() => this.setState(this.getBorderStyle(this.props, true)));
+        document.fonts.ready.then(() => this.setState(this.getBorderStyle(this.props)));
     }
 
     render() {
