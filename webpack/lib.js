@@ -39,7 +39,17 @@ module.exports = {
                     loader: 'css-loader',
                     options: {
                         camelCase: 'only',
+                        importLoaders: 2,
                         modules: true,
+                    },
+                }, {
+                    loader: 'postcss-loader',
+                    options: {
+                        plugins: [
+                            autoprefixer({
+                                browsers:['ie >= 8', 'last 4 version'],
+                            }),
+                        ],
                     },
                 }, {
                     loader: 'stylus-loader',
