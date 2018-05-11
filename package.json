@@ -1,6 +1,6 @@
 {
   "name": "dayler-ui",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "main": "./lib/index.min.js",
   "scripts": {
     "dist": "webpack --config ./webpack/index.js",
