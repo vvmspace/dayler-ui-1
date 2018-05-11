@@ -67,10 +67,7 @@ pipeline:
 
   deploy_package:
     image: plugins/npm
-    username: iknpx@aol.com
-    email: iknpx@aol.com
-    registry: https://registry.npmjs.org
-    secrets: [ npm_password ]
+    secrets: [ NPM_USERNAME, NPM_PASSWORD, NPM_EMAIL ]
     when:
       branch:
         - master
