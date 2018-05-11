@@ -30,6 +30,23 @@ $RED = #E14839
 $YELLOW = #F0B458
 ```
 
+#### Avatars
+```js
+import { Avatar } from 'dayler-ui';
+
+// Default avatars
+<Avatar />
+<Avatar image="https://cdn.dayler.io/images/avatar.svg" />
+<Avatar name="Stephen Hawking" />
+<Avatar name="Stephen Hawking" image="https://cdn.dayler.io/images/avatar.svg" />
+
+// Sized avatars
+<Avatar size={65} />
+<Avatar image="https://cdn.dayler.io/images/avatar.svg" size={65} />
+<Avatar name="Stephen Hawking" size={65} />
+<Avatar name="Stephen Hawking" image="https://cdn.dayler.io/images/avatar.svg" size={65} />
+```
+
 #### Panels
 ```js
 import { Panel } from 'dayler-ui';
