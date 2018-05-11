@@ -1,15 +1,10 @@
-$CONTAINER-BACKGROUND = #FFFFFF
-$DOT-COLOR = #FFFFFF
-$FRAME-BACKGROUND = #AAAAAA
-$PORTAL-OUTLINE = #AAAAAA
-
 dot()
 	position: absolute
 	margin: 0
 	padding: 0
 	width: 5px
 	height: 5px
-	background-color: $DOT-COLOR
+	background-color: #fff
 
 .wrapper
 	width: 0
@@ -40,7 +35,7 @@ dot()
 	top: 100px
 	display: grid
 	border-radius: 2px
-	background-color: $CONTAINER-BACKGROUND
+	background-color: #fff
 	box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .17)
 
 .avatars
@@ -66,7 +61,7 @@ dot()
 		bottom: 0
 		left: 0
 		z-index: 101
-		outline: 1px dashed $PORTAL-OUTLINE
+		outline: 1px dashed #aaa
 		background-color: transparent
 		cursor: move
 		user-select: none
@@ -108,7 +103,7 @@ dot()
 	overflow: hidden
 	border-top-left-radius: 2px
 	border-bottom-left-radius: 2px
-	background-color: $FRAME-BACKGROUND
+	background-color: #aaa
 
 .source
 	width: auto

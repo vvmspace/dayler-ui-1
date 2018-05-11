@@ -32,7 +32,9 @@ export default class SnackbarRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Snackbar</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Snackbar</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
                     <Panel title="snackbar" icon="code" outerStyle={{ marginBottom: 20 }}>

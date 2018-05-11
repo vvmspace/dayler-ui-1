@@ -7,7 +7,9 @@ export default class ChartsRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Chart</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Charts</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
                     ... in progress

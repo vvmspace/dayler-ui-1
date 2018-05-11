@@ -11,7 +11,9 @@ export default class ButtonsRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Buttons</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Buttons</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
                     <Panel title="default button" icon="code" outerStyle={{ marginBottom: 20 }}>

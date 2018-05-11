@@ -1,8 +1,6 @@
 @import '../../stylus/mixins/animate'
 @import '../../stylus/colors'
 
-$TITLE-COLOR = #FFFFFF
-
 .container
 	position: absolute
 	display: flex
@@ -16,13 +14,15 @@ $TITLE-COLOR = #FFFFFF
 	display: flex
 	justify-content: center
 	align-items: center
-	padding: 10px 20px
+	padding: 13px 20px 10px
 	width: 100%
 	border-radius: 2px
 	background-color: $DARK
-	color: $TITLE-COLOR
+	color: #fff
 	line-height: 24px
-
+	font-size 14px
+	font-weight 300
+	font-family: 'Myriad Pro', 'PT Sans', arial, sans-serif
 	user-select: none
 
 	&:not(:last-child)

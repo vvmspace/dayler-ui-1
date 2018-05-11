@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter/prism';
 import { coy } from 'react-syntax-highlighter/styles/prism';
-import { Button, Input, Panel } from 'ui';
+import { Button, IconButton, Input, Panel } from 'ui';
 
 import styles from '../styles.styl';
 
@@ -10,7 +10,9 @@ export default class InputsRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Inputs</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Inputs</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
                     <Panel title="Inputs" icon="code" outerStyle={{ marginBottom: 20 }}>
@@ -24,7 +26,7 @@ export default class InputsRoute extends Component {
                     <Panel title="Input with button" icon="code" outerStyle={{ marginBottom: 20 }}>
                         <div style={{ display: 'flex' }}>
                             <Input placeholder="Text Input with button" outerStyle={{ width: 200, marginRight: 10 }} />
-                            <Button title="Submit" color="red" />
+                            <IconButton title="Submit" icon="arrow-right-circle" color="red" />
                         </div>
                         <hr style={{ margin: '20px 0' }}/>
                         <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>

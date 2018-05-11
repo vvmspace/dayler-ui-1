@@ -10,7 +10,9 @@ export default class TypingsRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Typings</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Typings</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
                     <Panel title="headings" icon="code" outerStyle={{ marginBottom: 20 }}>

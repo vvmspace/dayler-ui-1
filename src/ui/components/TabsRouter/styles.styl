@@ -1,14 +1,9 @@
 @import '../../stylus/colors'
 
-$BACKGROUND = #FFFFFF
-$HEADER-BORDER = #DDDDDD
-$LINK-ACTIVE = #202020
-$LINK-DEFAULT = #909090
-
 .router
 	width: 800px
 	border-radius: 2px
-	background-color: $BACKGROUND
+	background-color: #fff
 	box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .17)
 
 .header
@@ -18,8 +13,9 @@ $LINK-DEFAULT = #909090
 	align-items: flex-end
 	padding: 0 20px
 	height: 60px
-	border-bottom: 2px solid $HEADER-BORDER
+	border-bottom: 2px solid #ddd
 	user-select: none
+	font-family: 'Myriad Pro', 'PT Sans', arial, sans-serif
 
 .body
 	padding: 30px
@@ -30,14 +26,14 @@ $LINK-DEFAULT = #909090
 	display: block
 	padding: 15px 10px
 	min-width: 80px
-	color: $LINK-DEFAULT
+	color: #909090
 	text-align: center
 	text-decoration: none
 	text-transform: uppercase
-	font-size: .9em
+	font-size: 12px
 
 .active
-	color: $LINK-ACTIVE
+	color: #202020
 
 .border
 	position: absolute

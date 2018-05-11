@@ -21,7 +21,9 @@ export default class SwitchesRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Switches</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Switches</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
                     <Panel title="checkboxes" icon="check" innerStyle={{ display: 'grid', gridTemplateColumns: '100px auto' }} outerStyle={{ marginBottom: 20 }}>

@@ -8,7 +8,9 @@ export default class ColorsRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Colors</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Colors</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
                     <div style={{ marginBottom: 20 }}>

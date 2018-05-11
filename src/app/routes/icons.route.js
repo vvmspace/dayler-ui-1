@@ -299,7 +299,9 @@ export default class IconsRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Icons</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Icons</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
                     <Panel title="usage" icon="code">

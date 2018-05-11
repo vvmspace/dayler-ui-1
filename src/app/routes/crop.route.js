@@ -30,7 +30,9 @@ export default class ImageCropRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Image Crop</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Image Crop</h3>
+                    </div>
                 </div>
                 <Crop node="root"
                     height={500}

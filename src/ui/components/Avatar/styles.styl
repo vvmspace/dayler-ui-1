@@ -1,15 +1,11 @@
-$BACKGROUND-COLOR = #AAAAAA
-$ICON-COLOR = #FEFEFE
-$NAME-COLOR = #888888
-
 defaultStyles()
 	display: flex
 	justify-content: center
 	align-items: center
-	border: 2px solid $BACKGROUND-COLOR
+	border: 2px solid #aaa
 	border-radius: 50%
-	background-color: $BACKGROUND-COLOR + 20%
-	color: $ICON-COLOR
+	background-color: #aaa + 20%
+	color: #fefefe
 
 .iconAvatar, .imageAvatar, .fontAvatar
 	defaultStyles()
@@ -19,12 +15,13 @@ defaultStyles()
 	flex-direction: column
 	justify-content: space-between
 	align-items: center
+	font-family: 'Myriad Pro', 'PT Sans', arial, sans-serif
 
 .name
 	display: flex
 	flex-grow: 1
 	align-items: flex-end
-	color: $NAME-COLOR
+	color: #888
 	text-align: center
 	font-size: 13px
 	line-height: 13px

@@ -10,10 +10,12 @@ export default class AvatarsRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Avatars</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Avatars</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
-                    <Panel title="Default Avatars" icon="code" outerStyle={{ marginBottom: 20 }}>
+                    <Panel title="Default" icon="code" outerStyle={{ marginBottom: 20 }}>
                         <div style={{ display: 'inline-flex' }}>
                             <Avatar style={{ marginRight: 10 }} />
                             <Avatar style={{ marginRight: 10 }} image="https://cdn.dayler.io/images/avatar.svg" />
@@ -25,7 +27,7 @@ export default class AvatarsRoute extends Component {
                             {`import { Avatar } from 'dayler-ui';\n\n<Avatar />\n<Avatar image="https://cdn.dayler.io/images/avatar.svg" />\n<Avatar name="Stephen Hawking" />\n<Avatar name="Stephen Hawking" image="https://cdn.dayler.io/images/avatar.svg" />`}
                         </SyntaxHighlighter>
                     </Panel>
-                    <Panel title="Sized Avatars" icon="code">
+                    <Panel title="Sized" icon="code">
                         <div style={{ display: 'inline-flex' }}>
                             <Avatar style={{ marginRight: 10 }} size={65} />
                             <Avatar style={{ marginRight: 10 }} image="https://cdn.dayler.io/images/avatar.svg" size={65} />

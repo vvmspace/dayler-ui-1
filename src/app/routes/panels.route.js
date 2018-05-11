@@ -10,11 +10,13 @@ export default class PanelsRoute extends Component {
         return (
             <div className={styles.route}>
                 <div className={styles.routeHeader}>
-                    <div className={styles.routeTitle}>Panels</div>
+                    <div className={styles.routeTitle}>
+                        <h3>Panels</h3>
+                    </div>
                 </div>
                 <div className={styles.routeBody}>
                     <Panel outerStyle={{ marginBottom: 20 }}>
-                        <p>Empty Panel</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos molestiae iste obcaecati! Vel perferendis ullam voluptas, corrupti id, officia dolore omnis illo doloribus cumque, dolorum at ducimus numquam inventore reprehenderit.</p>
                         <hr style={{ margin: '20px 0' }}/>
                         <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
                             {`import { Panel } from 'dayler-ui';\n\n<Panel>\n    ...\n</Panel>`}
