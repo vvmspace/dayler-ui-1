@@ -6,6 +6,7 @@ pipeline:
     when:
       branch:
         - master
+        - feature/*
       event:
         - push
         - pull_request
@@ -17,6 +18,7 @@ pipeline:
     when:
       branch:
         - master
+        - feature/*
       event:
         - push
         - pull_request
@@ -31,6 +33,7 @@ pipeline:
     when:
       branch:
         - master
+        - feature/*
       event:
         - push
         - pull_request
@@ -44,6 +47,7 @@ pipeline:
     when:
       branch:
         - master
+        - feature/*
       event:
         - push
 
