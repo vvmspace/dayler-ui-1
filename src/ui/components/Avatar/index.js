@@ -9,6 +9,7 @@ export default class Avatar extends Component {
         image: PropTypes.string,
         innerStyle: PropTypes.object,
         name: PropTypes.string,
+        alwaysHideName: PropTypes.bool,
         prevenHideName: PropTypes.bool,
         size: PropTypes.number.isRequired,
         style: PropTypes.object,
@@ -17,13 +18,14 @@ export default class Avatar extends Component {
     static defaultProps = {
         innerStyle: {},
         name: '',
+        alwaysHideName: false,
         prevenHideName: false,
         size: 120,
         style: {},
     };
 
     render() {
-        const { image, innerStyle, name, prevenHideName, size, style, ...props } = this.props;
+        const { image, innerStyle, name, alwaysHideName, prevenHideName, size, style, ...props } = this.props;
 
         const elementStyle = { width: size, height: size };
         const fontStyle = { fontSize: size * 0.34, top: size > 70 ? 5 : 2 };
@@ -60,7 +62,7 @@ export default class Avatar extends Component {
         return (
             <div className={styles.container} style={{ ...containerStyle, ...style }} {...props}>
                 {ImageAvatar || FontAvatar || IconAvatar}
-                {isNameShown ? <span className={styles.name} style={innerStyle}>{name}</span> : null}
+                {!alwaysHideName ? isNameShown ? <span className={styles.name} style={innerStyle}>{name}</span> : null : null}
             </div>
         );
     }
