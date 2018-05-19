@@ -26,6 +26,10 @@
 	font-size: 12px
 	cursor: pointer
 
+	&:disabled
+		background-color: $DEFAULT + 15%
+		color #666
+
 	&-icon
 		min-width: 45px
 		line-height: 18px
@@ -61,6 +65,10 @@
 	&:hover
 		background-color: $DARK + 10%
 
+	&:disabled
+		background-color: $DARK + 35%
+		color #fff
+
 	& > .ripple
 		background-color: $DARK + 25%
 
@@ -70,6 +78,10 @@
 
 	&:hover
 		background-color: $RED + 10%
+
+	&:disabled
+		background-color: $RED + 25%
+		color #fff
 
 	& > .ripple
 		background-color: $RED + 25%
@@ -81,6 +93,10 @@
 	&:hover
 		background-color: $GREEN + 10%
 
+	&:disabled
+		background-color: $GREEN + 25%
+		color #fff
+
 	& > .ripple
 		background-color: $GREEN + 25%
 
@@ -90,6 +106,10 @@
 
 	&:hover
 		background-color: $YELLOW + 10%
+
+	&:disabled
+		background-color: $YELLOW + 25%
+		color #fff
 
 	& > .ripple
 		background-color: $YELLOW + 25%

@@ -41,6 +41,36 @@ export default class ButtonsRoute extends Component {
                             {`import { Button } from 'dayler-ui';\n\n<Button title="Next" />\n<Button title="Next" color="dark" />\n<Button title="Next" color="red" />\n<Button title="Next" color="green" />\n<Button title="Next" color="yellow" />`}
                         </SyntaxHighlighter>
                     </Panel>
+                    <Panel title="disabled button" icon="code" outerStyle={{ marginBottom: 20 }}>
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            disabled={true}
+                        />
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            color="dark"
+                            disabled={true}
+                        />
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            color="red"
+                            disabled={true}
+                        />
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            color="green"
+                            disabled={true}
+                        />
+                        <Button style={{ marginRight: 10 }}
+                            title="Next"
+                            color="yellow"
+                            disabled={true}
+                        />
+                        <hr style={{ margin: '20px 0' }} />
+                        <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
+                            {`import { Button } from 'dayler-ui';\n\n<Button title="Next" disabled={true} />\n<Button title="Next" color="dark" disabled={true} />\n<Button title="Next" color="red" disabled={true} />\n<Button title="Next" color="green" disabled={true} />\n<Button title="Next" color="yellow" disabled={true} />`}
+                        </SyntaxHighlighter>
+                    </Panel>
                     <Panel title="icon button" icon="code" outerStyle={{ marginBottom: 20 }}>
                         <IconButton style={{ marginRight: 10 }}
                             icon="code"
