@@ -1,26 +1,25 @@
-const Assets = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const rupture = require('rupture');
-const webpack = require('webpack');
-const webpackMerge = require('webpack-merge');
+const Uglify = require('uglifyjs-webpack-plugin');
 
-const options = {
+module.exports = {
+    mode: 'production',
+    output: {
+        path: path.join(process.cwd(), 'lib'),
+        filename: 'index.min.js',
+        library: 'daylerUi',
+        libraryTarget: 'umd',
+    },
     resolve: {
-        extensions: ['.js', '.html'],
-        modules: ['node_modules', 'src'],
-        alias: {
-            '@': path.resolve(__dirname, '../src/app'),
-            '~': path.resolve(__dirname, '../src/stylus'),
-            'dayler-ui': path.resolve(__dirname, '../elements'),
-        },
+        extensions: ['.js'],
+        modules: ['node_modules'],
     },
     resolveLoader: {
-        modules: ['node_modules', 'src'],
+        modules: ['node_modules'],
     },
     entry: {
-        main: ['./src/index.js'],
+        main: ['./src/elements/index.js'],
     },
     module: {
         rules: [
@@ -76,23 +75,6 @@ const options = {
         ],
     },
     plugins: [
-        new Assets([{ to: '', from: 'src/assets' }], {
-            ignore: ['.gitkeep', '**/.DS_Store', '**/Thumbs.db'],
-            debug: 'warning',
-        }),
-        new HtmlWebpackPlugin({
-            filename: './index.html',
-            template: './src/index.html',
-            inject: 'body',
-        }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-            },
-        }),
+        new Uglify(),
     ],
 };
-
-module.exports = process.env.NODE_ENV !== 'production'
-    ? webpackMerge(options, require('./webpack.dev'))
-    : webpackMerge(options, require('./webpack.dist'));

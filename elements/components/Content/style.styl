@@ -1,0 +1,35 @@
+@import '~s-grid/s-grid-settings'
+@import '~s-grid/s-grid-functions'
+@import '../../variables'
+@import '../../mixins/media'
+
+.container
+	grid()
+
+	padding 20px 30px
+	position relative
+	transition: left .1s ease-in-out
+	width 100%
+	z-index 1
+	outline 1px solid green
+
++media-retina()
+	.container
+		left $nav-width-min
+		width $screen-retina - $nav-width-max
+
+	.expanded
+		left $nav-width-max
+
++media-desktop()
+	.container
+		left $nav-width-min
+		width $screen-desktop - $nav-width-max
+
+	.expanded
+		left $nav-width-max
+
++media-tablet()
+	.container
+		left $nav-width-min
+		width $screen-tablet - $nav-width-min

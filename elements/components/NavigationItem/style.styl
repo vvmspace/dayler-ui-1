@@ -1,0 +1,41 @@
+@import '../../colors'
+@import '../../variables'
+@import '../../mixins/media'
+
+.container
+	height: 56px
+
+.expanded
+	.title
+		display block
+
+.href
+	display: flex
+	align-items: center
+	height: 100%
+	color: $dark
+	text-decoration: none
+
+	&:hover
+		background-color: #fafafa
+
+.icon
+	width $nav-width-min
+
+.title
+	position: relative
+	top: 2px
+	display: none
+
+.active
+	.icon
+		color: $red
+
+	.title
+		color: #333
+
++media-tablet()
+	.expanded
+		.title
+			display none
+

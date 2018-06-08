@@ -14,7 +14,7 @@ pipeline:
   lint:
     image: node:carbon
     commands:
-      - npm run eslint
+      - npm run lint
     when:
       branch:
         - master
@@ -27,7 +27,6 @@ pipeline:
     image: node:carbon
     environment:
       - NODE_ENV=production
-    secrets: [ root_key ]
     commands:
       - npm run dist
     when:
@@ -53,7 +52,7 @@ pipeline:
 
   deploy:
     image: node:carbon
-    secrets: [ root_key ]
+    secrets: [ SSH_HOST, SSH_KEY, SSH_PATH ]
     commands:
       - npm install -g gulp
       - gulp deploy:production
