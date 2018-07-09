@@ -49,6 +49,7 @@ pipeline:
         - feature/*
       event:
         - push
+        - pull_request
 
   deploy:
     image: node:carbon
