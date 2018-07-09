@@ -1,1 +1,1 @@
-export IntroductionRoute from './Introduction/route';
+export ExampleRoute from './Example/route';

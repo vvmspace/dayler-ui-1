@@ -3,6 +3,11 @@
 @import '../../variables'
 @import '../../mixins/media'
 
+vertical()
+	top $nav-header-height
+	outline 1px solid green
+
+
 .container
 	grid()
 
@@ -11,7 +16,6 @@
 	transition: left .1s ease-in-out
 	width 100%
 	z-index 1
-	outline 1px solid green
 
 +media-retina()
 	.container
@@ -31,5 +35,9 @@
 
 +media-tablet()
 	.container
-		left $nav-width-min
-		width $screen-tablet - $nav-width-min
+		vertical()
+		width $screen-tablet
+
++media-mobile()
+	.container
+		vertical()

@@ -24,7 +24,7 @@
 
 .title
 	position: relative
-	top: 2px
+	top: 1px
 	display: none
 
 .active
@@ -35,7 +35,10 @@
 		color: #333
 
 +media-tablet()
-	.expanded
-		.title
-			display none
+	.title
+		display block
+
++media-mobile()
+	.title
+		display block
 

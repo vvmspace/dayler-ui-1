@@ -6,6 +6,8 @@ const rupture = require('rupture');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 
+const DEBUG = process.env.NODE_ENV !== 'production';
+
 const options = {
     resolve: {
         extensions: ['.js', '.html'],
@@ -41,6 +43,7 @@ const options = {
                         camelCase: 'only',
                         importLoaders: 2,
                         modules: true,
+                        localIdentName: DEBUG ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64]',
                     },
                 }, {
                     loader: 'postcss-loader',

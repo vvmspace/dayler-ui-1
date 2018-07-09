@@ -1,10 +1,43 @@
-.container
-	background-color #c30
-
 @import '../../mixins/animate'
 @import '../../mixins/media'
 @import '../colors'
 @import '../variables'
+
+vertical()
+	.container, .expanded
+		fadeInDown(.3s)
+
+		top 0
+		width 100%
+		height $nav-header-height
+
+	.icon
+		display none
+
+	.header
+		display flex
+		justify-content space-between
+		z-index 10
+		position relative
+		background-color #fff
+
+	.logo
+		background-position right 26px
+		display block
+		margin-right 20px
+
+	.menu-icon
+		display block
+
+	.body
+		position relative
+		background-color #fff
+		top -999px
+		transition top .1s ease-in-out
+		z-index 9
+
+	.isNavigationShown
+		top 0
 
 .container
 	fadeInLeft(.3s)
@@ -36,6 +69,10 @@
 	justify-content center
 	cursor pointer
 
+.menu-icon
+	display none
+	cursor pointer
+
 .logo
 	background-image url('https://cdn.dayler.io/images/logo_dark.svg')
 	background-size 100px
@@ -49,15 +86,7 @@
 	padding: 5px 0
 
 +media-tablet()
-	.action
-		display none
+	vertical()
 
-	.logo
-		background-image url('../../../src/assets/d_ayler_small.svg')
-		background-position center center
-		background-size 30px
-		width 100px
-		display block
-
-	.expanded
-		width $nav-width-min
++media-mobile()
+	vertical()

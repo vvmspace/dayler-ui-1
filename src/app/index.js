@@ -4,15 +4,63 @@ import { hot } from 'react-hot-loader';
 import { Content, Layout, Navigation } from 'dayler-ui';
 import '~/global.styl';
 
-import { IntroductionRoute } from './routes';
+import { ExampleRoute } from './routes';
 
 class App extends Component {
     routes = [{
-        component: IntroductionRoute,
+        component: ExampleRoute,
         exact: true,
-        icon: 'home',
+        icon: 'box',
         href: '/',
-        title: 'Introduction',
+        title: 'Setup',
+    }, {
+        component: ExampleRoute,
+        exact: false,
+        icon: 'book',
+        href: '/basics',
+        title: 'Basics',
+    }, {
+        component: ExampleRoute,
+        exact: false,
+        icon: 'feather',
+        href: '/icons',
+        title: 'Feather Icons',
+    }, {
+        component: ExampleRoute,
+        exact: false,
+        icon: 'grid',
+        href: '/buttons',
+        title: 'Buttons',
+    }, {
+        component: ExampleRoute,
+        exact: false,
+        icon: 'crop',
+        href: '/imagecrop',
+        title: 'Image Crop',
+    }, {
+        component: ExampleRoute,
+        exact: false,
+        icon: 'terminal',
+        href: '/forms',
+        title: 'Forms',
+    }, {
+        component: ExampleRoute,
+        exact: false,
+        icon: 'layers',
+        href: '/snack',
+        title: 'Snakbar',
+    }, {
+        component: ExampleRoute,
+        exact: false,
+        icon: 'toggle-left',
+        href: '/switches',
+        title: 'Switches',
+    }, {
+        component: ExampleRoute,
+        exact: false,
+        icon: 'folder',
+        href: '/tabs',
+        title: 'Tabs',
     }];
 
     state = {

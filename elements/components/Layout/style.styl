@@ -1,4 +1,18 @@
 @import '../../variables'
+@import '../../mixins/media'
+
+verical()
+	flex-direction column
+	align-items center
+
 
 .container
 	display flex
+
++media-tablet()
+	.container
+		verical()
+
++media-mobile()
+	.container
+		verical()
