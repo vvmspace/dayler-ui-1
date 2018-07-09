@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default class ClickOutside extends Component {
     static propTypes = {
         onClickOutside: PropTypes.func.isRequired,
-        children: PropTypes.element.isRequired,
+        children: PropTypes.any.isRequired,
     };
 
     isTouch = false;
@@ -36,10 +36,10 @@ export default class ClickOutside extends Component {
     }
 
     render() {
-        const { children, ...props } = this.props;
+        const { children } = this.props;
 
         return (
-            <div {...props} ref={referance => this.container = referance}>
+            <div ref={referance => this.container = referance}>
                 {children}
             </div>
         );

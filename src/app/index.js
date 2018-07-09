@@ -4,59 +4,70 @@ import { hot } from 'react-hot-loader';
 import { Content, Layout, Navigation } from 'dayler-ui';
 import '~/global.styl';
 
-import { ExampleRoute } from './routes';
+import {
+    ButtonsRoute,
+    FeatherIconsRoute,
+    FormsRoute,
+    ImageCropRoute,
+    OverviewRoute,
+    SetupRoute,
+    SnakbarRoute,
+    SwitchesRoute,
+    TabsRoute,
+} from './routes';
+
 
 class App extends Component {
     routes = [{
-        component: ExampleRoute,
+        component: SetupRoute,
         exact: true,
         icon: 'box',
         href: '/',
         title: 'Setup',
     }, {
-        component: ExampleRoute,
+        component: OverviewRoute,
         exact: false,
         icon: 'book',
-        href: '/basics',
-        title: 'Basics',
+        href: '/overview',
+        title: 'Overview',
     }, {
-        component: ExampleRoute,
+        component: FeatherIconsRoute,
         exact: false,
         icon: 'feather',
         href: '/icons',
         title: 'Feather Icons',
     }, {
-        component: ExampleRoute,
+        component: ButtonsRoute,
         exact: false,
         icon: 'grid',
         href: '/buttons',
         title: 'Buttons',
     }, {
-        component: ExampleRoute,
+        component: ImageCropRoute,
         exact: false,
         icon: 'crop',
         href: '/imagecrop',
         title: 'Image Crop',
     }, {
-        component: ExampleRoute,
+        component: FormsRoute,
         exact: false,
         icon: 'terminal',
         href: '/forms',
         title: 'Forms',
     }, {
-        component: ExampleRoute,
+        component: SnakbarRoute,
         exact: false,
         icon: 'layers',
         href: '/snack',
         title: 'Snakbar',
     }, {
-        component: ExampleRoute,
+        component: SwitchesRoute,
         exact: false,
         icon: 'toggle-left',
         href: '/switches',
         title: 'Switches',
     }, {
-        component: ExampleRoute,
+        component: TabsRoute,
         exact: false,
         icon: 'folder',
         href: '/tabs',
