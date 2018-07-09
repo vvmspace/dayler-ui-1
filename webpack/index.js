@@ -15,7 +15,7 @@ const options = {
         alias: {
             '@': path.resolve(__dirname, '../src/app'),
             '~': path.resolve(__dirname, '../src/stylus'),
-            'dayler-ui': path.resolve(__dirname, '../elements'),
+            'dayler-ui': path.resolve(__dirname, '../core'),
         },
     },
     resolveLoader: {

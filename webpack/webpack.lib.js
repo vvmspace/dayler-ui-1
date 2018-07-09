@@ -19,7 +19,7 @@ module.exports = {
         modules: ['node_modules'],
     },
     entry: {
-        main: ['./src/elements/index.js'],
+        main: ['./core/index.js'],
     },
     module: {
         rules: [
