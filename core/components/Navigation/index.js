@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 
 import Icon from '../Icon';
 import ClickOutside from '../ClickOutside';
 import NavigationItem from '../NavigationItem';
 import style from './style.styl';
 
-export default class Navigation extends Component {
+class Navigation extends Component {
     static propTypes = {
         expanded: PropTypes.bool.isRequired,
         onChange: PropTypes.func.isRequired,
@@ -45,37 +46,37 @@ export default class Navigation extends Component {
         const { expanded, routes } = this.props;
         const { isNavigationShown } = this.state;
 
-        return (
-            <div className={`${style.container} ${expanded ? style.expanded : null}`}>
-                <ClickOutside onClickOutside={this.handleCloseNavigation}>
-                    <div className={style.header}>
-                        <div className={style.action}>
-                            <Icon className={style.icon}
-                                onClick={this.handleChangeNavigationState}
-                                name={`chevron-${expanded ? 'left' : 'right'}`}
-                                size={34}
-                            />
-                            <Icon className={style.menuIcon}
-                                onClick={this.handleNavigationShown}
-                                name={`${isNavigationShown ? 'x' : 'menu'}`}
-                                size={34}
-                            />
-                        </div>
-                        <div className={style.logo}></div>
+        return <div className={`${style.container} ${expanded ? style.expanded : null}`}>
+            <ClickOutside onClickOutside={this.handleCloseNavigation}>
+                <div className={style.header}>
+                    <div className={style.action}>
+                        <Icon className={style.icon}
+                            onClick={this.handleChangeNavigationState}
+                            name={`chevron-${expanded ? 'left' : 'right'}`}
+                            size={34}
+                        />
+                        <Icon className={style.menuIcon}
+                            onClick={this.handleNavigationShown}
+                            name={`${isNavigationShown ? 'x' : 'menu'}`}
+                            size={34}
+                        />
                     </div>
-                    <ul className={`${style.body} ${isNavigationShown ? style.isNavigationShown : null}`}>
-                        {routes.map(route => (
-                            <NavigationItem key={Math.random()}
-                                onClick={this.handleCloseNavigationByItem}
-                                expanded={expanded}
-                                href={route.href}
-                                icon={route.icon}
-                                title={route.title}
-                            />
-                        ))}
-                    </ul>
-                </ClickOutside>
-            </div>
-        );
+                    <div className={style.logo}></div>
+                </div>
+                <ul className={`${style.body} ${isNavigationShown ? style.isNavigationShown : null}`}>
+                    {routes.map(route => (
+                        <NavigationItem key={Math.random()}
+                            onClick={this.handleCloseNavigationByItem}
+                            expanded={expanded}
+                            href={route.href}
+                            icon={route.icon}
+                            title={route.title}
+                        />
+                    ))}
+                </ul>
+            </ClickOutside>
+        </div>;
     }
 }
+
+export default withRouter(Navigation);

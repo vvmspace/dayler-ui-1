@@ -18,26 +18,24 @@ export default class NavigationItem extends Component {
     };
 
     isActive = (match, location) => {
-        return match && match.path === '/' + location.pathname.split('/')[1];
+        return match && match.url === '/' + location.pathname.split('/')[1];
     };
 
     render() {
         const { expanded, href, icon, title, ...props } = this.props;
 
-        return (
-            <li className={`${style.container} ${expanded ? style.expanded : null}`} {...props}>
-                <NavLink className={style.href}
-                    to={href}
-                    isActive={this.isActive}
-                    activeClassName={style.active}>
-                    <Icon className={style.icon}
-                        name={icon}
-                    />
-                    <span className={style.title}>
-                        {title}
-                    </span>
-                </NavLink>
-            </li>
-        );
+        return <li className={`${style.container} ${expanded ? style.expanded : null}`} {...props}>
+            <NavLink className={style.href}
+                to={href}
+                isActive={this.isActive}
+                activeClassName={style.active}>
+                <Icon className={style.icon}
+                    name={icon}
+                />
+                <span className={style.title}>
+                    {title}
+                </span>
+            </NavLink>
+        </li>;
     }
 }

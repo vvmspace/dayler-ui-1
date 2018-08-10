@@ -38,10 +38,8 @@ export default class ClickOutside extends Component {
     render() {
         const { children } = this.props;
 
-        return (
-            <div ref={referance => this.container = referance}>
-                {children}
-            </div>
-        );
+        return <div ref={referance => this.container = referance}>
+            {children}
+        </div>;
     }
 }

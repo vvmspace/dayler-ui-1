@@ -6,16 +6,16 @@ import style from './style.styl';
 export default class Layout extends Component {
     static propTypes = {
         children: PropTypes.oneOfType([
-            PropTypes.element,
-            PropTypes.arrayOf(PropTypes.element),
-        ]).isRequired,
+            PropTypes.arrayOf(PropTypes.node),
+            PropTypes.node,
+        ]),
     };
 
     render() {
-        return (
-            <div className={style.container}>
-                {this.props.children}
-            </div>
-        );
+        const { children } = this.props;
+
+        return <div className={style.container}>
+            {children}
+        </div>;
     }
 }
