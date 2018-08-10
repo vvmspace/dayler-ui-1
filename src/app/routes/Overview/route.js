@@ -8,7 +8,7 @@ export default class OverviewRoute extends Component {
             <div className={style.header}>
                 <span className={style.title}>Overview</span>
                 <span className={style.description}>
-                    Main components usage overview
+                    Components usage overview
                 </span>
             </div>
         </div>;
