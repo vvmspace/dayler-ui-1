@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Panel, Section } from 'dayler-ui';
+import { Badge, Panel, Section } from 'dayler-ui';
 
 import style from './style.styl';
 
@@ -41,6 +41,56 @@ export default class SetupRoute extends Component {
                 </div>
             </Section>
 
+            <Section title="Badges">
+                <Badge title="Default" style={{ marginRight: 10 }} />
+                <Badge title="Default Long Text" style={{ marginRight: 10 }} />
+                <Badge title="Red" type="red" style={{ marginRight: 10 }} />
+                <Badge title="Green" type="green" style={{ marginRight: 10 }} />
+                <Badge title="Yellow" type="yellow" />
+            </Section>
+
+            <Section title="Panels">
+                <Panel>
+                    Content
+                </Panel>
+                <Panel title="Panel Title">
+                    Content
+                </Panel>
+                <Panel title="Panel with Title and icon" icon="feather">
+                    Content
+                </Panel>
+                <Panel title="Panel with Title and icon" icon="feather" styles={{ body: style.panel }}>
+                    Styled content
+                </Panel>
+            </Section>
+            <Section title="Panels">
+                <Panel>
+                    Content
+                </Panel>
+                <Panel title="Panel Title">
+                    Content
+                </Panel>
+                <Panel title="Panel with Title and icon" icon="feather">
+                    Content
+                </Panel>
+                <Panel title="Panel with Title and icon" icon="feather" styles={{ body: style.panel }}>
+                    Styled content
+                </Panel>
+            </Section>
+            <Section title="Panels">
+                <Panel>
+                    Content
+                </Panel>
+                <Panel title="Panel Title">
+                    Content
+                </Panel>
+                <Panel title="Panel with Title and icon" icon="feather">
+                    Content
+                </Panel>
+                <Panel title="Panel with Title and icon" icon="feather" styles={{ body: style.panel }}>
+                    Styled content
+                </Panel>
+            </Section>
             <Section title="Panels">
                 <Panel>
                     Content
