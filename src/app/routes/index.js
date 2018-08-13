@@ -1,8 +1,10 @@
+import BadgesRoute from './Badges/route';
 import ButtonsRoute from './Buttons/route';
 import FeatherIconsRoute from './FeatherIcons/route';
 import FormsRoute from './Forms/route';
 import ImageCropRoute from './ImageCrop/route';
 import OverviewRoute from './Overview/route';
+import PanelsRoute from './Panels/route';
 import SetupRoute from './Setup/route';
 import SnakbarRoute from './Snakbar/route';
 import SwitchesRoute from './Switches/route';
@@ -20,6 +22,18 @@ export default [{
     icon: 'book',
     href: '/overview',
     title: 'Overview',
+}, {
+    component: BadgesRoute,
+    exact: false,
+    icon: 'server',
+    href: '/badges',
+    title: 'Badges',
+}, {
+    component: PanelsRoute,
+    exact: false,
+    icon: 'layers',
+    href: '/panels',
+    title: 'Panels',
 }, {
     component: FeatherIconsRoute,
     exact: false,
@@ -47,7 +61,7 @@ export default [{
 }, {
     component: SnakbarRoute,
     exact: false,
-    icon: 'layers',
+    icon: 'message-circle',
     href: '/snack',
     title: 'Snakbar',
 }, {

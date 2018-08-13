@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
 
 import Icon from '../Icon';
 import ClickOutside from '../ClickOutside';
 import NavigationItem from '../NavigationItem';
 import style from './style.styl';
 
-class Navigation extends Component {
+export default class Navigation extends Component {
     static propTypes = {
         expanded: PropTypes.bool.isRequired,
         onChange: PropTypes.func.isRequired,
@@ -78,5 +77,3 @@ class Navigation extends Component {
         </div>;
     }
 }
-
-export default withRouter(Navigation);

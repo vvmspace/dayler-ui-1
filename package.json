@@ -72,6 +72,7 @@
     "react-dom": "^16.3.1",
     "react-feather": "^1.1.0",
     "react-router-dom": "^4.2.2",
+    "react-syntax-highlighter": "^8.0.1",
     "s-grid": "^1.2.1"
   },
   "devDependencies": {
@@ -101,6 +102,7 @@
     "jest": "^23.1.0",
     "jest-mock-axios": "^2.1.11",
     "postcss-loader": "^2.1.5",
+    "raw-loader": "^0.5.1",
     "react-hot-loader": "^4.2.0",
     "rupture": "^0.7.1",
     "style-loader": "^0.21.0",

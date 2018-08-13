@@ -12,18 +12,20 @@ const allowedTypes = [
 
 export default class Badge extends Component {
     static propTypes = {
+        className: PropTypes.string,
         title: PropTypes.string.isRequired,
         type: PropTypes.oneOf(allowedTypes),
     };
 
     static defaultProps = {
+        className: '',
         type: 'dark',
     };
 
     render() {
-        const { title, type, ...props } = this.props;
+        const { className, title, type, ...props } = this.props;
 
-        return <div className={`${style.container} ${style[type]}`} {...props}>
+        return <div className={`${style.container} ${style[type]} ${className}`} {...props}>
             {title}
         </div>;
     }

@@ -75,6 +75,9 @@ const options = {
                     name: '[name].[hash:20].[ext]',
                     limit: 10000,
                 },
+            }, {
+                test: /\.ex$/,
+                loader: 'raw-loader',
             },
         ],
     },
