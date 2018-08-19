@@ -9,4 +9,5 @@ export Layout from './components/Layout';
 export Navigation from './components/Navigation';
 export NavigationItem from './components/NavigationItem';
 export Panel from './components/Panel';
+export Radio from './components/Radio';
 export Section from './components/Section';
