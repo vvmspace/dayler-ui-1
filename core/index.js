@@ -1,6 +1,7 @@
 export * from './components/Buttons';
 
 export Badge from './components/Badge';
+export CheckedBadge from './components/CheckedBadge';
 export ClickOutside from './components/ClickOutside';
 export Content from './components/Content';
 export Icon from './components/Icon';
