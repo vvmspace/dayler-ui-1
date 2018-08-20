@@ -8,7 +8,21 @@ import * as examples from './examples';
 import style from './style.styl';
 
 export default class ButtonsRoute extends Component {
+    state = {
+        isLoading: false,
+    };
+
+    handleLoadingStart = () => {
+        this.setState({ isLoading: true });
+    };
+
+    handleLoadingStop = () => {
+        this.setState({ isLoading: false });
+    };
+
     render() {
+        const { isLoading } = this.state;
+
         return <div className={style.container}>
             <div className={style.header}>
                 <span className={style.title}>Buttons</span>
@@ -79,6 +93,48 @@ export default class ButtonsRoute extends Component {
                 <Panel>
                     <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
                         {examples.linkButtons}
+                    </SyntaxHighlighter>
+                </Panel>
+            </Section>
+
+            <Section title="Action Buttons">
+                <Panel>
+                    <Button title="Start"
+                        color="dark"
+                        className={style.button}
+                        isLoading={isLoading}
+                        disabled={isLoading}
+                        onClick={this.handleLoadingStart} />
+
+                    <Button title="Start Long Text For Width Example"
+                        color="green"
+                        className={style.button}
+                        isLoading={isLoading}
+                        disabled={isLoading}
+                        onClick={this.handleLoadingStart} />
+
+                    <IconButton icon="slack"
+                        color="red"
+                        className={style.button}
+                        isLoading={isLoading}
+                        disabled={isLoading}
+                        onClick={this.handleLoadingStart} />
+
+                    <IconButton icon="download"
+                        title="Start"
+                        color="yellow"
+                        className={style.button}
+                        isLoading={isLoading}
+                        disabled={isLoading}
+                        onClick={this.handleLoadingStart} />
+
+                    <Button title="Stop"
+                        color="red"
+                        onClick={this.handleLoadingStop} />
+                </Panel>
+                <Panel>
+                    <SyntaxHighlighter language='jsx' style={coy} wrapLines={true}>
+                        {examples.actionButtons}
                     </SyntaxHighlighter>
                 </Panel>
             </Section>

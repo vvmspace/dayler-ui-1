@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
+import Loading from '../Loading';
+
 import style from './style.styl';
 
 const defatulPropTypes = {
     className: PropTypes.string,
     color: PropTypes.oneOf(['dark', 'red', 'green', 'yellow']),
+    isLoading: PropTypes.bool,
     type: PropTypes.string,
 };
 
@@ -49,7 +52,7 @@ export class Button extends Component {
 
     render() {
         const { ...rippleStyle } = this.state;
-        const { className, color, title, type, ...props } = this.props;
+        const { className, color, isLoading, title, type, ...props } = this.props;
 
         return (
             <button className={`${style.button} ${style[color]} ${className}`}
@@ -59,7 +62,8 @@ export class Button extends Component {
                 {...props}>
                 <div className={style.ripple} style={rippleStyle}
                     ref={referance => this.ripple = referance}></div>
-                <div className={style.title}>{title}</div>
+                {isLoading ? <Loading size={20} styles={{ body: style.loading }} /> : null}
+                <div className={`${style.title} ${isLoading ? style.hidden : ''}`}>{title}</div>
             </button>
         );
     }
@@ -76,7 +80,7 @@ export class IconButton extends Button {
 
     render() {
         const { ...rippleStyle } = this.state;
-        const { className, color, icon, title, type, ...props } = this.props;
+        const { className, color, icon, isLoading, title, type, ...props } = this.props;
 
         return (
             <button className={`${style.button} ${style.buttonIcon} ${style[color]} ${className}`}
@@ -86,8 +90,9 @@ export class IconButton extends Button {
                 {...props}>
                 <div className={style.ripple} style={rippleStyle}
                     ref={referance => this.ripple = referance}></div>
-                <div className={style.icon}><Icon size={18} name={icon} /></div>
-                {title ? <div className={style.title} style={{ top: 1 }}>{title}</div> : null}
+                {isLoading ? <Loading size={20} styles={{ body: style.loading }} /> : null}
+                <div className={`${style.icon} ${isLoading ? style.hidden : ''}`}><Icon size={18} name={icon} /></div>
+                {title ? <div className={`${style.title} ${isLoading ? style.hidden : ''}`} style={{ top: 1 }}>{title}</div> : null}
             </button>
         );
     }
