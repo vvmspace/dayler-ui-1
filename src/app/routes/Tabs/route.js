@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Tabs } from 'dayler-ui';
 
+import routes from './routes';
 import style from './style.styl';
 
 export default class TabsRoute extends Component {
@@ -11,6 +13,7 @@ export default class TabsRoute extends Component {
                     Routing based tabs component example
                 </span>
             </div>
+            <Tabs routes={routes} />
         </div>;
     }
 }

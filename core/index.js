@@ -12,3 +12,4 @@ export NavigationItem from './components/NavigationItem';
 export Panel from './components/Panel';
 export Radio from './components/Radio';
 export Section from './components/Section';
+export Tabs from './components/Tabs';
