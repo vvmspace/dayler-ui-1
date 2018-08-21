@@ -2,8 +2,6 @@
 *sublime*
 .DS_Store
 
-*-lock.json
-*.lock
 *.log
 *.snap
 
