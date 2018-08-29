@@ -23,7 +23,7 @@ pipeline:
         - push
         - pull_request
 
-  build/ui-example:
+  build/examples:
     image: node:carbon
     environment:
       - NODE_ENV=production
@@ -37,7 +37,7 @@ pipeline:
         - push
         - pull_request
 
-  build/ui-lib:
+  build/library:
     image: node:carbon
     environment:
       - NODE_ENV=production
@@ -51,7 +51,7 @@ pipeline:
         - push
         - pull_request
 
-  deploy:
+  deploy/examples:
     image: node:carbon
     secrets: [ SSH_HOST, SSH_KEY, SSH_PATH ]
     commands:
@@ -63,7 +63,7 @@ pipeline:
       event:
         - push
 
-  publish:
+  publish/library:
     image: plugins/npm
     secrets: [ NPM_TOKEN, NPM_EMAIL ]
     when:

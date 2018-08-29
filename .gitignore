@@ -1,7 +1,11 @@
-.idea
 *sublime*
-.DS_Store
 
+.DS_Store
+.idea
+.vs_code
+
+*-lock.json
+*.lock
 *.log
 *.snap
 
