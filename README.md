@@ -16,3 +16,29 @@ npm install --save dayler-ui
 
 ---
 *Made with* :heart: *for [Dayler.io](https://dayler.io)*
+
+# TODO:
+- [] Avatar
+- [] Calendar
+- [] Checkbox
+- [] Date Input
+- [] Drop Down Calendar
+- [] Drop Down List
+- [] Drop Down select
+- [] Image Crop
+- [] Input (Password)
+- [] Input (Text )
+- [] Line Charts
+- [] Modal
+- [] Panel (Bottom Expandable Area)
+- [] Panel (Header Actions)
+- [] Phone Input
+- [] Proggress Bar (Line )
+- [] Progress Bar (Circle)
+- [] Route Based Step Dialog
+- [] Route Preloader
+- [] Slider Select
+- [] Snakbar
+- [] Switch
+- [] Table
+- [] Text Input (Multiline)
