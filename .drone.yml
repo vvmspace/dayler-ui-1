@@ -1,6 +1,6 @@
 pipeline:
   install:
-    image: node-yarn:latest
+    image: yarnpkg/node-yarn:latest
     commands:
       - yarn
     when:
@@ -12,7 +12,7 @@ pipeline:
         - pull_request
 
   lint:
-    image: node-yarn:latest
+    image: yarnpkg/node-yarn:latest
     commands:
       - yarn lint
     when:
@@ -24,7 +24,7 @@ pipeline:
         - pull_request
 
   build/examples:
-    image: node-yarn:latest
+    image: yarnpkg/node-yarn:latest
     environment:
       - NODE_ENV=production
     commands:
@@ -38,7 +38,7 @@ pipeline:
         - pull_request
 
   build/library:
-    image: node-yarn:latest
+    image: yarnpkg/node-yarn:latest
     environment:
       - NODE_ENV=production
     commands:
@@ -52,7 +52,7 @@ pipeline:
         - pull_request
 
   deploy/examples:
-    image: node-yarn:latest
+    image: yarnpkg/node-yarn:latest
     secrets: [ SSH_HOST, SSH_KEY, SSH_PATH ]
     commands:
       - npm install -g gulp
