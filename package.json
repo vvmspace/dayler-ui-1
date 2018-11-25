@@ -32,7 +32,7 @@
     "ui-components",
     "webpack"
   ],
-  "author": "Iknpx",
+  "author": "Iakov Salikov <iknpx@aol.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/iknpx/dayler-ui/issues"
@@ -60,8 +60,10 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
     "@babel/plugin-proposal-optional-chaining": "^7.0.0",
     "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.0.0",

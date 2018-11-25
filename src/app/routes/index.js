@@ -50,8 +50,8 @@ export default [{
     component: ImageCropRoute,
     exact: false,
     icon: 'crop',
-    href: '/imagecrop',
-    title: 'Image Crop',
+    href: '/crop',
+    title: 'Crop',
 }, {
     component: FormsRoute,
     exact: false,

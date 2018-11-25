@@ -4,8 +4,6 @@
 .idea
 .vs_code
 
-*-lock.json
-*.lock
 *.log
 *.snap
 
