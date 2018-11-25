@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 export default class ClickOutside extends Component {
     static propTypes = {
         onClickOutside: PropTypes.func.isRequired,
-        children: PropTypes.any.isRequired,
     };
 
     isTouch = false;
