@@ -1,8 +1,8 @@
 pipeline:
   install:
-    image: node:carbon
+    image: node-yarn:latest
     commands:
-      - npm install --quiet
+      - yarn
     when:
       branch:
         - master
@@ -12,9 +12,9 @@ pipeline:
         - pull_request
 
   lint:
-    image: node:carbon
+    image: node-yarn:latest
     commands:
-      - npm run lint
+      - yarn lint
     when:
       branch:
         - master
@@ -24,11 +24,11 @@ pipeline:
         - pull_request
 
   build/examples:
-    image: node:carbon
+    image: node-yarn:latest
     environment:
       - NODE_ENV=production
     commands:
-      - npm run dist
+      - yarn dist
     when:
       branch:
         - master
@@ -38,11 +38,11 @@ pipeline:
         - pull_request
 
   build/library:
-    image: node:carbon
+    image: node-yarn:latest
     environment:
       - NODE_ENV=production
     commands:
-      - npm run lib
+      - yarn lib
     when:
       branch:
         - master
@@ -52,7 +52,7 @@ pipeline:
         - pull_request
 
   deploy/examples:
-    image: node:carbon
+    image: node-yarn:latest
     secrets: [ SSH_HOST, SSH_KEY, SSH_PATH ]
     commands:
       - npm install -g gulp
