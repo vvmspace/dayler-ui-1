@@ -10,7 +10,7 @@ const DEBUG = process.env.NODE_ENV !== 'production';
 
 const options = {
     resolve: {
-        extensions: ['.js', '.html'],
+        extensions: ['.js', '.html', '.styl'],
         modules: ['node_modules', 'src'],
         alias: {
             'dayler-ui': path.resolve(__dirname, '../src/lib'),
@@ -20,7 +20,7 @@ const options = {
         modules: ['node_modules', 'src'],
     },
     entry: {
-        main: ['./src/index.js'],
+        main: ['./src/main.js'],
     },
     module: {
         rules: [
@@ -76,7 +76,7 @@ const options = {
                     limit: 10000,
                 },
             }, {
-                test: /\.ex$/,
+                test: /\.example$/,
                 loader: 'raw-loader',
             },
         ],
