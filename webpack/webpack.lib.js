@@ -8,7 +8,7 @@ module.exports = {
     output: {
         path: path.join(process.cwd(), 'lib'),
         filename: 'index.min.js',
-        library: 'daylerUi',
+        library: 'dayler-ui',
         libraryTarget: 'umd',
     },
     resolve: {
@@ -19,7 +19,7 @@ module.exports = {
         modules: ['node_modules'],
     },
     entry: {
-        main: ['./core/index.js'],
+        main: ['./src/lib/index.js'],
     },
     module: {
         rules: [

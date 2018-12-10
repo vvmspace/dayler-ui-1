@@ -13,9 +13,7 @@ const options = {
         extensions: ['.js', '.html'],
         modules: ['node_modules', 'src'],
         alias: {
-            '@': path.resolve(__dirname, '../src/app'),
-            '~': path.resolve(__dirname, '../src/stylus'),
-            'dayler-ui': path.resolve(__dirname, '../core'),
+            'dayler-ui': path.resolve(__dirname, '../src/lib'),
         },
     },
     resolveLoader: {
@@ -43,7 +41,9 @@ const options = {
                         camelCase: 'only',
                         importLoaders: 2,
                         modules: true,
-                        localIdentName: DEBUG ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64]',
+                        localIdentName: DEBUG
+                            ? '[path][name]__[local]--[hash:base64:5]'
+                            : '[hash:base64]',
                     },
                 }, {
                     loader: 'postcss-loader',

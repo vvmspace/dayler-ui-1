@@ -13,25 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/iknpx/dayler-ui.git"
   },
-  "keywords": [
-    "buttons",
-    "checkbox",
-    "date-picker",
-    "feather",
-    "image-crop",
-    "input",
-    "panels",
-    "radio",
-    "react",
-    "snackbar",
-    "stylus",
-    "switcher",
-    "tabs",
-    "typings",
-    "ui",
-    "ui-components",
-    "webpack"
-  ],
   "author": "Iakov Salikov <iknpx@aol.com>",
   "license": "MIT",
   "bugs": {
@@ -52,8 +33,7 @@
     "react-dom": "^16.3.1",
     "react-feather": "^1.1.0",
     "react-router-dom": "^4.2.2",
-    "react-syntax-highlighter": "^8.0.1",
-    "s-grid": "^1.2.1"
+    "react-syntax-highlighter": "^8.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -75,7 +55,7 @@
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
-    "eslint-config-dayler": "^1.0.2",
+    "eslint-config-dayler": "^1.0.3",
     "express": "^4.16.3",
     "file-loader": "^1.1.11",
     "ghooks": "^2.0.4",
