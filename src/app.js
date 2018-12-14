@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 
 import { Flex } from 'dayler-ui';
 
-import { MainRoute } from './routes';
+import { ColorsRoute, MainRoute } from './routes';
 
 @hot(module)
 export class App extends Component {
@@ -13,6 +13,7 @@ export class App extends Component {
             <Router>
                 <Switch>
                     <Route exact path="/" component={MainRoute} />
+                    <Route exact path="/colors" component={ColorsRoute} />
                     <Redirect to="/" />
                 </Switch>
             </Router>
