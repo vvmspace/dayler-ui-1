@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import classNames from 'classnames';
 
 import {
@@ -16,6 +16,7 @@ import {
     RootContainer,
 } from './containers';
 
+import navigationSchema from './navigation';
 import style from './stylus/base.styl';
 
 @hot(module)
@@ -54,15 +55,13 @@ export class App extends Component {
         };
 
         return <FlexContainer classes={{ container: style.flexContainer }}>
-            <Navigation simple={simple} onChange={this.handleViewChange} />
+            <Navigation schema={navigationSchema} simple={simple} onChange={this.handleViewChange} />
             <ResponsiveContainer classes={responsiveContainerClasses}>
-                <Router>
-                    <Switch>
-                        <Route exact path="/" component={RootContainer} />
-                        <Route exact path="/colors" component={ColorsContainer} />
-                        <Redirect to="/" />
-                    </Switch>
-                </Router>
+                <Switch>
+                    <Route exact path="/" component={RootContainer} />
+                    <Route exact path="/colors" component={ColorsContainer} />
+                    <Redirect to="/" />
+                </Switch>
             </ResponsiveContainer>
         </FlexContainer>;
     }

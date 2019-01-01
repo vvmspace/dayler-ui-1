@@ -63,7 +63,7 @@ pipeline:
         - push
         - pull_request
 
-  deploy/examples:
+  deploy/ui:
     image: chekote/gulp:latest
     secrets: [ SSH_HOST, SSH_KEY, SSH_PATH ]
     commands:
@@ -74,7 +74,7 @@ pipeline:
       event:
         - push
 
-  publish/library:
+  publish/lib:
     image: plugins/npm
     secrets: [ NPM_TOKEN, NPM_EMAIL ]
     when:

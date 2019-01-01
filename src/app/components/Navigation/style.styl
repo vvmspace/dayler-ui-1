@@ -1,21 +1,108 @@
+@import '~dayler-ui/colors'
 @import '~dayler-ui/mixins'
+
 @import '~@app/stylus/variables'
 
 .container
-    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .17)
+    fadeInLeft(.3s)
+    box-shadow 0 2px 7px 0 rgba(0, 0, 0, .17)
     flex-shrink 0
     width $nav-width-max
     background-color #fff
     display flex
+    flex-direction column
+    overflow-y scroll
+    user-select none
 
 .min
     width $nav-width-min
+
+    .logo
+        display none
+
+.header
+    display flex
+    height $nav-height
+    align-items center
+    user-select none
+    border-bottom 1px solid #eee
+    flex-shrink 0
+
+.body
+    flex-grow 1
+    display flex
+    flex-direction column
+    padding 10px 0
+
+.toogle
+    height $nav-height
+    width $nav-height
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    cursor pointer
+
+    &-icon
+        color $grey-400
+
+.logo
+    position relative
+    top -3px
+
+.mobile
+    &-menu
+        display none
+        align-items center
+        justify-content space-between
+        height $nav-height
+
+    &-toogle
+        height 100%
+        width $nav-height
+        display flex
+        flex-direction column
+        align-items center
+        justify-content center
+        cursor pointer
 
 +media-tablet()
     .container
         width $nav-width-min
 
+    .logo
+        display none
+
+    .header
+        display none
+
 +media-mobile()
     .container
-        height 100px
+        fadeInDown(.3s)
         width 100%
+
+    .header
+        display none
+
+    .body
+        fadeIn(.1s)
+        background-color #fff
+        top $nav-height
+        z-index 10
+        flex-grow 1
+        display none
+        position absolute
+        width 100%
+        border-top 1px solid #eee
+        flex-grow 1
+        overflow hidden
+
+    .logo
+        margin-right 25px
+
+    .mobile
+        &-menu
+            display flex
+
+        &-opened
+            display flex
