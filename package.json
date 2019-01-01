@@ -5,8 +5,7 @@
   "scripts": {
     "dist": "webpack --config ./webpack/index.js",
     "lib": "webpack --config ./webpack/webpack.lib.js",
-    "lint": "eslint ./**/*.js --no-ignore",
-    "lint:affected": "LIST=`git diff-index --name-only HEAD | grep .*\\.js | grep -v json`; if [ \"$LIST\" ]; then eslint $LIST --no-ignore; fi",
+    "lint": "LIST=`git diff-index --name-only HEAD | grep .*\\.js | grep -v json`; if [ \"$LIST\" ]; then eslint $LIST --no-ignore; fi",
     "start": "node ./server.js",
     "test": "jest"
   },
@@ -21,7 +20,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "yarn lint:affected",
+      "pre-commit": "yarn lint",
       "pre-push": "yarn test"
     }
   },

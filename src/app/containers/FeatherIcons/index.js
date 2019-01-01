@@ -4,10 +4,10 @@ import { Heading } from 'dayler-ui';
 
 import style from './style';
 
-export class PanelsContainer extends Component {
+export class FeatherIconsContainer extends Component {
     render() {
         return <div className={style.container}>
-            <Heading h2 className={style.title}>Panels</Heading>
+            <Heading h2 className={style.title}>Feather Icons</Heading>
         </div>;
     }
 }

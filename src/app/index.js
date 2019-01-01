@@ -12,10 +12,27 @@ import { Navigation } from './components';
 import { StorageService } from './services/storage';
 
 import {
+    BadgesContainer,
+    ButtonsContainer,
+    ChartsContainer,
+    CheckboxesContainer,
     ColorsContainer,
+    FeatherIconsContainer,
+    HelpersContainer,
+    ImageCropperContainer,
+    IntroductionContainer,
+    PaginatorContainer,
     PanelsContainer,
-    RootContainer,
+    ProgressBarContainer,
+    ResponsiveLayoutsContainer,
+    SelectsContainer,
+    SnackBarsContainer,
+    SpinnersContainer,
+    StepperContainer,
+    TablesContainer,
+    TextInputsContainer,
     TypingsContainer,
+    UserIconsContainer,
 } from './containers';
 
 import navigationSchema from './navigation';
@@ -60,10 +77,29 @@ export class App extends Component {
             <Navigation schema={navigationSchema} simple={simple} onChange={this.handleViewChange} />
             <ResponsiveContainer classes={responsiveContainerClasses}>
                 <Switch>
-                    <Route exact path="/" component={RootContainer} />
+                    <Route exact path="/" component={IntroductionContainer} />
                     <Route exact path="/typings" component={TypingsContainer} />
+                    <Route exact path="/responsive" component={ResponsiveLayoutsContainer} />
                     <Route exact path="/colors" component={ColorsContainer} />
+                    <Route exact path="/icons" component={FeatherIconsContainer} />
                     <Route exact path="/panels" component={PanelsContainer} />
+                    <Route exact path="/tabs" component={TablesContainer} />
+                    <Route exact path="/buttons" component={ButtonsContainer} />
+                    <Route exact path="/checkboxes" component={CheckboxesContainer} />
+                    <Route exact path="/inputs" component={TextInputsContainer} />
+                    <Route exact path="/selects" component={SelectsContainer} />
+                    <Route exact path="/badges" component={BadgesContainer} />
+                    <Route exact path="/user-icons" component={UserIconsContainer} />
+                    <Route exact path="/progress" component={ProgressBarContainer} />
+                    <Route exact path="/spinners" component={SpinnersContainer} />
+                    <Route exact path="/tables" component={TablesContainer} />
+                    <Route exact path="/charts" component={ChartsContainer} />
+                    <Route exact path="/cropper" component={ImageCropperContainer} />
+                    <Route exact path="/paginator" component={PaginatorContainer} />
+                    <Route exact path="/stepper" component={StepperContainer} />
+                    <Route exact path="/snack" component={SnackBarsContainer} />
+                    <Route exact path="/helpers" component={HelpersContainer} />
+
                     <Redirect to="/" />
                 </Switch>
             </ResponsiveContainer>

@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react';
 
+import { Heading } from 'dayler-ui';
+
 import style from './style';
 
-export class RootContainer extends PureComponent {
+export class IntroductionContainer extends PureComponent {
     render() {
         return <div className={style.container}>
-            ... route ...
+            <Heading h1 className={style.title}>Dayler UI</Heading>
         </div>;
     }
 }

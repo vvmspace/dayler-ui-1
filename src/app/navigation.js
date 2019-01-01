@@ -32,6 +32,11 @@ export default [{
     to: '/panels',
 }, {
     id: key(32),
+    icon: 'folder',
+    title: 'Tabs',
+    to: '/tabs',
+}, {
+    id: key(32),
     icon: 'server',
     title: 'Buttons',
     to: '/buttons',
@@ -45,4 +50,64 @@ export default [{
     icon: 'edit',
     title: 'Text Inputs',
     to: '/inputs',
+}, {
+    id: key(32),
+    icon: 'chevrons-down',
+    title: 'Selects',
+    to: '/selects',
+}, {
+    id: key(32),
+    icon: 'tag',
+    title: 'Badges',
+    to: '/badges',
+}, {
+    id: key(32),
+    icon: 'users',
+    title: 'User Icons',
+    to: '/user-icons',
+}, {
+    id: key(32),
+    icon: 'percent',
+    title: 'Progress Bar',
+    to: '/progress',
+}, {
+    id: key(32),
+    icon: 'loader',
+    title: 'Spinners',
+    to: '/spinners',
+}, {
+    id: key(32),
+    icon: 'align-justify',
+    title: 'Tables',
+    to: '/tables',
+}, {
+    id: key(32),
+    icon: 'activity',
+    title: 'Charts',
+    to: '/charts',
+}, {
+    id: key(32),
+    icon: 'crop',
+    title: 'Image Cropper',
+    to: '/cropper',
+}, {
+    id: key(32),
+    icon: 'book-open',
+    title: 'Paginator',
+    to: '/paginator',
+}, {
+    id: key(32),
+    icon: 'chevrons-right',
+    title: 'Stepper',
+    to: '/stepper',
+}, {
+    id: key(32),
+    icon: 'copy',
+    title: 'Snack Bars',
+    to: '/snack',
+}, {
+    id: key(32),
+    icon: 'code',
+    title: 'Helpers',
+    to: '/helpers',
 }];
