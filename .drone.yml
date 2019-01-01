@@ -35,7 +35,7 @@ pipeline:
         - push
         - pull_request
 
-  build/examples:
+  build/ui:
     image: kkarczmarczyk/node-yarn:latest
     environment:
       - NODE_ENV=production
@@ -49,7 +49,7 @@ pipeline:
         - push
         - pull_request
 
-  build/library:
+  build/lib:
     image: kkarczmarczyk/node-yarn:latest
     environment:
       - NODE_ENV=production

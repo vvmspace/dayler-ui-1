@@ -6,13 +6,13 @@ const Uglify = require('uglifyjs-webpack-plugin');
 module.exports = {
     mode: 'production',
     output: {
-        path: path.join(process.cwd(), 'lib'),
+        path: path.join(process.cwd(), 'umd'),
         filename: 'index.min.js',
         library: 'dayler-ui',
         libraryTarget: 'umd',
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js', '.html', '.styl'],
         modules: ['node_modules'],
     },
     resolveLoader: {
