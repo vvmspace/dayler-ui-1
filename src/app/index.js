@@ -13,7 +13,9 @@ import { StorageService } from './services/storage';
 
 import {
     ColorsContainer,
+    PanelsContainer,
     RootContainer,
+    TypingsContainer,
 } from './containers';
 
 import navigationSchema from './navigation';
@@ -59,7 +61,9 @@ export class App extends Component {
             <ResponsiveContainer classes={responsiveContainerClasses}>
                 <Switch>
                     <Route exact path="/" component={RootContainer} />
+                    <Route exact path="/typings" component={TypingsContainer} />
                     <Route exact path="/colors" component={ColorsContainer} />
+                    <Route exact path="/panels" component={PanelsContainer} />
                     <Redirect to="/" />
                 </Switch>
             </ResponsiveContainer>

@@ -1,9 +1,20 @@
 @import '~dayler-ui/mixins'
+@import '~dayler-ui/colors'
 
 route-container()
+    padding 20px 30px
+    flex-grow 1
+    display flex
+    flex-direction column
+    overflow scroll
+
+route-title()
+    color $grey-400
+    margin-bottom 30px
+
+route()
     .container
-        padding 30px
-        flex-grow 1
-        display flex
-        flex-direction column
-        overflow scroll
+        route-container()
+
+    .title
+        route-title()
