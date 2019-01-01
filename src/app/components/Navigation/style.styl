@@ -1,0 +1,21 @@
+@import '~dayler-ui/mixins'
+@import '~@app/stylus/variables'
+
+.container
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .17)
+    flex-shrink 0
+    width $nav-width-max
+    background-color #fff
+    display flex
+
+.min
+    width $nav-width-min
+
++media-tablet()
+    .container
+        width $nav-width-min
+
++media-mobile()
+    .container
+        height 100px
+        width 100%

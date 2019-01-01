@@ -1,13 +1,11 @@
 import React, { PureComponent } from 'react';
-import { H5 } from 'dayler-ui';
 import classes from 'classnames';
 
 import style from './style';
 
-export class ColorsRoute extends PureComponent {
+export class ColorsContainer extends PureComponent {
     render() {
         return <div className={style.container}>
-            <H5 className={style.title}>Colors</H5>
             <div className={style.colors}>
                 <div className={classes(style.item, style['g100'])}>#CACACD</div>
                 <div className={classes(style.item, style['g200'])}>#A7A7AC</div>

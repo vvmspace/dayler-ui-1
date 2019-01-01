@@ -1,0 +1,36 @@
+@import '~dayler-ui/mixins'
+@import '~dayler-ui/variables'
+
+@import './variables.styl'
+
+.flex-container
+    background-color #ef
+    position relative
+
+.responsive-container
+    width 100%
+
++media-retina()
+    .responsive-container
+        width $screen-retina - $nav-width-max
+
+    .responsive-container-min
+        width $screen-retina - $nav-width-min
+
++media-desktop()
+    .responsive-container
+        width $screen-desktop - $nav-width-max
+
+    .responsive-container-min
+        width $screen-desktop - $nav-width-min
+
++media-tablet()
+    .responsive-container, .responsive-container-min
+        width $screen-tablet - $nav-width-min
+
++media-mobile()
+    .flex-container
+        flex-direction column
+
+    .responsive-container
+        flex-grow 1

@@ -13,7 +13,8 @@ const options = {
         extensions: ['.js', '.html', '.styl'],
         modules: ['node_modules', 'src'],
         alias: {
-            'dayler-ui': path.resolve(__dirname, '../src/lib'),
+            '@app': path.resolve(__dirname, '../src/app'),
+            'dayler-ui': path.resolve(__dirname, '../lib'),
         },
     },
     resolveLoader: {

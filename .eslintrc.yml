@@ -4,7 +4,7 @@ extends:
 
 settings:
   react:
-    version: 16.3
+    version: '16.3'
   import/resolver:
     node:
       moduleDirectory: ['node_modules', './src']
