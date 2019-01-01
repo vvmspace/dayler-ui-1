@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Heading } from 'dayler-ui';
 
-import style from './style';
+import style from './style.styl';
 
 export class SnackBarsContainer extends Component {
     render() {

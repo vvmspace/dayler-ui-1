@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import { Heading } from 'dayler-ui';
 
-import style from './style';
+import style from './style.styl';
 
 export class IntroductionContainer extends PureComponent {
     render() {
