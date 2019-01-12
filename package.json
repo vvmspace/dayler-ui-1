@@ -5,7 +5,7 @@
   "scripts": {
     "dist": "webpack --config ./webpack/index.js",
     "lib": "webpack --config ./webpack/webpack.lib.js",
-    "lint": "LIST=`git diff-index --name-only HEAD | grep .*\\.js | grep -v json`; if [ \"$LIST\" ]; then eslint $LIST --no-ignore; fi",
+    "lint": "eslint .",
     "start": "node ./server.js",
     "test": "jest"
   },
@@ -60,6 +60,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-element-proptypes": "^1.0.0",
     "react-feather": "^1.1.0",
     "react-router-dom": "^4.2.2",
     "react-syntax-highlighter": "^8.0.1"

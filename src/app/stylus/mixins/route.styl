@@ -16,5 +16,13 @@ route()
     .container
         route-container()
 
+    .body
+        & > *:not(:last-child)
+            margin-bottom 40px
+
     .title
         route-title()
+
+    .subtitle
+        margin-bottom 10px
+        color $grey-200

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { Icon } from 'dayler-ui';
+import { Icon, ScrollView } from 'dayler-ui';
 
 import cdn from '@app/cdn.json';
 
@@ -84,14 +84,16 @@ export class Navigation extends Component {
                 <div className={style.mobileToogle} onClick={this.handleOpenMobileMenu}>
                     <Icon name={isOpen ? 'x' : 'menu'} />
                 </div>
-                <img className={style.logo} src={cdn.logo} alt="Dayler" />
+                <img className={style.mobileLogo} src={cdn.logo} alt="Dayler" />
             </div>
             <div className={bodyClassNames} onClick={this.handleCloseMobileMenu}>
-                {schema.map(item => (
-                    <NavigationItem key={item.id} to={item.to} icon={item.icon} simple={simple}>
-                        {item.title}
-                    </NavigationItem>
-                ))}
+                <ScrollView classes={{ body: style.scrollBody, container: style.scrollContainer }}>
+                    {schema.map(item => (
+                        <NavigationItem key={item.id} to={item.to} icon={item.icon} simple={simple}>
+                            {item.title}
+                        </NavigationItem>
+                    ))}
+                </ScrollView>
             </div>
         </div>;
     }

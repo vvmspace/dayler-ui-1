@@ -8,7 +8,7 @@ export default [{
 }, {
     id: key(32),
     icon: 'type',
-    title: 'Typings',
+    title: 'Typography',
     to: '/typings',
 }, {
     id: key(32),
@@ -82,6 +82,11 @@ export default [{
     to: '/tables',
 }, {
     id: key(32),
+    icon: 'clock',
+    title: 'Date',
+    to: '/date',
+}, {
+    id: key(32),
     icon: 'activity',
     title: 'Charts',
     to: '/charts',
@@ -107,7 +112,17 @@ export default [{
     to: '/snack',
 }, {
     id: key(32),
+    icon: 'more-vertical',
+    title: 'Scroll View',
+    to: '/scroll',
+}, {
+    id: key(32),
     icon: 'code',
+    title: 'Syntax Highliter',
+    to: '/syntax',
+}, {
+    id: key(32),
+    icon: 'help-circle',
     title: 'Helpers',
     to: '/helpers',
 }];

@@ -1,0 +1,8 @@
+import { Heading } from 'dayler-ui';
+
+<Heading h1>Heading H1</Heading>
+<Heading h2>Heading H2</Heading>
+<Heading h3>Heading H3</Heading>
+<Heading h4>Heading H4</Heading>
+<Heading h5>Heading H5</Heading>
+<Heading h6>Heading H6</Heading>

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700&subset=cyrillic');
 
-@import './colors'
+@import './colors.styl'
 @import './reset'
 
 body, html
@@ -18,3 +18,9 @@ body
 	flex-direction column
 	display flex
 	flex-grow 1
+
+a
+	color $blue-600
+
+	&:hover
+		color $blue-800
