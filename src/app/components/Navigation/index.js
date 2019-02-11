@@ -1,100 +1,44 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
+import { NavLink } from 'react-router-dom';
 
-import { Icon, ScrollView } from 'dayler-ui';
+import { FlexContainer, Icon } from 'dayler-ui';
 
-import cdn from '@app/cdn.json';
-
-import { NavigationItem } from '../NavigationItem';
+import schema from './schema';
 import style from './style.styl';
 
-export class Navigation extends Component {
-    static propTypes = {
-        classes: PropTypes.shape({
-            container: PropTypes.string,
-        }),
-        schema: PropTypes.arrayOf(
-            PropTypes.shape({
-                id: PropTypes.string.isRequired,
-                icon: PropTypes.string.isRequired,
-                title: PropTypes.string.isRequired,
-                to: PropTypes.string.isRequired,
-            }),
-        ).isRequired,
-        simple: PropTypes.bool,
-        onChange: PropTypes.func.isRequired,
-    };
+export function Navigation({ active, classes, ...props }) {
+    const containerClassNames = classnames(style.container, classes.container, {
+        [style.open]: active,
+    });
 
-    static defaultProps = {
-        classes: {
-            container: '',
-        },
-        simple: false,
-        onChange: () => { },
-    };
-
-    state = {
-        isOpen: false,
-    };
-
-    handleOpenMobileMenu = () => {
-        this.setState(state => ({ isOpen: !state.isOpen }));
-    };
-
-    handleCloseMobileMenu = () => {
-        this.setState({ isOpen: false });
-    };
-
-    handleViewChange = () => {
-        const { onChange, simple } = this.props;
-
-        onChange(!simple);
-    };
-
-    render() {
-        const { classes, simple, schema, ...props } = this.props;
-        const { isOpen } = this.state;
-
-        const containerClassNames = classNames(
-            style.container,
-            classes.container,
-            {
-                [style.min]: simple,
-            },
-        );
-
-        const bodyClassNames = classNames(
-            style.body,
-            {
-                [style.mobileOpened]: isOpen,
-            }
-        );
-
-        return <div {...props} className={containerClassNames}>
-            <div className={style.header}>
-                <div className={style.toogle} onClick={this.handleViewChange}>
-                    <Icon className={style.toogleIcon}
-                        size={32}
-                        name={`chevron-${simple ? 'right' : 'left'}`} />
-                </div>
-                <img className={style.logo} src={cdn.logo} alt="Dayler" />
-            </div>
-            <div className={style.mobileMenu}>
-                <div className={style.mobileToogle} onClick={this.handleOpenMobileMenu}>
-                    <Icon name={isOpen ? 'x' : 'menu'} />
-                </div>
-                <img className={style.mobileLogo} src={cdn.logo} alt="Dayler" />
-            </div>
-            <div className={bodyClassNames} onClick={this.handleCloseMobileMenu}>
-                <ScrollView classes={{ body: style.scrollBody, container: style.scrollContainer }}>
-                    {schema.map(item => (
-                        <NavigationItem key={item.id} to={item.to} icon={item.icon} simple={simple}>
-                            {item.title}
-                        </NavigationItem>
+    return <div {...props} className={containerClassNames}>
+        <FlexContainer classes={{ container: style.content }}>
+            {schema.map((group, index) => (
+                <div className={style.group} key={index}>
+                    {group.map(link => (
+                        <NavLink key={link.id} to={link.to} className={style.navlink} activeClassName={style.active}>
+                            <Icon size={18} name={link.icon} className={style.icon} />
+                            <span className={style.title}>{link.title}</span>
+                        </NavLink>
                     ))}
-                </ScrollView>
-            </div>
-        </div>;
-    }
+                </div>
+            ))}
+        </FlexContainer>
+    </div>;
 }
+
+Navigation.propTypes = {
+    active: PropTypes.bool.isRequired,
+    classes: PropTypes.shape({
+        container: PropTypes.string,
+    }),
+};
+
+Navigation.defaultProps = {
+    active: true,
+    classes: {
+        container: '',
+    },
+};

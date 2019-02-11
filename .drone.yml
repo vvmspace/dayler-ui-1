@@ -74,6 +74,17 @@ pipeline:
       event:
         - push
 
+  deploy/dev-ui:
+    image: chekote/gulp:latest
+    secrets: [ SSH_HOST, SSH_KEY, SSH_PATH_DEV ]
+    commands:
+      - gulp deploy:dev
+    when:
+      branch:
+        - feature/*
+      event:
+        - push
+
   publish/lib:
     image: plugins/npm
     secrets: [ NPM_TOKEN, NPM_EMAIL ]

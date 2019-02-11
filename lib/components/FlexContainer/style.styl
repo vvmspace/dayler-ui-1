@@ -1,6 +1,19 @@
-.container
-	flex-grow 1
-	display flex
+@import '../../mixins'
+@import '../../variables'
 
-.vertical
-	flex-direction column
+.container
+	display flex
+	width calc(100vw - 25px)
+	flex-wrap wrap
+
++media-retina()
+	.container
+		width $screen-retina - 25px
+
++media-desktop()
+	.container
+		width $screen-desktop - 25px
+
++media-tablet()
+	.container
+		width $screen-tablet - 25px

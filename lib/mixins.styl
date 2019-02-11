@@ -1,6 +1,5 @@
 @import './variables'
 
-/* MEDIA MIXINS */
 media-retina()
 	+above($screen-retina)
 		{block}
@@ -17,7 +16,6 @@ media-mobile()
 	+below($screen-tablet - 1px)
 		{block}
 
-/* FADE MIXINS */
 fadeIn(duration)
 	animation-name: fadeIn
 	animation-duration: duration
@@ -98,9 +96,21 @@ fadeOut(duration)
 		to
 			opacity: 0
 
-/* RIPPLE MIXINS */
 ripple(color, shift = 70%)
 	position: absolute
 	border-radius: 100%
 	background-color: color + shift
 	transform: scale(0)
+
+placeholder(color)
+	&::-webkit-input-placeholder
+		color: color
+
+	&::-moz-placeholder
+		color: color
+
+	&:-moz-placeholder
+		color: color
+
+	&:-ms-input-placeholder
+		color: color

@@ -4,8 +4,6 @@ const helmet = require('helmet');
 const webpack = require('webpack');
 const config = require('./webpack');
 
-const PORT = process.env.PORT || 8080;
-
 const app = express();
 const server = http.createServer(app);
 const compiler = webpack(config);
@@ -24,4 +22,4 @@ app.use(hmr);
 app.use(middleware);
 app.use('*', middleware);
 
-server.listen(PORT);
+server.listen(process.env.PORT || 8080);
