@@ -4,6 +4,7 @@
  * SSH_HOST : ssh host
  * SSH_KEY  : ssh key
  * SSH_PATH : ssh path
+ * SSH_PATH_DEV : ssh dev path
  */
 
 const gulp = require('gulp');

@@ -12,11 +12,23 @@
 	position fixed
 	top 0
 	justify-content center
+	z-index 1000
 
 .content
 	justify-content space-between
 	align-items center
 	user-select none
 
-.action
+.menu
+	background-color transparent
+	border-radius 50%
+	height 42px
+	width 42px
+	align-items center
+	justify-content center
+	display flex
+	transition .2s ease-in-out
 	cursor pointer
+
+	&:hover
+		background-color #eee

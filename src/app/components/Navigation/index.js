@@ -3,29 +3,33 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { NavLink } from 'react-router-dom';
 
-import { FlexContainer, Icon } from 'dayler-ui';
+import { GridContainer, Icon } from 'dayler-ui';
 
 import schema from './schema';
 import style from './style.styl';
 
-export function Navigation({ active, classes, ...props }) {
+export function Navigation({ active, classes, onRouteChange, ...props }) {
     const containerClassNames = classnames(style.container, classes.container, {
         [style.open]: active,
     });
 
     return <div {...props} className={containerClassNames}>
-        <FlexContainer classes={{ container: style.content }}>
+        <GridContainer classes={{ container: style.content }} grid={{ retina: 4, desktop: 4, tablet: 2 }}>
             {schema.map((group, index) => (
                 <div className={style.group} key={index}>
                     {group.map(link => (
-                        <NavLink key={link.id} to={link.to} className={style.navlink} activeClassName={style.active}>
+                        <NavLink key={link.id}
+                            to={link.to}
+                            className={style.navlink}
+                            activeClassName={style.active}
+                            onClick={onRouteChange}>
                             <Icon size={18} name={link.icon} className={style.icon} />
                             <span className={style.title}>{link.title}</span>
                         </NavLink>
                     ))}
                 </div>
             ))}
-        </FlexContainer>
+        </GridContainer>
     </div>;
 }
 
@@ -34,6 +38,7 @@ Navigation.propTypes = {
     classes: PropTypes.shape({
         container: PropTypes.string,
     }),
+    onRouteChange: PropTypes.func.isRequired,
 };
 
 Navigation.defaultProps = {
@@ -41,4 +46,5 @@ Navigation.defaultProps = {
     classes: {
         container: '',
     },
+    onRouteChange: () => { },
 };
