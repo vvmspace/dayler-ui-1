@@ -15,6 +15,7 @@ const options = {
         alias: {
             '@app': path.resolve(__dirname, '../src/app'),
             'dayler-ui': path.resolve(__dirname, '../lib'),
+            'react-dom': '@hot-loader/react-dom',
         },
     },
     resolveLoader: {

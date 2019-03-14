@@ -19,6 +19,7 @@ export function Navigation({ active, classes, onRouteChange, ...props }) {
                 <div className={style.group} key={index}>
                     {group.map(link => (
                         <NavLink key={link.id}
+                            id={link.id}
                             to={link.to}
                             className={style.navlink}
                             activeClassName={style.active}

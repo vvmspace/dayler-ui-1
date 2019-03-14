@@ -1,46 +1,55 @@
-import React, { Component } from 'react';
-import { ConnectedRouter as Router } from 'connected-react-router';
-import { createBrowserHistory } from 'history';
-import { hot } from 'react-hot-loader';
-import { Provider, connect } from 'react-redux';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import React, { PureComponent, Suspense, lazy } from 'react';
 import { render } from 'react-dom';
+import { hot } from 'react-hot-loader/root';
+
+import PropTypes from 'prop-types';
+import { createBrowserHistory } from 'history';
+import { Provider, connect } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { FlexLayout } from 'dayler-ui';
 
-import { Header } from './components';
-import { AboutContainer } from './containers';
 import createStore from './store';
+import { Header } from './components';
 
 import style from './style.styl';
 
-const history = createBrowserHistory();
-const store = createStore(history);
+const AboutContainer = lazy(() => import('./containers/AboutContainer'));
 
-@hot(module)
-@connect(reducers => ({ ...reducers }))
-class AppContainer extends Component {
+@hot
+@connect(store => ({ ...store }))
+class AppContainer extends PureComponent {
     render() {
         return <FlexLayout classes={{ container: style.layout }}>
             <Header />
-            <Switch>
-                <Route exact path="/" component={AboutContainer} />
-                <Redirect to="/" />
-            </Switch>
+            <Suspense fallback={null}>
+                <Switch>
+                    <Route exact path={['/']} render={props => <AboutContainer {...props} />} />
+
+                    <Redirect to="/" />
+                </Switch>
+            </Suspense>
         </FlexLayout>;
     }
 }
 
-class App extends Component {
-    render() {
-        return <Provider store={store}>
-            <Router history={history}>
-                <AppContainer />
-            </Router>
-        </Provider>;
-    }
-}
+export const App = () => {
+    const history = createBrowserHistory();
+    const store = createStore(history);
+
+    return <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <AppContainer />
+        </ConnectedRouter>
+    </Provider>;
+};
 
 export const bootstrap = node => {
     render(<App />, node);
+};
+
+Route.propTypes = {
+    ...Route.propTypes,
+    path: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 };

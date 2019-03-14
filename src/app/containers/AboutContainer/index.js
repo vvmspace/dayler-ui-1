@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import { GridContainer } from 'dayler-ui';
 
-export class AboutContainer extends Component {
+export default class AboutContainer extends PureComponent {
     render() {
-        return <div>...</div>;
+        return <GridContainer>
+            ...
+        </GridContainer>;
     }
 }
