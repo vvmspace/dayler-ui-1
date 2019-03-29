@@ -4,9 +4,10 @@ extends:
 
 settings:
   react:
-    version: '16.3'
+    version: '16.8.5'
   import/resolver:
     node:
       moduleDirectory: ['node_modules', './src']
-    webpack:
-      config: './webpack/index.js'
+    alias:
+      - ['app', './app']
+      - ['dayler-ui', './src']

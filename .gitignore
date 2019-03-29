@@ -7,6 +7,8 @@
 *.log
 *.snap
 
+.cache
 dist
+example
 coverage
 node_modules

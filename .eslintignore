@@ -1,5 +1,5 @@
 __tests__
+
 dist
-lib
-coverage
+example
 node_modules
