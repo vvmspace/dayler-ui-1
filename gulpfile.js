@@ -22,7 +22,7 @@ gulp.task('deploy:production', function () {
 })
 
 gulp.task('deploy:dev', function () {
-    return gulp.src('dist/*')
+    return gulp.src('example/*')
         .pipe(sftp({
             host: process.env.SSH_HOST,
             keyContents: process.env.SSH_KEY,
