@@ -1,0 +1,83 @@
+pipeline:
+  install:
+    image: iknpx/archnode
+    commands:
+      - yarn
+    when:
+      branch:
+        - master
+        - develop
+      event:
+        - push
+        - pull_request
+
+  lint:
+    image: iknpx/archnode
+    commands:
+      - yarn lint
+    when:
+      branch:
+        - master
+        - develop
+      event:
+        - push
+        - pull_request
+
+  build/ui:
+    image: iknpx/archnode
+    environment:
+      - NODE_ENV=production
+    commands:
+      - yarn build:ui
+    when:
+      branch:
+        - master
+        - develop
+      event:
+        - push
+        - pull_request
+
+  build/lib:
+    image: iknpx/archnode
+    environment:
+      - NODE_ENV=production
+    commands:
+      - yarn build:lib
+    when:
+      branch:
+        - master
+        - develop
+      event:
+        - push
+        - pull_request
+
+  deploy/ui:
+    image: iknpx/archnode
+    secrets: [ SSH_HOST, SSH_KEY, SSH_PATH ]
+    commands:
+      - gulp deploy:production
+    when:
+      branch:
+        - master
+      event:
+        - push
+
+  deploy/dev-ui:
+    image: iknpx/archnode
+    secrets: [ SSH_HOST, SSH_KEY, SSH_PATH_DEV ]
+    commands:
+      - gulp deploy:dev
+    when:
+      branch:
+        - develop
+      event:
+        - push
+
+  publish/lib:
+    image: plugins/npm
+    secrets: [ NPM_TOKEN, NPM_EMAIL ]
+    when:
+      branch:
+        - master
+      event:
+        - push
