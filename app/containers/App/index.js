@@ -1,14 +1,15 @@
 import React from 'react'
 import { hot } from 'react-hot-loader'
 
-import { Header } from 'app/components'
+import { Header, Layout } from 'app/components'
 
 import classes from './classes.styl'
 
 const AppContainer = ({ ...props }) => (
-    <div {...props} className={classes.container}>
+    <Layout {...props} overrides={{ container: classes.container }}>
         <Header />
-    </div>
+        ...
+    </Layout>
 )
 
 export const App = AppContainer
