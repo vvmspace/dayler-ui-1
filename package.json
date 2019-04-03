@@ -12,6 +12,7 @@
     "start": "parcel app/index.html --no-autoinstall --out-dir example"
   },
   "alias": {
+    "home": "./",
     "app": "./app",
     "dayler-ui": "./src",
     "react-dom": "@hot-loader/react-dom"

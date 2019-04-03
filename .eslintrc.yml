@@ -9,5 +9,6 @@ settings:
     node:
       moduleDirectory: ['node_modules', './src']
     alias:
+      - ['home', './']
       - ['app', './app']
       - ['dayler-ui', './src']

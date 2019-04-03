@@ -1,9 +1,13 @@
+@import 'app/variables'
+
 .container
     display flex
     position absolute
     top 0
     bottom 0
     width 100vw
-    height 100vh
+    height calc(100vh - $header-height)
     overflow-y auto
     flex-direction column
+    top $header-height
+    align-items center

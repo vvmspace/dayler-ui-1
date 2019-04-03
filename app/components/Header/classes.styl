@@ -1,2 +1,33 @@
+@import 'home/stylus/mixins'
+@import 'app/variables'
+
 .container
+    fadeInDown(.5s)
     display flex
+    background-color #fff
+    width 100%
+    height $header-height
+    align-items center
+    box-shadow 0 2px 7px 0 rgba(0, 0, 0, .17)
+    position fixed
+    top 0
+    justify-content center
+    z-index 10
+
+.icon
+    cursor pointer
+
+    &:hover
+        &:before
+            background-color rgba(0, 0, 0, .03)
+
+    &:before
+        content ''
+        width 46px
+        height 46px
+        background-color rgba(0, 0, 0, 0)
+        position absolute
+        border-radius 50%
+        top -13px
+        left -10px
+        transition background-color .2s ease
