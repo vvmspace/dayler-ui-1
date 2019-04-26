@@ -28,7 +28,7 @@ pipeline:
     environment:
       - NODE_ENV=production
     commands:
-      - yarn build:ui
+      - yarn dist
     when:
       branch:
         - master
@@ -42,11 +42,12 @@ pipeline:
     environment:
       - NODE_ENV=production
     commands:
-      - yarn build:lib
+      - yarn lib
     when:
       branch:
         - master
         - develop
+        - develop/*
       event:
         - push
         - pull_request
@@ -70,6 +71,7 @@ pipeline:
     when:
       branch:
         - develop
+        - develop/*
       event:
         - push
 

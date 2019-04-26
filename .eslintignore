@@ -1,4 +1,4 @@
-.cache
+bundle
+coverage
 dist
-example
 node_modules

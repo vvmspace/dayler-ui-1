@@ -11,7 +11,7 @@ const gulp = require('gulp')
 const sftp = require('gulp-sftp')
 
 gulp.task('deploy:production', function () {
-    return gulp.src('dist/*')
+    return gulp.src('bundle/*')
         .pipe(sftp({
             host: process.env.SSH_HOST,
             keyContents: process.env.SSH_KEY,
@@ -22,7 +22,7 @@ gulp.task('deploy:production', function () {
 })
 
 gulp.task('deploy:dev', function () {
-    return gulp.src('example/*')
+    return gulp.src('bundle/*')
         .pipe(sftp({
             host: process.env.SSH_HOST,
             keyContents: process.env.SSH_KEY,

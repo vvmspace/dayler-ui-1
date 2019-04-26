@@ -1,14 +1,11 @@
-*sublime*
-
-.DS_Store
 .idea
-.vs_code
+*sublime*
+.DS_Store
 
 *.log
-*.snap
+*-lock*
 
-.cache
-dist
-example
+bundle
 coverage
+dist
 node_modules
