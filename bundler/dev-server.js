@@ -24,6 +24,6 @@ app.use('*', middleware)
 
 server.listen(port)
 
-if (process.argv[2] === 'open') {
+if (process.argv.includes('--open')) {
     opn(`http://localhost:${port}`)
 }
