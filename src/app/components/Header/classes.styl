@@ -1,2 +1,35 @@
+@import '~dayler-ui/stylus/mixins'
+@import '~dayler-ui/stylus/variables'
+
+@import '~app/stylus/variables'
+
 .container
     display flex
+    background-color #fff
+    height $header-height
+    align-items center
+    box-shadow 0 2px 7px 0 rgba(0, 0, 0, .17)
+    justify-content center
+    position fixed
+    width 100%
+
+.content
+    height 100%
+    display flex
+    align-items center
+    width calc(100vw - 25px)
+
++media-retina()
+    .content
+        width $screen-retina - 25px
+
++media-desktop()
+    .content
+        width $screen-desktop - 25px
+
++media-tablet()
+    .content
+        width $screen-tablet - 25px
+
+.logo
+    width 75px

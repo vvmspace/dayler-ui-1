@@ -10,6 +10,7 @@ const options = {
         modules: ['node_modules', 'src'],
         alias: {
             'dayler-ui': path.resolve(__dirname, '../src/lib'),
+            'app': path.resolve(__dirname, '../src/app'),
             'src': path.resolve(__dirname, '../src'),
             'root': path.resolve(__dirname, '../'),
             'react-dom': '@hot-loader/react-dom',
