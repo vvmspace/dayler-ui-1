@@ -4,6 +4,7 @@
 @import '~app/stylus/variables'
 
 .container
+    fadeInDown(.3s)
     display flex
     background-color #fff
     height $header-height
@@ -12,12 +13,14 @@
     justify-content center
     position fixed
     width 100%
+    user-select none
 
 .content
     height 100%
     display flex
     align-items center
     width calc(100vw - 25px)
+    justify-content space-between
 
 +media-retina()
     .content
@@ -31,5 +34,53 @@
     .content
         width $screen-tablet - 25px
 
+    .input
+        display none
+
++media-mobile()
+    .input
+        display none
+
+.actions
+    display flex
+    flex-grow 1
+
 .logo
     width 75px
+
+.menu
+    border-radius 50%
+    width 41px
+    height 41px
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    cursor pointer
+    margin-right 15px
+    transition background-color .15s ease
+    flex-shrink 0
+
+    &:hover
+        background-color rgba(0, 0, 0, .05)
+
+.input
+    placeholder(#777)
+    color #555
+    height 41px
+    border-radius 20px
+    border 0
+    outline 0
+    background-color rgba(0, 0, 0, .00)
+    font-size 1.1em
+    min-width 0
+    width 0
+    transition all .1s ease-in-out
+
+    &:focus
+        placeholder(#bbb)
+
+    &-open
+        background-color rgba(0, 0, 0, .03)
+        padding 0 20px
+        min-width 80%

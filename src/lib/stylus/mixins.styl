@@ -18,124 +18,124 @@ media-mobile()
         {block}
 
 fadeIn(duration)
-    animation-name: fadeIn
-    animation-duration: duration
-    animation-fill-mode: both
+    animation-name fadeIn
+    animation-duration duration
+    animation-fill-mode both
 
     @keyframes fadeIn
         from
-            opacity: 0
+            opacity 0
 
         to
-            opacity: 1
+            opacity 1
 
 fadeInUp(duration)
-    animation-name: fadeInUp
-    animation-duration: duration
-    animation-fill-mode: both
+    animation-name fadeInUp
+    animation-duration duration
+    animation-fill-mode both
 
     @keyframes fadeInUp
         from
-            opacity: 0
-            transform: translate3d(0, 100%, 0)
+            opacity 0
+            transform translate3d(0, 100%, 0)
 
         to
-            opacity: 1
-            transform: none
+            opacity 1
+            transform none
 
 inUp(duration)
-    animation-name: fadeInUp
-    animation-duration: duration
-    animation-fill-mode: both
+    animation-name fadeInUp
+    animation-duration duration
+    animation-fill-mode both
 
     @keyframes fadeInUp
         from
-            transform: translate3d(0, 100%, 0)
+            transform translate3d(0, 100%, 0)
 
         to
-            transform: none
+            transform none
 
 fadeInDown(duration)
-    animation-name: fadeInDown
-    animation-duration: duration
-    animation-fill-mode: both
+    animation-name fadeInDown
+    animation-duration duration
+    animation-fill-mode both
 
     @keyframes fadeInDown
         from
-            opacity: 0
-            transform: translate3d(0, -100%, 0)
+            opacity 0
+            transform translate3d(0, -100%, 0)
 
         to
-            opacity: 1
-            transform: none
+            opacity 1
+            transform none
 
 inDown(duration)
-    animation-name: fadeInDown
-    animation-duration: duration
-    animation-fill-mode: both
+    animation-name fadeInDown
+    animation-duration duration
+    animation-fill-mode both
 
     @keyframes fadeInDown
         from
-            transform: translate3d(0, -100%, 0)
+            transform translate3d(0, -100%, 0)
 
         to
-            transform: none
+            transform none
 
 fadeInLeft(duration)
-    animation-name: fadeInLeft
-    animation-duration: duration
-    animation-fill-mode: both
+    animation-name fadeInLeft
+    animation-duration duration
+    animation-fill-mode both
 
     @keyframes fadeInLeft
         from
-            opacity: 0
-            transform: translate3d(-100%, 0, 0)
+            opacity 0
+            transform translate3d(-100%, 0, 0)
 
         to
-            opacity: 1
-            transform: none
+            opacity 1
+            transform none
 
 fadeInRight(duration)
-    animation-name: fadeInRight
-    animation-duration: duration
-    animation-fill-mode: both
+    animation-name fadeInRight
+    animation-duration duration
+    animation-fill-mode both
 
     @keyframes fadeInRight
         from
-            opacity: 0
-            transform: translate3d(100%, 0, 0)
+            opacity 0
+            transform translate3d(100%, 0, 0)
 
         to
-            opacity: 1
-            transform: none
+            opacity 1
+            transform none
 
 fadeOut(duration)
-    animation-name: fadeOut
-    animation-duration: duration
-    animation-fill-mode: both
+    animation-name fadeOut
+    animation-duration duration
+    animation-fill-mode both
 
     @keyframes fadeOut
         from
-            opacity: 1
+            opacity 1
 
         to
-            opacity: 0
+            opacity 0
 
 ripple(color, shift = 70%)
-    position: absolute
-    border-radius: 100%
-    background-color: color + shift
-    transform: scale(0)
+    position absolute
+    border-radius 100%
+    background-color color + shift
+    transform scale(0)
 
 placeholder(color)
     &::-webkit-input-placeholder
-        color: color
+        color color
 
     &::-moz-placeholder
-        color: color
+        color color
 
     &:-moz-placeholder
-        color: color
+        color color
 
     &:-ms-input-placeholder
-        color: color
+        color color
