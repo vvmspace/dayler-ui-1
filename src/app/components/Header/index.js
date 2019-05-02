@@ -1,40 +1,37 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback, useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import { AnimatedIcon } from 'dayler-ui'
 
+import { Search } from 'app/components'
+import CDN from 'app/cdn.json'
+
 import classes from './classes.styl'
 
-const src = {
-    logo: 'https://cdn.dayler.io/images/logo_dark.svg',
-}
-
 export const Header = ({ ...props }) => {
-    let input
-
-    const [isOpen, setOpen] = useState(false)
-    const [searchString, setSearch] = useState('')
-
-    const handleOpen = useCallback(() => {
-        setOpen(!isOpen)
-        setSearch('')
-    }, [isOpen])
-
-    const handleSearch = useCallback(({ target: { value }}) => {
-        setSearch(value)
-    }, [isOpen])
-
     const css = {
         menu: classnames(classes.menu, {
             [classes.menuOpen]: isOpen,
         }),
-        input: classnames(classes.input, {
-            [classes.inputOpen]: isOpen,
-        }),
     }
+
+    const searchRef = useRef(null)
+
+    const [isOpen, setOpenValue] = useState(false)
+    const [searchValue, setSearchValue] = useState('')
+
+    const handleOpen = useCallback(() => {
+        setOpenValue(!isOpen)
+        setSearchValue('')
+
+    }, [isOpen])
+
+    const handleSearch = useCallback(value => {
+        setSearchValue(value)
+    }, [searchValue])
 
     function handleKeyPress({ key }) {
         if (key === 'Escape') {
-            setOpen(false)
+            setOpenValue(false)
         }
     }
 
@@ -42,7 +39,7 @@ export const Header = ({ ...props }) => {
         document.addEventListener('keydown', handleKeyPress, false)
 
         if (isOpen) {
-            input.focus()
+            searchRef.current.focus()
         }
 
         return () => {
@@ -57,14 +54,12 @@ export const Header = ({ ...props }) => {
                     <AnimatedIcon state={isOpen} />
                 </span>
 
-                <input className={css.input}
-                    type="text"
-                    placeholder="Search ..."
-                    value={searchString}
+                <Search active={isOpen}
+                    value={searchValue}
                     onChange={handleSearch}
-                    ref={_ => input = _} />
+                    ref={searchRef} />
             </div>
-            <img className={classes.logo} src={src.logo} alt="Dayler.io" />
+            <img className={classes.logo} src={CDN.logo_dark} alt="Dayler.io" />
         </div>
     </div>
 }
