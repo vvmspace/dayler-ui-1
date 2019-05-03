@@ -1,0 +1,39 @@
+@import '~dayler-ui/stylus/mixins'
+@import '~dayler-ui/stylus/variables'
+
+@import '~app/stylus/variables'
+
+.container
+    fadeInDown(.1s)
+    border-top 1px solid #eee
+    background-color #fff
+    position absolute
+    width 100%
+    top $header-height
+    display none
+    padding 25px 0
+    z-index 10
+    flex-direction column
+    align-items center
+
+.open
+    display flex
+
+.content
+    height 100%
+    display flex
+    align-items center
+    width calc(100vw - 35px)
+    justify-content space-between
+
++media-retina()
+    .content
+        width $screen-retina - 35px
+
++media-desktop()
+    .content
+        width $screen-desktop - 35px
+
++media-tablet()
+    .content
+        width $screen-tablet - 35px

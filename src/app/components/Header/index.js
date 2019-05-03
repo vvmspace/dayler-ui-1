@@ -2,14 +2,14 @@ import React, { useState, useCallback, useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import { AnimatedIcon } from 'dayler-ui'
 
-import { Search } from 'app/components'
-import CDN from 'app/cdn.json'
+import { Navigation, Search } from 'app/components'
+import cdn from 'app/cdn.json'
 
 import classes from './classes.styl'
 
 export const Header = ({ ...props }) => {
     const css = {
-        menu: classnames(classes.menu, {
+        menuIcon: classnames(classes.menuIcon, {
             [classes.menuOpen]: isOpen,
         }),
     }
@@ -48,9 +48,10 @@ export const Header = ({ ...props }) => {
     })
 
     return <div {...props} className={classes.container}>
+        <Navigation filter={searchValue} open={isOpen} />
         <div className={classes.content}>
             <div className={classes.actions}>
-                <span className={css.menu} onClick={handleOpen}>
+                <span className={css.menuIcon} onClick={handleOpen}>
                     <AnimatedIcon state={isOpen} />
                 </span>
 
@@ -59,7 +60,7 @@ export const Header = ({ ...props }) => {
                     onChange={handleSearch}
                     ref={searchRef} />
             </div>
-            <img className={classes.logo} src={CDN.logo_dark} alt="Dayler.io" />
+            <img className={classes.logo} src={cdn.logo_dark} alt="Dayler.io" />
         </div>
     </div>
 }
