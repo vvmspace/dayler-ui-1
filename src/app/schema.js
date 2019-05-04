@@ -47,4 +47,15 @@ export default [{
             'typing',
         ],
     }],
+}, {
+    key: key(),
+    items: [{
+        key: key(),
+        title: 'Feather Icons',
+        href: '/feather',
+        tags: [
+            'icons',
+            'feather',
+        ],
+    }],
 }]

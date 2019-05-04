@@ -7,6 +7,7 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 
 import { Content, Header, Layout } from './components'
 
+const FeatherRoute = lazy(() => import('./routes/FeatherRoute'))
 const IndexRoute = lazy(() => import('./routes/IndexRoute'))
 const TypingsRoute = lazy(() => import('./routes/TypingsRoute'))
 
@@ -21,6 +22,7 @@ export default class App extends PureComponent {
                     <Suspense fallback={null}>
                         <Switch>
                             <Route exact path={['/']} component={IndexRoute} />
+                            <Route path={['/feather']} component={FeatherRoute} />
                             <Route path={['/typings']} component={TypingsRoute} />
 
                             <Redirect to="/" />
