@@ -27,7 +27,7 @@ export default class FeatherRoute extends PureComponent {
                 onChange={this.handleSearch} />
 
             <div className={classes.icons}>
-                {service.search(featherIconsSource.icons, query).map(icon => <Icon key={icon.id}>
+                {service.search(featherIconsSource.icons, query).map((icon, index) => <Icon key={icon.id} index={index}>
                     <Feather size={48}>{icon.name}</Feather>
                     <span className={classes.title}>{icon.name}</span>
                 </Icon>)}
