@@ -1,0 +1,48 @@
+@import '~dayler-ui/stylus/colors'
+@import '~dayler-ui/stylus/mixins'
+@import '~dayler-ui/stylus/variables'
+
+getContainer(cols = 5)
+    grid-template-columns repeat(cols, 100% / cols)
+
+.container
+    getContainer(1)
+    width 100%
+    flex-grow 1
+    display grid
+    flex-shink 0
+    user-select none
+
++media-retina()
+    .container
+        getContainer(7)
+
++media-desktop()
+    .container
+        getContainer(6)
+
++media-tablet()
+    .container
+        getContainer(3)
+
++media-mobile()
+    .container
+        getContainer(1)
+
+.group
+    margin-bottom 20px
+    display flex
+    flex-direction column
+    flex-shink 0
+
+    & > *:not(:last-child)
+        margin-bottom 5px
+
+.null
+    width 100%
+    display flex
+    justify-content center
+    text-align center
+    flex-grow 1
+    align-items center
+    color $grey-300

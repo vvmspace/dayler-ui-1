@@ -1,6 +1,6 @@
 const express = require('express')
 const http = require('http')
-const opn = require('opn')
+const open = require('open')
 const webpack = require('webpack')
 
 const config = require('./index')
@@ -25,5 +25,5 @@ app.use('*', middleware)
 server.listen(port)
 
 if (process.argv.includes('--open')) {
-    opn(`http://localhost:${port}`)
+    open(`http://localhost:${port}`)
 }

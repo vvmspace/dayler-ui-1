@@ -12,7 +12,8 @@
     "dist": "webpack --config ./bundler/index.js",
     "lib": "webpack --config ./bundler/webpack.lib.js",
     "lint": "eslint .",
-    "start": "node ./bundler/dev-server.js"
+    "start": "node ./bundler/dev-server.js",
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/iknpx/dayler-ui/issues"
@@ -53,7 +54,8 @@
     "gulp": "3.9.1",
     "gulp-sftp": "^0.1.5",
     "html-webpack-plugin": "^3.2.0",
-    "opn": "^6.0.0",
+    "jest": "^24.7.1",
+    "open": "^6.2.0",
     "postcss-loader": "^3.0.0",
     "raw-loader": "^2.0.0",
     "react-hot-loader": "^4.8.4",
