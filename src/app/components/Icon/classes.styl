@@ -19,7 +19,17 @@
         transform scale(1.08)
 
 
++media-tablet()
+    .container
+        &:hover
+            transform none
+            transition none
+
 +media-mobile()
     .container
         width 140px
         height 140px
+
+        &:hover
+            transform none
+            transition none
