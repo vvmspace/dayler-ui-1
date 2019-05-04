@@ -1,5 +1,6 @@
 export * from './Content'
 export * from './Header'
+export * from './Icon'
 export * from './Layout'
 export * from './Navigation'
 export * from './NavigationItem'

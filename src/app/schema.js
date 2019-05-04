@@ -51,11 +51,66 @@ export default [{
     key: key(),
     items: [{
         key: key(),
+        title: 'Button',
+        href: '/button',
+        tags: [
+            '',
+        ],
+    }, {
+        key: key(),
+        title: 'Select',
+        href: '/select',
+        tags: [
+            '',
+        ],
+    }, {
+        key: key(),
+        title: 'Range',
+        href: '/range',
+        tags: [
+            '',
+        ],
+    }, {
+        key: key(),
+        title: 'Stepper',
+        href: '/stepper',
+        tags: [
+            '',
+        ],
+    }, {
+        key: key(),
         title: 'Feather Icons',
         href: '/feather',
         tags: [
             'icons',
             'feather',
+        ],
+    }],
+}, {
+    key: key(),
+    items: [{
+        key: key(),
+        title: 'Panel',
+        href: '/panel',
+        tags: [
+            '',
+        ],
+    }, {
+        key: key(),
+        title: 'Modal',
+        href: '/modal',
+        tags: [
+            '',
+        ],
+    }],
+}, {
+    key: key(),
+    items: [{
+        key: key(),
+        title: '',
+        href: '/',
+        tags: [
+            '',
         ],
     }],
 }]

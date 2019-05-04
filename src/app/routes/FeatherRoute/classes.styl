@@ -1,0 +1,63 @@
+@import '~dayler-ui/stylus/mixins'
+@import '~dayler-ui/stylus/colors'
+
+getContainer(cols = 5)
+    grid-template-columns repeat(cols, 1fr)
+
+.container
+    display flex
+    flex-direction column
+
+.icons
+    getContainer(3)
+    display grid
+    grid-gap 10px
+    justify-items center
+    padding 10px 0
+
+.title
+    color $grey-300
+    margin-top 10px
+    text-align center
+    font-size .8em
+
+.search
+    placeholder(#777)
+    color #555
+    height 41px
+    border-radius 20px
+    border 0
+    outline 0
+    background-color #fff
+    font-size 1em
+    margin 0 5px
+    padding 0 20px
+    align-self flex-start
+    box-shadow 0 2px 7px 0 rgba(0, 0, 0, .17)
+    margin-bottom 25px
+    transition all .2s ease
+    min-width 130px
+    flex-shrink 0
+
+    &:focus
+        min-width 80%
+
++media-retina()
+    .icons
+        getContainer(10)
+
++media-desktop()
+    .icons
+        getContainer(7)
+
++media-tablet()
+    .icons
+        getContainer(5)
+
++media-mobile()
+    .icons
+        getContainer(2)
+
+    .search
+        &:focus
+            min-width 95%
