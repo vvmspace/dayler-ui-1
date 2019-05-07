@@ -1,4 +1,8 @@
-const filter = (tags, query) => {
+const filter = (tags, name, query) => {
+    if (name.toLowerCase().indexOf(query.toLowerCase()) > -1) {
+        return true
+    }
+
     for (const tag of tags) {
         if (tag.toLowerCase().indexOf(query.toLowerCase()) > -1) {
             return true
@@ -10,6 +14,6 @@ const filter = (tags, query) => {
 
 export const search = (icons = [], query = '') => {
     return query
-        ? icons.filter(icon => filter(icon.tags, query))
+        ? icons.filter(icon => filter(icon.tags, icon.name, query))
         : icons
 }

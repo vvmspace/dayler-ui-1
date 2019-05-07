@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 
 import { Feather, featherIconsSource } from 'dayler-ui'
-import { Icon } from 'app/components'
 
 import * as service from './service'
 import classes from './classes.styl'
@@ -19,6 +18,7 @@ export default class FeatherRoute extends PureComponent {
 
     render() {
         const { query } = this.state
+        const icons = service.search(featherIconsSource.icons, query)
 
         return <div className={classes.container}>
             <input type="text" className={classes.search}
@@ -27,10 +27,10 @@ export default class FeatherRoute extends PureComponent {
                 onChange={this.handleSearch} />
 
             <div className={classes.icons}>
-                {service.search(featherIconsSource.icons, query).map((icon, index) => <Icon key={icon.id} index={index}>
+                {icons.map(icon => <span key={icon.id} className={classes.icon}>
                     <Feather size={48}>{icon.name}</Feather>
                     <span className={classes.title}>{icon.name}</span>
-                </Icon>)}
+                </span>)}
             </div>
         </div>
     }

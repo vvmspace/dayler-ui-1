@@ -102,10 +102,7 @@ export default [{
         tags: [
             '',
         ],
-    }],
-}, {
-    key: key(),
-    items: [{
+    }, {
         key: key(),
         title: '',
         href: '/',

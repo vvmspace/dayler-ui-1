@@ -17,9 +17,10 @@ media-mobile()
     +below($screen-tablet - 1px)
         {block}
 
-fadeIn(duration)
+fadeIn(duration, delay = 0)
     animation-name fadeIn
     animation-duration duration
+    animation-delay delay
     animation-fill-mode both
 
     @keyframes fadeIn
@@ -29,9 +30,10 @@ fadeIn(duration)
         to
             opacity 1
 
-fadeInUp(duration)
+fadeInUp(duration, delay = 0)
     animation-name fadeInUp
     animation-duration duration
+    animation-delay delay
     animation-fill-mode both
 
     @keyframes fadeInUp
@@ -43,9 +45,10 @@ fadeInUp(duration)
             opacity 1
             transform none
 
-inUp(duration)
+inUp(duration, delay = 0)
     animation-name fadeInUp
     animation-duration duration
+    animation-delay delay
     animation-fill-mode both
 
     @keyframes fadeInUp
@@ -55,9 +58,10 @@ inUp(duration)
         to
             transform none
 
-fadeInDown(duration)
+fadeInDown(duration, delay = 0)
     animation-name fadeInDown
     animation-duration duration
+    animation-delay delay
     animation-fill-mode both
 
     @keyframes fadeInDown
@@ -69,9 +73,10 @@ fadeInDown(duration)
             opacity 1
             transform none
 
-inDown(duration)
+inDown(duration, delay = 0)
     animation-name fadeInDown
     animation-duration duration
+    animation-delay delay
     animation-fill-mode both
 
     @keyframes fadeInDown
@@ -81,9 +86,10 @@ inDown(duration)
         to
             transform none
 
-fadeInLeft(duration)
+fadeInLeft(duration, delay = 0)
     animation-name fadeInLeft
     animation-duration duration
+    animation-delay delay
     animation-fill-mode both
 
     @keyframes fadeInLeft
@@ -95,9 +101,10 @@ fadeInLeft(duration)
             opacity 1
             transform none
 
-fadeInRight(duration)
+fadeInRight(duration, delay = 0)
     animation-name fadeInRight
     animation-duration duration
+    animation-delay delay
     animation-fill-mode both
 
     @keyframes fadeInRight
@@ -109,9 +116,10 @@ fadeInRight(duration)
             opacity 1
             transform none
 
-fadeOut(duration)
+fadeOut(duration, delay = 0)
     animation-name fadeOut
     animation-duration duration
+    animation-delay delay
     animation-fill-mode both
 
     @keyframes fadeOut
