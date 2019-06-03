@@ -72,6 +72,7 @@ pipeline:
     when:
       branch:
         - master
+        - develop
       event:
         - push
 
@@ -81,5 +82,6 @@ pipeline:
     when:
       branch:
         - master
+        - develop
       event:
         - push
