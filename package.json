@@ -25,7 +25,9 @@
     }
   },
   "dependencies": {
+    "@emotion/core": "^10.0.10",
     "classnames": "^2.2.6",
+    "emotion": "^10.0.9",
     "feather-icons": "^4.21.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -46,6 +48,7 @@
     "@hot-loader/react-dom": "^16.8.6",
     "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-emotion": "^10.0.13",
     "copy-webpack-plugin": "^5.0.2",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
