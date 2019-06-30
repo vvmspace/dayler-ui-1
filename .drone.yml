@@ -67,10 +67,13 @@ steps:
 
   - name: publish/npm-package
     image: plugins/npm
-    username:
-      from_secret: npm_username
-    password:
-      from_secret: npm_password
+    settings:
+      username:
+        from_secret: npm_username
+      password:
+        from_secret: npm_password
+      email:
+        from_secret: npm_email
     when:
       branch:
         - master
