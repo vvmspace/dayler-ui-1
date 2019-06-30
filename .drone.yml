@@ -6,7 +6,7 @@ steps:
   - name: install
     image: iknpx/archnode
     commands:
-      - yarn
+      - yarn --silent
     when:
       branch:
         - master
