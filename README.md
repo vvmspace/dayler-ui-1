@@ -1,4 +1,4 @@
-![logo](https://cdn.dayler.io/images/logo_dark.svg)
+![logo](https://cdn.dayler.io/images/logo_green.svg)
 ---
 ![Build Status](https://drone.dayler.dev/api/badges/iknpx/dayler-ui/status.svg)
 [![npm version](https://badge.fury.io/js/dayler-ui.svg)](https://badge.fury.io/js/dayler-ui)
