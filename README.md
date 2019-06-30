@@ -18,4 +18,4 @@ npm install --save dayler-ui
 [API usage with examples](https://ui.dayler.io)
 
 ---
-*Made with* :heart: *for [Dayler.io](https://dayler.io)*
+*Made with* :heart: *for [dayler.io](https://dayler.io)*

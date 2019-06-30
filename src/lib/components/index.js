@@ -1,3 +1,1 @@
-export * from './AnimatedIcon'
-export * from './Feather'
-export * from './Panel'
+export const nil = { }

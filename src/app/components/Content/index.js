@@ -1,10 +1,10 @@
 import React from 'react'
 
-import classes from './classes.styl'
+import css from './css.styl'
 
 export const Content = ({ children, ...props }) => {
-    return <div {...props} className={classes.container}>
-        <div className={classes.content}>
+    return <div {...props} className={css.container}>
+        <div className={css.content}>
             {children}
         </div>
     </div>

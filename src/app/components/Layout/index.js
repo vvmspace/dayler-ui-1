@@ -1,9 +1,9 @@
 import React from 'react'
 
-import classes from './classes.styl'
+import css from './css.styl'
 
 export const Layout = ({ children, ...props }) => {
-    return <div {...props} className={classes.container}>
+    return <div {...props} className={css.container}>
         {children}
     </div>
 }

@@ -49,9 +49,7 @@ const options = {
                     loader: 'postcss-loader',
                     options: {
                         plugins: [
-                            require('autoprefixer')({
-                                browsers:['ie >= 8', 'last 4 version'],
-                            }),
+                            require('autoprefixer'),
                         ],
                     },
                 }, {
@@ -80,10 +78,6 @@ const options = {
     },
     plugins: [
         (plugin => new plugin([{ to: '', from: 'src/assets' }], {
-            ignore: ['.gitkeep', '**/.DS_Store', '**/Thumbs.db'],
-            debug: 'warning',
-        }))(require('copy-webpack-plugin')),
-        (plugin => new plugin([{ to: '', from: 'src/workers' }], {
             ignore: ['.gitkeep', '**/.DS_Store', '**/Thumbs.db'],
             debug: 'warning',
         }))(require('copy-webpack-plugin')),

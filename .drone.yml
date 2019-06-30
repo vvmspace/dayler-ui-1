@@ -1,5 +1,9 @@
-pipeline:
-  install:
+---
+kind: pipeline
+name: ci
+
+steps:
+  - name: install
     image: iknpx/archnode
     commands:
       - yarn
@@ -11,7 +15,7 @@ pipeline:
         - push
         - pull_request
 
-  lint:
+  - name: lint
     image: iknpx/archnode
     commands:
       - yarn lint
@@ -23,7 +27,7 @@ pipeline:
         - push
         - pull_request
 
-  test:
+  - name:  test
     image: iknpx/archnode
     commands:
       - yarn test
@@ -35,10 +39,10 @@ pipeline:
         - push
         - pull_request
 
-  build/ui:
+  - name: build/ui
     image: iknpx/archnode
     environment:
-      - NODE_ENV=production
+      NODE_ENV: production
     commands:
       - yarn dist
     when:
@@ -47,41 +51,44 @@ pipeline:
         - develop
       event:
         - push
-        - pull_request
 
-  build/lib:
+  - name: build/lib
     image: iknpx/archnode
     environment:
-      - NODE_ENV=production
+      NODE_ENV: production
     commands:
       - yarn lib
     when:
       branch:
         - master
         - develop
-        - develop/*
-      event:
-        - push
-        - pull_request
-
-  deploy/ui:
-    image: iknpx/archnode
-    secrets: [ SSH_HOST, SSH_KEY, SSH_PATH ]
-    commands:
-      - gulp deploy:production
-    when:
-      branch:
-        - master
-        - develop
       event:
         - push
 
-  publish/lib:
+  - name: publish/npm-package
     image: plugins/npm
-    secrets: [ NPM_TOKEN, NPM_EMAIL ]
+    npm_token:
+      from_secret: NPM_TOKEN
+    npm_email:
+      from_secret: NPM_EMAIL
     when:
       branch:
         - master
-        - develop
+      event:
+        - push
+
+  - name: publish_master_image
+    image: plugins/docker
+    settings:
+      repo: dayler/ui
+      purge: true
+      insecure: false
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    when:
+      branch:
+        - master
       event:
         - push
