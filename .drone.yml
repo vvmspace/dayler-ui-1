@@ -95,17 +95,3 @@ steps:
         - master
       event:
         - push
-
-  - name: status/telegram
-    image: appleboy/drone-telegram
-    settings:
-      token:
-        from_secret: telegram_token
-      to:
-        from_secret: telegram_to
-    when:
-      status: [ success, failure ]
-      branch:
-        - master
-      event:
-        - push
