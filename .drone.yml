@@ -39,7 +39,7 @@ steps:
         - push
         - pull_request
 
-  - name: build/ui
+  - name: build/master-image-source
     image: iknpx/archnode
     environment:
       NODE_ENV: production
@@ -52,7 +52,7 @@ steps:
       event:
         - push
 
-  - name: build/lib
+  - name: build/npm-package
     image: iknpx/archnode
     environment:
       NODE_ENV: production
@@ -67,9 +67,9 @@ steps:
 
   - name: publish/npm-package
     image: plugins/npm
-    npm_token:
+    token:
       from_secret: NPM_TOKEN
-    npm_email:
+    email:
       from_secret: NPM_EMAIL
     when:
       branch:
@@ -77,7 +77,7 @@ steps:
       event:
         - push
 
-  - name: publish_master_image
+  - name: publish/master-image
     image: plugins/docker
     settings:
       repo: dayler/ui
