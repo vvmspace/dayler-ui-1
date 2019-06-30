@@ -6,7 +6,7 @@
 
 # Dayler React Components
 
-[dayler-ui](https://ui.dayler.io/) is a collection of simply beautiful open source react components designed for [dayler.io](https://dayler.io/)
+[dayler-ui](https://ui.dayler.dev/) is a collection of simply beautiful open source react components designed for [dayler.io](https://dayler.io/)
 
 
 ### Installation
@@ -15,7 +15,7 @@ npm install --save dayler-ui
 ```
 
 ### Usage
-[API usage with examples](https://ui.dayler.io)
+[API usage with examples](https://ui.dayler.dev)
 
 ### Run Examples Image
 ```bash
