@@ -21,6 +21,10 @@ trim_trailing_whitespace = false
 indent_size = 2
 indent_style = space
 
+[*.conf]
+indent_size = 2
+indent_style = space
+
 [package.json]
 indent_size = 2
 indent_style = space
