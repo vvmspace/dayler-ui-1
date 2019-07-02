@@ -5,7 +5,7 @@ import React, { lazy, PureComponent, Suspense } from 'react'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import { hot } from 'react-hot-loader/root'
 
-import { Content, Layout } from './components'
+import { Content, Layout, Navigation } from './components'
 
 const IndexRoute = lazy(() => import('./routes/IndexRoute'))
 
@@ -14,6 +14,7 @@ export default class App extends PureComponent {
     render() {
         return <BrowserRouter>
             <Layout>
+                <Navigation />
                 <Content>
                     <Suspense fallback={null}>
                         <Switch>
