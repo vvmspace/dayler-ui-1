@@ -5,7 +5,7 @@ const webpack = require('webpack')
 
 const config = require('./index')
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8081
 
 const app = express()
 const server = http.createServer(app)

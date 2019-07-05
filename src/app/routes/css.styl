@@ -1,0 +1,17 @@
+scopedContent(size)
+    & > *
+        margin-top size
+        margin-bottom size
+
+    & > *:not(:last-child)
+        margin-right size
+
+    & > *:not(:first-child)
+        margin-left size
+
+.container
+    padding 20px
+
+.card
+    &:not(:last-child)
+        margin-bottom 10px

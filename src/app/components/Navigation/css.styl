@@ -1,0 +1,18 @@
+@import '~dayler-ui/stylus/mixins'
+
+@import '~app/stylus/variables'
+
+.container
+    fadeInLeft(.2s)
+    width 280px
+    background-color #fff
+    flex-shrink 0
+    box-shadow 0 2px 7px 0 rgba(0, 0, 0, .17)
+
+.header
+    height 100px
+    display flex
+
++media-tablet()
+    .container
+        width $navigation-width-xs

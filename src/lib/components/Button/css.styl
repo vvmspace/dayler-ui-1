@@ -1,0 +1,108 @@
+@import '../../stylus/colors'
+@import '../../stylus/mixins'
+
+@keyframes buttonRippleAnimation
+    100%
+        opacity: 0
+        transform: scale(2.5)
+
+getColor(color)
+    background-color color - 20%
+    color #FFFFFF
+
+    &:hover
+        background-color color - 5%
+
+    & .rippler
+        ripple(color - 80%, 60%)
+
+    & .icon
+        background-color color - 35%
+
+        & > svg
+            color #FFFFFF
+
+    &:disabled
+        background-color color + 80%
+        color color + 30%
+
+        &:active
+            transform translate(0, 0)
+
+        & .icon
+            background-color color + 80%
+
+            & > svg
+                color color + 30%
+
+.container
+    position relative
+    display inline-flex
+    justify-content center
+    align-items center
+    overflow hidden
+    height 31px
+    outline 0
+    border 0
+    border-radius 2px
+    vertical-align middle
+    text-decoration none
+    font-family inherit
+    cursor pointer
+    padding 0
+    transition transform .1s ease-in, background-color .2s ease-in
+
+    &:active
+        transform translate(0, 1px)
+
+    & > *
+        text-decoration none
+        user-select none
+
+    &:disabled
+        cursor not-allowed
+
+.animate
+    animation buttonRippleAnimation .4s linear
+
+.title
+    position relative
+    z-index 2
+    padding 0 18px
+    display flex
+    align-items center
+    font-size 12px
+    text-decoration none
+    line-height 2
+    max-width 100%
+    white-space nowrap
+    text-overflow ellipsis
+    overflow hidden
+    text-transform uppercase
+
+.icon
+    display flex
+    align-items center
+    justify-content center
+    flex-direction column
+    width 31px
+    height 31px
+
+    & > svg
+        position relative
+        z-index 2
+
+    & + .title
+        padding 0 18px 0 14px
+
+.blue
+    getColor($blue)
+
+.green
+    getColor($green)
+
+.grey
+    getColor($grey)
+
+.red
+    getColor($red)

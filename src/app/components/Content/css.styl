@@ -1,6 +1,8 @@
 @import '~dayler-ui/stylus/mixins'
 @import '~dayler-ui/stylus/variables'
 
+@import '~app/stylus/variables'
+
 .container
     width 100%
     flex-grow 1
@@ -8,16 +10,17 @@
 .content
     display flex
     flex-direction column
-    width calc(100vw - 25px)
+    width "calc(%s - %s)" % (100vh $navigation-width-xl)
+
 
 +media-retina()
     .content
-        width $screen-retina - 25px
+        width "calc(%s - %s)" % ($screen-retina $navigation-width-xl)
 
 +media-desktop()
     .content
-        width $screen-desktop - 25px
+        width "calc(%s - %s)" % ($screen-desktop $navigation-width-xl)
 
 +media-tablet()
     .content
-        width $screen-tablet - 25px
+        width "calc(%s - %s)" % ($screen-tablet $navigation-width-xs)

@@ -8,6 +8,9 @@ import { hot } from 'react-hot-loader/root'
 import { Content, Layout, Navigation } from './components'
 
 const IndexRoute = lazy(() => import('./routes/IndexRoute'))
+const ButtonsRoute = lazy(() => import('./routes/ButtonsRoute'))
+const CardsRoute = lazy(() => import('./routes/CardsRoute'))
+const ColorsRoute = lazy(() => import('./routes/ColorsRoute'))
 
 @hot
 export default class App extends PureComponent {
@@ -19,6 +22,9 @@ export default class App extends PureComponent {
                     <Suspense fallback={null}>
                         <Switch>
                             <Route exact path={['/']} component={IndexRoute} />
+                            <Route exact path={['/buttons']} component={ButtonsRoute} />
+                            <Route exact path={['/cards']} component={CardsRoute} />
+                            <Route exact path={['/colors']} component={ColorsRoute} />
 
                             <Redirect to="/" />
                         </Switch>
