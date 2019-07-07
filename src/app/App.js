@@ -7,24 +7,36 @@ import { hot } from 'react-hot-loader/root'
 
 import { Content, Layout, Navigation } from './components'
 
-const IndexRoute = lazy(() => import('./routes/IndexRoute'))
-const ButtonsRoute = lazy(() => import('./routes/ButtonsRoute'))
-const CardsRoute = lazy(() => import('./routes/CardsRoute'))
-const ColorsRoute = lazy(() => import('./routes/ColorsRoute'))
-
 @hot
 export default class App extends PureComponent {
+    state = {
+        isWidth: true,
+    }
+
+    handleChangeNavigationWidth = () => {
+        this.setState(state => ({ isWidth: !state.isWidth }))
+    }
+
     render() {
+        const { isWidth } = this.state
+
         return <BrowserRouter>
             <Layout>
-                <Navigation />
-                <Content>
+                <Navigation isWidth={isWidth}
+                    onChangeWidth={this.handleChangeNavigationWidth} />
+                <Content isWidth={isWidth}>
                     <Suspense fallback={null}>
                         <Switch>
-                            <Route exact path={['/']} component={IndexRoute} />
-                            <Route exact path={['/buttons']} component={ButtonsRoute} />
-                            <Route exact path={['/cards']} component={CardsRoute} />
-                            <Route exact path={['/colors']} component={ColorsRoute} />
+                            <Route exact path={['/']}
+                                component={lazy(() => import('./routes/IndexRoute'))} />
+                            <Route exact path={['/buttons']}
+                                component={lazy(() => import('./routes/ButtonsRoute'))} />
+                            <Route exact path={['/cards']}
+                                component={lazy(() => import('./routes/CardsRoute'))} />
+                            <Route exact path={['/colors']}
+                                component={lazy(() => import('./routes/ColorsRoute'))} />
+                            <Route exact path={['/icons']}
+                                component={lazy(() => import('./routes/IconsRoute'))} />
 
                             <Redirect to="/" />
                         </Switch>

@@ -1,0 +1,155 @@
+.container
+    width 25px
+    height 25px
+    position relative
+    flex-shrink 0
+    transform rotate(0)
+
+    & > *
+        transition .1s ease-in-out
+        position absolute
+        height 2px
+        border-radius 2px
+        background-color #000
+        width 19px
+
+menu()
+    &:nth-child(1)
+        left 3px
+        top 6px
+
+    &:nth-child(2)
+        left 3px
+        top 12px
+
+    &:nth-child(3)
+        left 3px
+        top 18px
+
+close()
+    &:nth-child(1)
+        left 3px
+        top 12px
+        transform rotate(45deg)
+
+    &:nth-child(2)
+        left 3px
+        top 12px
+        opacity 0
+
+    &:nth-child(3)
+        left 3px
+        top 12px
+        transform rotate(-45deg)
+
+chevron-left()
+    &:nth-child(1)
+        left 2px
+        top 9px
+        transform rotate(-45deg) scale(.55, 1)
+
+    &:nth-child(2)
+        left 3px
+        top 12px
+        opacity 0
+
+    &:nth-child(3)
+        left 2px
+        top 15px
+        transform rotate(45deg) scale(.55, 1)
+
+chevron-right()
+    &:nth-child(1)
+        left 4px
+        top 9px
+        transform rotate(45deg) scale(.55, 1)
+
+    &:nth-child(2)
+        left 3px
+        top 12px
+        opacity 0
+
+    &:nth-child(3)
+        left 4px
+        top 15px
+        transform rotate(-45deg) scale(.55, 1)
+
+arrow-left()
+    &:nth-child(1)
+        left -2px
+        top 8px
+        transform rotate(-45deg) scale(.7, 1)
+
+    &:nth-child(2)
+        left 3px
+        top 12px
+
+    &:nth-child(3)
+        left -2px
+        top 16px
+        transform rotate(45deg) scale(.7, 1)
+
+arrow-rigth()
+    &:nth-child(1)
+        left 8px
+        top 8px
+        transform rotate(45deg) scale(.7, 1)
+
+    &:nth-child(2)
+        left 3px
+        top 12px
+
+    &:nth-child(3)
+        left 8px
+        top 16px
+        transform rotate(-45deg) scale(.7, 1)
+
+.chevronleftright
+    &.container > *
+        chevron-left()
+
+    &.active > *
+        chevron-right()
+
+.chevronrightleft
+    &.container > *
+        chevron-right()
+
+    &.active > *
+        chevron-left()
+
+.menuchevronleft
+    &.container > *
+        menu()
+
+    &.active > *
+        chevron-left()
+
+.menuchevronright
+    &.container > *
+        menu()
+
+    &.active > *
+        chevron-right()
+
+
+.menuclose
+    &.container > *
+        menu()
+
+    &.active > *
+        close()
+
+.menuleft
+    &.container > *
+        menu()
+
+    &.active > *
+        arrow-left()
+
+.menuright
+    &.container > *
+        menu()
+
+    &.active > *
+        arrow-rigth()

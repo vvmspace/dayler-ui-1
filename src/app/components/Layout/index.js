@@ -1,9 +1,9 @@
 import React from 'react'
 
-import css from './css.styl'
+import __CSS__ from './css.styl'
 
 export const Layout = ({ children, ...props }) => {
-    return <div {...props} className={css.container}>
+    return <div {...props} className={__CSS__.container}>
         {children}
     </div>
 }
